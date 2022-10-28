@@ -1,0 +1,141 @@
+// Thank You Message
+.wpforms-confirmation-container-full {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent !important;
+    font-size: 1.125rem;
+    @include size(100%,300px);
+    padding-inline: 0 !important;
+    border: 1px solid #DDD !important;
+    border-radius: 3px;
+}
+
+.wpforms-contact {
+    margin-bottom: 0;
+
+    .wpforms-field-container {
+        .wpforms-field {
+            margin-bottom: 20px;
+            padding: 0 !important;
+        }
+
+        .wpforms-field-label {
+            @include proxima_semibold();
+            font-weight: 600;
+            font-size: 15px !important;
+            font-weight: normal !important;
+            
+            .wpforms-required-label {
+                position: relative;
+                top: -2px;
+                // display: none !important;
+                font-size: 10px;
+                font-weight: 300;
+            }
+        }
+
+        .wpforms-field-description {
+            font-weight: 400;
+            color: #666;
+        }
+
+        .wpforms-one-half {
+            width: calc( 50% - 5px ) !important;
+            margin-left: 10px !important;
+        }
+
+        // Completion of sub-labels for Name
+        .wpforms-field-sublabel {
+            @include proxima_light();
+            font-weight: 300 !important;
+            color: rgba(#888,.9);
+        }
+
+        .wpforms-field-name-first + .wpforms-field-sublabel.after::after {
+            content: 'Name';
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        .wpforms-field-name-last + .wpforms-field-sublabel.after::after {
+            content: 'Name';
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        input[type=text],
+        input[type=email],
+        input[type=tel],
+        select,
+        textarea {
+            position: relative;
+            background-color: rgba(#FFF, 1) !important;
+            @include proxima_regular();
+            font-weight: 400;
+            font-size: 15px !important;
+            // color: #888 !important;
+            border: 1px solid #DDD !important;
+            border-radius: 0 !important;
+            appearance: none !important;
+
+            &.wpforms-error {
+                border-color: $dangered !important;
+            }
+        }
+
+        textarea {
+            padding: 1em !important;
+        }
+
+        select {
+            background-repeat: no-repeat !important;
+            background-position: 98.5% center !important;
+            background-size: 16px auto !important;
+            background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") !important;
+        }
+
+        .wpforms-required-label {
+            font-size: 14px !important;
+            color: #AD0000 !important;
+        }
+
+        label.wpforms-error {
+            display: none !important;
+        }
+    
+        @media ( max-width: 959px ) {
+            .wpforms-one-half,
+            .wpforms-one-third {
+                width: 100%  !important;
+                margin-left: 0 !important;
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    .wpforms-submit-container {
+        text-align: right;
+        
+        button[type=submit] {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            @include proxima_regular();
+            background: $primary-clr !important;
+            font-size: 14px !important;
+            font-weight: 500;
+            color: #FFF !important;
+            text-transform: uppercase !important;
+            line-height: 1.4;
+            padding: 1em 2em !important;
+            border: 0 !important;
+            border-radius: 5px;
+
+            &:focus,
+            &:hover {
+                background: darken($primary-clr, 5%) !important;
+            }
+        }
+    }    
+}

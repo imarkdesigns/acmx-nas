@@ -1,0 +1,963 @@
+// Import mixins
+@import 'common/mixins',
+        'common/fonts';
+
+
+.about-lead {
+    background-color: rgba(#FFF,1);
+
+    h1 {
+        @include proxima_light();
+        font-size: clamp(1.5rem, 1.2188rem + 1.4063vw, 2.625rem);
+    }
+}
+
+.about-track-record {
+    background-image: linear-gradient(120deg, $primary-clr 0%, darken($primary-clr,10%) 100%);
+}
+
+.track-record-wrapper {
+    > div {
+        border: solid #FFF;
+        border-width: 0 0 1px;
+
+        &:nth-last-child(2),
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+
+    .uk-tile {
+        * { color: rgba(#FFF,.9); }
+    }
+
+    .uk-tile .track-value {
+        display: block;
+        @include proxima_bold();
+        font-size: 3rem;
+        line-height: 1;
+
+        small {
+            display: block;
+            font-size: .875rem;
+            font-variant-caps: all-small-caps;
+            line-height: normal;
+            margin: 0 0 5px;
+        }
+    }
+
+    .uk-tile .track-caption {
+        display: block;
+        font-variant-caps: all-small-caps;
+        line-height: 1;
+    }
+
+    @media screen and ( min-width: 640px ) {
+        > div {
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3) {
+                border-width: 0 0 1px;
+            }
+
+            &:nth-child(2) {
+                border-width: 0 1px 1px;
+            }
+
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(6) {
+                border-width: 0;
+            }
+
+            &:nth-child(5) {
+                border-width: 0 1px 0;
+            }
+        }
+
+        .uk-tile .track-value small {
+            display: inline-block;
+        }
+    }
+}
+
+.faqs {
+    .uk-grid {
+        .uk-panel {
+            color: rgba(#545454,1);
+        }
+
+        .uk-panel .uk-icon {
+            position: relative;
+            top: -2px;
+            margin-right: 5px;
+        }
+
+        .uk-panel > button {
+            background-color: transparent;
+            @include proxima_regular();
+            font-size: 1rem;
+            color: #666;
+            padding: 0;
+            border: 0;
+            cursor: pointer;
+        }
+    }
+
+    .faq-lists {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 30px;
+
+        .uk-accordion-title {
+            position: relative;
+            @include proxima_bold();
+            font-size: 2rem;
+            line-height: 1.2;
+            width: 100%;
+            padding-right: 70px;
+            box-sizing: border-box;
+
+            &::before {
+                float: none;
+                position: absolute;
+                right: 0;
+                background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline fill='none' stroke='%23000' stroke-width='1.03' points='16 7 10 13 4 7'%3E%3C/polyline%3E%3C/svg%3E");
+            }
+        }
+
+        .uk-open .uk-accordion-title::before {
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline fill='none' stroke='%23000' stroke-width='1.03' points='4 13 10 7 16 13'%3E%3C/polyline%3E%3C/svg%3E");
+        }
+
+        .uk-accordion-content {
+            font-size: 1.125rem;
+            width: 100%;
+            padding-right: 70px;
+            box-sizing: border-box;
+
+            ul { list-style: square }
+             a { color: rgba($primary-clr,.9); }
+            strong { @include proxima_semibold() }
+        }
+    }
+}
+
+.stories-lists {
+
+    figure.uk-position-relative:hover {
+        img {
+            transform: scale(1.03);
+        }
+    }
+
+    .uk-cover-container {
+        will-change: transform;
+    }
+
+    .uk-cover-container img {
+        @include size(100%);
+        object-fit: cover;
+        border-radius: 5px 5px 0 0;
+        transition: transform 400ms ease-out;
+        transform: scale(1);
+    }
+
+    figcaption {
+        background-color: $primary-clr;
+        padding: 30px;
+        border-radius: 0 0 5px 5px;
+        box-sizing: border-box;
+    }
+
+    figcaption .story-title {
+        display: inline-block;
+        @include proxima_light();
+        font-size: 1.125rem;
+        font-variant-caps: all-small-caps;
+        line-height: 1.2;
+
+        small {
+            display: block;
+        }
+    }
+
+    figcaption .story-link {
+        font-size: .875rem;
+    }
+}
+
+.comments-lists {
+
+    .uk-cover-container {
+        border-radius: 2px;
+
+        canvas {
+            min-height: 360px;
+        }
+    }
+
+    // @for $i from 1 through 29 {
+    //     .uk-grid div:nth-child(#{$i}) .uk-overlay-primary {
+    //         background-color: rgba(random(255),random(255),random(255),.9);
+    //         // backdrop-filter: saturate(180%) blur(5px);
+    //     }
+    // }
+
+    .uk-overlay-primary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(#000,.75);
+    }
+
+    .uk-overlay h2 {
+        display: block;
+        font-size: 1.125rem;
+        line-height: 1;
+
+        small {
+            display: block;
+            font-size: .875rem;
+            font-variant-caps: all-small-caps;
+            margin-top: 5px;
+        }
+    }
+
+    .uk-overlay button {
+        appearance: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: transparent;
+        @include proxima_light();
+        font-size: 1.125rem;
+        color: rgba(#FFF,.9);
+        border: 0;
+        cursor: pointer;
+
+        span.uk-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // margin-right: 5px;
+            background-color: rgba(#FFF,.9);
+            color: #111;
+            @include size(28px);
+            border: 1px solid rgba(#FFF,.9);
+            border-radius: 50%;
+        }
+    }
+}
+
+.comments-modal {
+
+    .uk-modal-dialog {
+        border-radius: 10px;
+    }
+
+    .uk-modal-header {
+        display: flex;
+        align-items: center;
+
+        position: relative;
+        background-color: #DADAE6;
+        height: 150px;
+        border-radius: 10px 10px 0 0;
+
+        h2 {
+            position: relative;
+            display: block;
+            @include proxima_bold();
+            font-size: 1.75rem;
+            line-height: 1;
+            z-index: 1;
+
+            small {
+                display: block;
+                @include proxima_light();
+                font-size: 1rem;
+                font-variant-caps: all-small-caps;
+                margin-top: 15px;
+            }
+        }
+    }
+
+}
+
+.loan-goal {
+    blockquote {
+        position: relative;
+        @include proxima_light();
+        font-style: normal;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -35px;
+            left: -35px;
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.27,7.79 C17.27,9.45 16.97,10.43 15.99,12.02 C14.98,13.64 13,15.23 11.56,15.97 L11.1,15.08 C12.34,14.2 13.14,13.51 14.02,11.82 C14.27,11.34 14.41,10.92 14.49,10.54 C14.3,10.58 14.09,10.6 13.88,10.6 C12.06,10.6 10.59,9.12 10.59,7.3 C10.59,5.48 12.06,4 13.88,4 C15.39,4 16.67,5.02 17.05,6.42 C17.19,6.82 17.27,7.27 17.27,7.79 L17.27,7.79 Z' fill='%23FFFFFF'%3E%3C/path%3E%3Cpath d='M8.68,7.79 C8.68,9.45 8.38,10.43 7.4,12.02 C6.39,13.64 4.41,15.23 2.97,15.97 L2.51,15.08 C3.75,14.2 4.55,13.51 5.43,11.82 C5.68,11.34 5.82,10.92 5.9,10.54 C5.71,10.58 5.5,10.6 5.29,10.6 C3.47,10.6 2,9.12 2,7.3 C2,5.48 3.47,4 5.29,4 C6.8,4 8.08,5.02 8.46,6.42 C8.6,6.82 8.68,7.27 8.68,7.79 L8.68,7.79 Z' fill='%23FFFFFF'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 75px auto;
+            line-height: normal;
+            @include size(75px);
+            transform: scaleX(-1);
+            opacity: .15;
+        }
+    }
+}
+
+.loan-list {
+
+    .uk-tab > .uk-active > a {
+        border-color: $primary-clr;
+    }
+
+    .uk-accordion .uk-accordion-title {
+        text-transform: uppercase;
+    }
+
+    .uk-card {
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    .uk-card-media-top .uk-label {
+        background-color: $primary-clr;
+        @include proxima_light();
+        font-size: .75rem;
+        font-variant-caps: all-small-caps;
+        color: rgba(#FFF,.9);
+        text-decoration: none;
+    }
+
+    .uk-card-title {
+        font-size: 1.125rem;
+
+        + small {
+            font-size: .875rem;
+        }
+    }
+
+    .uk-card-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $primary-clr;
+        font-size: .875rem;
+        color: rgba(#FFF,.9);
+        border-top: 0;
+    }
+
+}
+
+
+.outreach-people {
+    background-color: rgba(#363742,1);
+
+    .uk-panel h2 {
+        @include proxima_bold();
+        font-size: clamp(1.5rem, 1.125rem + 1.875vw, 3rem);
+        text-transform: uppercase;
+        line-height: 1;
+
+        + p {
+            @include proxima_light();
+        }
+    }
+
+    
+    // .comments-wrapper {
+    //     display: flex;
+    //     flex-direction: column;
+    //     gap: 30px;
+    // }
+
+    // .comments-wrapper canvas {
+    //     min-height: 360px;
+    // }
+
+    // .comments-wrapper .tile-modal-container {
+    //     position: absolute;
+    //     top: -1px;
+    //     bottom: -1px;
+    //     right: 0;
+    //     width: calc( 100% / 2 + 1px );
+    //     box-sizing: border-box;
+    // }
+
+    // .comments-wrapper .tile-content h2 {
+    //     display: block;
+    //     font-size: 1.5rem;
+    //     line-height: 1;
+
+    //     small {
+    //         display: block;
+    //         font-size: 1rem;
+    //         font-variant-caps: all-small-caps;
+    //         margin-top: 15px;
+    //     }
+
+    //     + div > a {
+    //         color: rgba($primary-clr,.9);
+    //     }
+    // }
+
+    // .comments-wrapper .tile-button-wrapper button {
+    //     appearance: none;
+    //     display: flex;
+    //     align-items: center;
+    //     gap: 10px;
+    //     background-color: transparent;
+    //     @include proxima_light();
+    //     font-size: 1.125rem;
+    //     border: 0;
+    //     cursor: pointer;
+
+    //     span.uk-icon {
+    //         display: flex;
+    //         align-items: center;
+    //         justify-content: center;
+    //         // margin-right: 5px;
+    //         @include size(34px);
+    //         border: 1px solid #222;
+    //         border-radius: 50%;
+    //     }
+    // }
+
+    .uk-grid div {
+        &:nth-child(1) .uk-overlay {
+            background-color: rgba(37,168,217,.9);
+
+            &::after {
+                background: rgba(37,168,217,.9);
+            }
+        }
+
+        &:nth-child(2) .uk-overlay {
+            background-color: rgba(196,35,61,.9);
+            
+            &::after {
+                background-color: rgba(196,35,61,.9);
+            }
+        }
+
+        &:nth-child(3) .uk-overlay {
+            background-color: rgba(241,116,57,.9);
+
+            &::after {
+                background-color: rgba(241,116,57,.9);
+            }
+        }
+
+        &:nth-child(4) .uk-overlay {
+            background-color: rgba(113,30,113,.9);
+
+            &::after {
+                background-color: rgba(113,30,113,.9);
+            }
+        }
+    }
+
+    .uk-overlay {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &.uk-position-cover {
+            height: calc( 100% - 70px );
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: transparent !important;
+
+            &::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                border-radius: 5px 5px 0 0;
+                backdrop-filter: blur(5px);
+                z-index: 0;
+            }
+
+            p {
+                position: relative;
+                z-index: 1;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: -35px;
+                    left: -35px;
+                    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.27,7.79 C17.27,9.45 16.97,10.43 15.99,12.02 C14.98,13.64 13,15.23 11.56,15.97 L11.1,15.08 C12.34,14.2 13.14,13.51 14.02,11.82 C14.27,11.34 14.41,10.92 14.49,10.54 C14.3,10.58 14.09,10.6 13.88,10.6 C12.06,10.6 10.59,9.12 10.59,7.3 C10.59,5.48 12.06,4 13.88,4 C15.39,4 16.67,5.02 17.05,6.42 C17.19,6.82 17.27,7.27 17.27,7.79 L17.27,7.79 Z' fill='%23FFFFFF'%3E%3C/path%3E%3Cpath d='M8.68,7.79 C8.68,9.45 8.38,10.43 7.4,12.02 C6.39,13.64 4.41,15.23 2.97,15.97 L2.51,15.08 C3.75,14.2 4.55,13.51 5.43,11.82 C5.68,11.34 5.82,10.92 5.9,10.54 C5.71,10.58 5.5,10.6 5.29,10.6 C3.47,10.6 2,9.12 2,7.3 C2,5.48 3.47,4 5.29,4 C6.8,4 8.08,5.02 8.46,6.42 C8.6,6.82 8.68,7.27 8.68,7.79 L8.68,7.79 Z' fill='%23FFFFFF'%3E%3C/path%3E%3C/svg%3E");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 75px auto;
+                    line-height: normal;
+                    @include size(75px);
+                    transform: scaleX(-1);
+                    opacity: .15;
+                }
+            }
+        }
+    }
+
+    .uk-position-bottom {
+        height: 70px;
+        padding-inline: 15px;
+    }
+
+    .uk-overlay h3 {
+        @include proxima_semibold();
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    .uk-overlay button {
+        appearance: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: transparent;
+        @include proxima_light();
+        font-size: 1rem;
+        color: rgba(#FFF,.9);
+        border: 0;
+        cursor: pointer;
+
+        span.uk-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(#FFF,.9);
+            color: #111;
+            @include size(24px);
+            border: 2px solid transparent;
+            border-radius: 50%;
+        }
+    }
+
+}
+
+.outreach-community {
+
+    h2 {
+        @include bodoni();
+        text-align: center;
+        @include sharpText();
+    }
+
+    ul.uk-list {
+        background-color: rgba(#000,.75);
+        background-blend-mode: multiply;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+
+}
+
+.outreach-sponsor {
+
+    .faq-lists {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 30px;
+
+        .uk-accordion-title {
+            position: relative;
+            @include proxima_regular();
+            font-size: 1.5rem;
+            line-height: 1.2;
+            width: 100%;
+            padding-right: 70px;
+            box-sizing: border-box;
+
+            &::before {
+                float: none;
+                position: absolute;
+                right: 0;
+                background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='1.03' points='16 7 10 13 4 7'%3E%3C/polyline%3E%3C/svg%3E");
+            }
+        }
+
+        .uk-open .uk-accordion-title::before {
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline fill='none' stroke='%23FFF' stroke-width='1.03' points='4 13 10 7 16 13'%3E%3C/polyline%3E%3C/svg%3E");
+        }
+
+        .uk-accordion-content {
+            font-size: 1.125rem;
+            width: 100%;
+            padding-right: 70px;
+            box-sizing: border-box;
+
+            ul { list-style: square }
+             a { color: rgba($primary-clr,.9); }
+            strong { @include proxima_semibold() }
+        }
+    }
+
+}
+
+// rgba(196,35,61,.9) 
+// rgba(113,30,113,.9)
+// rgba(37,168,217,.9)
+// rgba(71,171,9,.9)
+// rgba(241,116,57,.9)
+// 
+
+.team-lists {
+
+    .uk-card {
+        position: relative;
+        max-width: 414px;
+        margin-inline: auto;
+    }
+
+    figure.uk-inline img {
+        border-radius: 2px;
+    }
+
+    figcaption.uk-overlay {
+        background-color: rgba(#000,.8);
+        font-size: 1rem;
+        border-radius: 2px;
+        border: 1px solid rgba(#FFF,.20);
+        backdrop-filter: saturate(180%) blur(10px);
+
+        h2 {
+            @include bodoni();
+            font-size: clamp(1.125rem, 0.8438rem + 1.4063vw, 2rem);
+            color: rgba(#FFF,.9);
+            line-height: 1;
+            margin: 0;
+
+            .uk-text-meta {
+                // display: block;
+                font-family: $face-regular;
+                font-weight: 400;
+                // vertical-align: text-top;
+            }
+        }
+
+        p { margin: 0 }
+
+    }
+
+    @media ( min-width: 960px ) {
+
+        .uk-card {
+            max-width: max-content;
+        }
+
+        figcaption.uk-overlay h2 .uk-text-meta {
+            display: inline-block;
+            vertical-align: baseline;
+        }
+
+    }
+}
+
+body.map {
+    > img {
+        display: block;
+        visibility: hidden;
+        width: 0 !important;
+        height: 0 !important;
+    }
+}
+
+.map-legend {
+    border-bottom: 1px solid rgba($primary-clr,1);
+    box-sizing: border-box;
+
+    .uk-container {
+        padding-inline: 0;
+    }
+
+    .uk-subnav {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 10px;
+        margin-left: 0;
+
+        $boxColor: (#F37125, #808080, #E2C239, #223E93, #BB1F2C, #B1D352, #7D3A96, #040707);
+
+        @for $i from 1 through length($boxColor) {
+            > li:nth-child(#{$i})::before {
+                content: '';
+                position: absolute;
+                top: 3px;
+                left: 1px;
+                display: block;
+                background-color: nth($boxColor, $i);
+                @include size(12px);
+            }
+        }
+    
+        > li {
+            font-size: .875rem;
+            color: #000;
+            text-transform: none;
+            text-decoration: none;
+        }
+    }
+
+    @media screen and ( min-width: 1200px ) {
+        .uk-subnav { justify-content: flex-end }
+    }
+
+}
+
+.property-map {
+    border-bottom: 10px solid $primary-clr;
+
+    // InfoWindow
+    .eapps-google-maps-marker {
+        min-width: 270px;
+        max-width: 270px !important;
+        width: 100%;
+        box-sizing: border-box;
+
+        .eapps-google-maps-marker-title {
+            @include proxima_regular();
+            font-size: 1rem !important;
+            padding-right: 0;
+        }
+
+        .eapps-google-maps-marker-content {
+            padding: 16px;
+        }
+
+        // Address
+        .eapps-google-maps-marker-info {
+            display: none;
+        }
+
+        .eapps-google-maps-marker-description {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: 0;
+        }
+
+        .uk-panel.uk-padding-small {
+            padding: 0 !important;
+        
+            div.uk-text-meta,
+            div:first-child {
+                @include proxima_light();
+                font-size: .875rem;
+                font-variant-caps: all-small-caps;
+            }
+
+            address.uk-text-meta,
+            div:last-child {
+                @include proxima_light();
+                font-size: 1rem;
+                // font-variant-caps: all-small-caps;
+                color: #000;
+            }
+        }
+    }
+
+    // Sidebar Listings
+    .eapps-google-maps-bar-list {
+        text-align: left;
+
+        .eapps-google-maps-bar-list-item {
+            align-items: center;
+        }
+
+        .eapps-google-maps-bar-list-item-additional-distance {
+            display: none;
+        }
+
+        .eapps-google-maps-bar-list-item-info-title {
+            @include proxima_semibold();
+            font-weight: 600;
+        }
+
+        .uk-panel.uk-padding-small {
+            padding: 0 !important;
+        }
+
+        div.uk-text-meta {
+            @include proxima_light();
+            font-size: .75rem;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+        address.uk-text-meta {
+            @include proxima_light();
+            font-size: .875rem;
+            color: #000;
+        }
+    }
+
+    .eapps-google-maps-bar-search-location {
+        display: none;
+    }
+}
+
+.localnav {
+    .uk-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-inline: 0;
+    }
+
+    h1 {
+        @include bodoni();
+        display: block;
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        max-width: 300px;
+        margin-right: 60px !important;
+    }
+
+    h1, ul {
+        margin: 0;
+    }
+
+    a {
+        font-size: .875rem;
+        color: rgba(#000,.9);
+        text-decoration: none;
+        transition: color 300ms ease-out;
+
+        &:hover {
+            color: rgba($primary-clr,.9);
+        }
+    }
+
+    .uk-dropbar {
+        background-color: rgba(#FFF,.9);
+        max-width: 1920px !important;
+        width: 100% !important;
+        height: calc( 100vh - 60px );
+        padding: 15px;
+        box-shadow: none;
+        border-top: 1px solid #EEE;
+        backdrop-filter: blur(10px);
+    }
+
+    .uk-button-small {
+        background-color: transparent;
+        font-family: .875rem;
+        text-transform: capitalize;
+        padding: 0 !important;
+    }
+
+    .category-tray {
+        min-height: 150px;
+    }
+
+
+    @media screen and ( min-width: 640px ) {
+        
+        .uk-dropbar {
+            height: auto !important;
+            box-shadow: 0 12px 7px -6px rgb(0 0 0 / 5%);
+        }
+
+    }
+}
+
+.news-list {
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: 'NAS News';
+        position: absolute;
+        top: -200px;
+        right: 0;
+        @include proxima_black();
+        display: inline-block;
+        // font-size: 40rem;
+        font-size: 30rem;
+        color: rgba(#000,.03);
+        text-align: right;
+        letter-spacing: -0.22em;
+        line-height: 1;
+        width: 100%;
+        white-space: nowrap;
+        vertical-align: text-top;
+        overflow-x: hidden;
+        z-index: -1;
+    }
+
+    .uk-headings {
+        margin-bottom: 30px;
+    }
+
+    .uk-card {
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: 0 0 2px 0 rgba(#000,.15);
+
+        .uk-card-media-left,
+        .uk-card-media-top {
+            overflow: hidden;
+        }
+
+        .uk-card-media-left > img,
+        .uk-card-media-top > img {
+            transition: transform 400ms cubic-bezier(0.4, 0, 0.25, 1) 0ms;
+
+            &:hover {
+                transform: scale(1.03);
+            }
+        }
+    }
+
+    .uk-card-body {
+        padding: 1.25em;
+    }
+
+    .news-highlight .uk-card-body .title-headline {
+        @include proxima_bold();
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1;
+        @include sharpText();
+    }
+
+    .listitem-medium .uk-card-body .title-headline {
+        @include proxima_semibold();
+        font-size: 1.25rem;
+        font-weight: 500;
+        line-height: 1.2;
+        @include sharpText();
+    }
+
+    .listitem-small .uk-card-body .title-headline {
+        @include proxima_semibold();
+        font-size: 1.125rem;
+        line-height: 1.2;
+    }
+}
+
+.more-news-lists {
+    .uk-headings {
+        margin-bottom: 30px;
+    }
+
+    .uk-card-media-left img {
+        border-radius: 3px;
+    }
+
+    .title-headline {
+        @include proxima_semibold();
+        font-weight: 500;
+        font-size: 1.125rem;
+    }
+}

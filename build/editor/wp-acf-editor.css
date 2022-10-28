@@ -1,0 +1,22 @@
+/*
+ * Style for User Profile Section
+ **/
+#your-profile .acf-column-1 h2:nth-child(9),
+#your-profile .acf-column-1 table:nth-child(10) {
+    display: none !important;
+}
+
+#your-profile .acf-column-1 h2:nth-child(14),
+#your-profile .acf-column-1 table:nth-child(15) {
+    display: none !important;
+}
+
+#createuser .acf-column-1 table:nth-child(7),
+#your-profile .acf-column-1 table:nth-child(8) {
+    margin-bottom: 0 !important;
+}
+
+#createuser .acf-column-1 table:nth-child(10),
+#your-profile .acf-column-1 table:nth-child(11) {
+    margin-top: 0 !important;
+}

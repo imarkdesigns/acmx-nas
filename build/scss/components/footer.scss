@@ -1,0 +1,223 @@
+[data-fragment="footer"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+
+    background-color: rgba(#000,.9);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 400px;
+    padding: 2em 1em;
+    box-sizing: border-box;
+}
+
+.ff-links .download-brochure .uk-panel,
+.ff-links .call-nas .uk-panel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: .75rem;
+
+    a, div { 
+        color: rgba(#FFF,.9);
+        text-transform: uppercase;
+        text-decoration: none;
+        line-height: 1.2;
+        transition: color 300ms ease-out;
+
+        > span {
+            color: $primary-clr;
+        }
+    }
+
+    a:focus,
+    a:hover { color: lighten($primary-clr,25%) }
+
+    img {
+        @include size(32px);
+        opacity: .9;
+    }
+}
+
+.ff-logo {
+    text-align: center;
+
+    img {
+        @include size(150px,auto);
+    }
+}
+
+.ff-legal {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 15px;
+    width: 100%;
+
+    .legal-copyright,
+    .legal-links {
+        font-size: .875rem;
+        color: rgba(#FFF,.9);
+        width: 100%;
+    }
+
+    .legal-copyright {
+        text-align: center;
+
+        span { display: block }
+    }
+
+    .legal-links {
+        display: flex;
+        justify-content: center;
+    }
+
+    .uk-subnav {
+        margin-bottom: 0;
+
+        > li > a {
+            color: rgba(#FFF,.9);
+            text-transform: none;
+        }
+
+        > li > a:focus,
+        > li > a:hover {
+            color: rgba($primary-clr,.9);
+        }
+    }
+
+}
+
+@media screen and ( min-width: 960px ) {
+    [data-fragment="footer"] {
+        padding: 3em;
+    }
+
+    .ff-links .download-brochure .uk-panel,
+    .ff-links .call-nas .uk-panel {
+        font-size: 1rem;
+
+        img { @include size(46px) }
+    }
+
+    .ff-legal {
+        flex-wrap: nowrap;
+
+        .legal-copyright { 
+            text-align: left;
+
+            span { display: inline }
+        }
+
+        .legal-links { justify-content: flex-end }
+    }
+}
+
+
+//
+// OnDemand Settings
+//
+@media only screen
+    and ( -webkit-max-device-pixel-ratio: 1 ) {
+
+    [data-ondemand="footer"] {
+        position: relative;
+        background-color: rgba(#2A292C,1);
+
+        .uk-grid {
+            padding: 1em;
+            min-height: 60px;
+
+            * { font-size: .75rem }
+
+            .od-footer-copyright {
+                text-align: center;
+            }
+
+            .uk-subnav {
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+                gap: 16px;
+            }
+
+            .uk-subnav li {
+                position: relative;
+                padding: 0;
+
+                &::before {
+                    position: absolute;
+                    top: 0;
+                    margin-right: 0;
+                    transform: translateX(-8px);
+                }
+            }
+
+            .uk-subnav li > a {
+                color: rgba(#A7ABB4,.9);
+                text-transform: none;
+
+                &:hover {
+                    color: rgba($primary-clr,.9);
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and ( min-width: 640px )
+    and ( -webkit-max-device-pixel-ratio: 1 ) {
+    [data-ondemand="footer"] {
+        .uk-grid { padding: 0 1em }
+        .od-footer-copyright { text-align: left }
+        .uk-subnav { justify-content: flex-end }
+    }
+}
+
+@media only screen 
+    and ( max-device-width: 1366px )
+    and ( -webkit-min-device-pixel-ratio: 2 )
+    and ( -webkit-max-device-pixel-ratio: 5 ) {
+
+        .main {
+            margin-bottom: 54px;
+        }
+
+        [data-ondemand="footer"].touch {
+            position: fixed;
+            inset: auto 0 0;
+            box-sizing: border-box;
+            z-index: 10001;
+
+            .uk-grid {
+                // align-items: center;
+                gap: 1px;
+                min-height: 1% !important;
+                margin-inline: auto;
+                padding: 0;
+
+                > div {
+                    flex: 1 0 calc( 100% / 4 - .5px );
+                    background-color: rgba(#2A292C,1);
+                }
+            }
+
+            .uk-panel a {
+                display: flex;
+                flex-flow: column wrap;
+                align-items: center;
+                justify-content: center;
+                gap: 3px;
+
+                position: relative;
+                font-size: .75rem;
+                text-transform: uppercase;
+                text-decoration: none;
+                padding: .5em 0;
+            }
+        }
+
+}

@@ -1,0 +1,234 @@
+//* Import Common Styles
+@import 'common/fonts', 
+        'common/mixins', 
+        'common/global';
+
+//* Import Components Styles
+@import 'components/footer',
+        'components/header',
+        'components/menu';
+
+//* Import Resets Styles
+@import 'common/reset-wp',
+        'common/reset-uikit',
+        'common/reset-pb';
+
+
+// Set max-width to all parent containers
+[role="main"],
+[data-fragment="hero"],
+[data-fragment="menu"],
+[data-fragment="footer"],
+[data-ondemand="menu"],
+[data-ondemand="footer"] {
+    max-width: 1920px;
+    margin-inline: auto;
+}
+
+.ondemand-banner {
+    background-color: rgba(#000,.25);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    @include size(100%,450px);
+
+    .uk-overlay {
+        color: rgba(#FFF,.9);
+        text-align: right;
+
+        h2 {
+            @include proxima_black();
+            font-size: 2.65rem;
+            color: rgba(#FFF,9);
+            text-transform: uppercase;
+            line-height: .9;
+            margin: 0;
+        }
+
+        h2 span:first-child {
+            color: rgba($primary-clr,.9);
+        }
+
+        h2 span:last-child {
+            display: block;
+            font-size: 2rem;
+            letter-spacing: .13rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: rgba($primary-clr,.9);
+            text-transform: uppercase;
+            margin-block: 1em;
+        }
+
+        p a {
+            display: inline-block;
+            color: rgba($primary-clr,.9);
+        }
+    }
+
+    @media screen and ( min-width: 960px ) {
+        @include size(100%,550px);
+
+        .uk-overlay h2 {
+            font-size: 3.75rem;
+        }
+
+        .uk-overlay h2 span:last-child {
+            font-size: 3rem;
+            letter-spacing: .09rem;
+        }
+    }
+}
+
+.news-module {
+    // Hack the Slider Item first
+    .uk-grid-small > * {
+        
+        // padding-left: 10px;
+    }
+
+    .uk-slidenav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(#000,.75);
+        color: rgba(#FFF,1);
+        // max-width: 100%;
+        @include size(52px);
+        padding: 1em;
+        border-radius: 50%;
+
+        &.uk-slidenav-next {
+            box-shadow: -1px 0 0 1px rgba($primary-clr,.75);
+        }
+
+        &.uk-slidenav-previous {
+            box-shadow: 1px 0 0 1px rgba($primary-clr,.75);   
+        }
+    }
+
+    .news-intro .uk-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        position: relative;
+        @include size(100%);
+        padding-top: 70px;
+        box-sizing: border-box;
+        overflow: hidden;
+
+        h2 {
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+
+            position: absolute;
+            inset: 30px 0 0;
+            @include bodoni();
+            font-size: 2.5rem;
+            color: rgba($primary-clr,.9);
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 1;
+            width: auto;
+            transform: rotate(0deg) translate3d(0,0,0) scale3d(1,1,1);
+            transform-style: preserve-3d;
+            z-index: 0;
+        }
+
+        h2 small {
+            font-size: 1.5rem;
+            color: #000;
+            margin-bottom: 5px;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        a.readmore {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(#333,1);
+            font-size: .875rem;
+            font-variant: small-caps;
+            color: rgba(#FFF,.9);
+            text-decoration: none;
+            @include size(120px);
+            border-radius: 50%;
+            border: 0;
+            box-shadow: 0 -1px 0 1px rgba($primary-clr,.75);
+            z-index: 1;
+        }
+    }
+
+    .uk-inline {
+        margin: 0;
+
+        img {
+            height: 450px;
+            border-radius: 2px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        a.uk-position-cover {
+            top: auto;
+            bottom: 0;
+            height: calc( 100% - 75px );
+        }
+    }
+
+    .uk-overlay-primary {
+        background: linear-gradient( to bottom, rgba(#000,.75) 15%, rgba(#000,.05) );
+        border-radius: 2px;
+
+        span.news-category {
+            position: relative;
+            display: block;
+            margin-bottom: 15px;
+            z-index: 1;
+        }
+
+        h3.news-title {
+            font-size: 1.125rem;
+            color: rgba(#FFF,.9);
+            line-height: 1.2;
+            margin: 0;
+        }
+    }
+
+    @media screen and ( min-width: 640px ) {
+        
+        .news-intro .uk-panel {
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            padding-top: 0;
+            padding-right: 2.5em;
+
+            h2 {
+                inset: 0;
+                font-size: 4rem;
+                width: 550px;
+                transform: rotate(-90deg);
+            }
+
+            h2 small { font-size: 2.5rem }
+            p { display: none }
+        }
+
+        .uk-inline img {
+            height: 550px;
+        }
+
+    }
+
+}

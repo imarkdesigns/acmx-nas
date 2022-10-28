@@ -1,0 +1,51 @@
+@mixin proxima_light() {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    text-rendering: optimizeSpeed;
+}
+
+@mixin proxima_regular() {
+    font-family: proxima-nova, sans-serif;
+    font-style: normal;
+    text-rendering: optimizeSpeed;
+}
+
+@mixin proxima_regular_i() {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    text-rendering: optimizeSpeed;
+}
+
+@mixin proxima_semibold() {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    text-rendering: optimizeSpeed;
+}
+
+@mixin proxima_bold() {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-rendering: optimizeSpeed;
+}
+
+@mixin proxima_black() {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    text-rendering: optimizeSpeed;
+}
+
+@mixin bodoni() {
+    font-family: bodoni-urw, serif;
+    font-weight: 300;
+    font-style: normal;
+    text-rendering: optimizeSpeed;
+    letter-spacing: -0.022em;
+
+    // -webkit-font-smoothing: subpixel-antialiased;
+    // -moz-osx-font-smoothing: grayscale;
+}

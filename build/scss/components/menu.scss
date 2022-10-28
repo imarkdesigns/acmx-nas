@@ -1,0 +1,389 @@
+[data-fragment="menu"] {
+    z-index: 1002;
+
+    .uk-navbar {
+        position: relative;
+        background-color: rgba(#000,1);
+    }
+
+    .uk-logo {
+        background-image: url(#{$img}/logo-nasassets_x2.png);
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: auto 35px;
+        white-space: nowrap;
+        @include size(160px, 45px);
+        @include hideText();
+    }
+
+    .uk-navbar {
+        height: 80px;
+
+        .uk-navbar-left { padding-left: 15px }
+        .uk-navbar-right { padding-right: 15px }
+    }
+
+    .uk-navbar-nav {
+        gap: 15px;
+
+        > li > a {
+            @include proxima_regular();
+            color: rgba(#FFF,.9);
+            text-transform: none;
+            padding: 0;
+        }
+
+        // isHover
+        > li > a:focus,
+        > li > a:hover {
+            color: rgba(#82B236,.9);
+        }
+
+        // isActive
+        > li.current-menu-parent a,
+        > li.current-menu-item a {
+            color: rgba($primary-clr,.9);
+        }
+    }
+
+    .uk-navbar-dropdown {
+        background: none;
+        margin-top: 3px;
+        min-width: 150px;
+        padding: 0;
+        box-shadow: none;
+
+        .uk-navbar-dropdown-nav > li {
+            background-color: rgba(#000,.9);
+            border-top: 1px solid rgba(#888,.25);
+
+            &:first-child { border-top: 0 }
+            &:last-child { border-radius: 0 0 5px 5px }
+
+            &:focus,
+            &:hover {
+                background-color: $primary-clr;
+                margin-top: 0;
+
+                > a { color: rgba(#FFF,.9); }
+            }
+
+            > a {
+                color: #FFF;
+                line-height: normal;
+                padding: .75em 1em;
+            }
+        }
+    }
+
+    &.xs {
+        * { min-height: 60px }
+
+        .uk-logo {
+            background-size: auto 30px;
+        }
+
+        .uk-navbar {
+            height: 60px !important;
+        }
+
+        .navbar-mobile-menu * {
+            min-height: 1% !important
+        }
+    }
+
+    // Search Icon
+    .navbar-search-trigger a.uk-search-icon {
+        @include proxima_regular();
+        color: #FFF;
+
+        svg { 
+            position: relative;
+            top: -2px;
+            margin-left: 5px 
+        }
+    }
+
+    // Search Field
+    .navbar-search-field {
+        // Quick Links
+        .quick-links {
+            position: absolute;
+            left: 50%;
+            top: 60px;
+            width: 100%;
+            max-width: 600px;
+            padding: 1em 2em;
+            box-sizing: border-box;
+            transform: translateX(-50%);
+            border-radius: 0 0 5px 5px;
+
+            strong {
+                @include proxima_bold();
+                color: rgba(#888,.8);
+                text-transform: uppercase;
+                @include sharpText();
+            }
+
+            .uk-list {
+                padding-left: 15px;
+            }
+
+            .uk-list li a {
+                font-size: .875rem;
+                color: rgba(#000,.8);
+                text-decoration: none;
+
+                &:hover {
+                    color: rgba($primary-clr,.9);
+                }
+            }
+        }
+
+        .uk-search-input {
+            @include proxima_semibold();
+            color: rgba(#FFF,.9);
+            border-color: transparent;
+
+            &::-webkit-input-placeholder {
+                @include proxima_semibold();
+                color: rgba(#FFF,.5);
+            }
+
+            &:-ms-input-placeholder {
+                @include proxima_semibold();
+                color: rgba(#FFF,.5);
+            }
+            
+            &::placeholder {
+                @include proxima_semibold();
+                color: rgba(#FFF,.5);
+            }            
+        }
+
+        .uk-close {
+            min-height: auto;
+        }
+
+        .uk-close svg {
+            color: rgba(#FFF,.8);
+            width: 12px;
+
+            line {
+                stroke-width: 1.5;
+            }
+        }
+    }
+
+    // Mobile Menu
+    button.mobile-menu {
+        gap: 5px;
+
+        background-color: transparent;
+        @include proxima_regular();
+        font-variant: small-caps;
+        color: rgba(#FFF,.9);
+        border: 0;
+        // @include sharpText();
+
+        > span {
+            min-height: auto;
+        }
+
+        svg {
+            position: relative;
+            top: 4px;
+
+            .line-1 {
+                y: 0;
+                width: 13px;
+            }
+
+            .line-2 {
+                y: 5;
+                width: 18px;
+            }
+
+            .line-3 {
+                y: 10;
+                width: 8px;
+                opacity: 1;
+            }
+
+            .line-4 {
+                y: 15;
+                width: 10px;
+                opacity: 0
+            }
+        }
+    }
+
+    // Mobile Menu
+    .navbar-mobile-menu {
+        background-color: rgba(#000,.95);
+        backdrop-filter: saturate(180%) blur(10px);
+        -webkit-overflow-scrolling: touch;
+
+        .uk-nav {
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 0;
+
+            line-height: normal;
+
+            li {
+                border-top: 1px solid rgba(#888,.25);
+
+                &:first-child {
+                    border-top: 0;
+                }
+            }
+
+            li a {
+                color: rgba(#FFF,.9);
+                padding-block: 1em;
+                padding-left: .5em;
+
+                -webkit-tap-highlight-color: rgba(0,0,0,0);
+                outline: none;
+                border-radius: 0;
+            }
+        }
+
+        .uk-search {
+            margin-bottom: 15px;
+
+            input {
+                border-radius: 2px;
+                border-color: rgba(#FFF,.25);
+            }
+        }
+    }
+}
+
+//
+// OnDemand Settings
+//
+[data-ondemand="menu"] {
+
+    .uk-navbar-container {
+        background-color: rgba(#131215,1);
+
+        *:not(.uk-navbar-dropdown):not(.uk-navbar-dropdown *) {
+            @include proxima_regular();
+            font-size: 0.875rem;
+            color: rgba(#FFF,.9);
+            text-transform: none;
+            text-decoration: none;
+            height: 80px;
+            min-height: 1%;
+        }
+    }
+
+    // Logo
+    .uk-logo {
+        background-image: url(#{$img}/logo-nasassets_x2.png);
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: auto 35px;
+        outline-offset: -7px;
+        white-space: nowrap;
+        @include size(160px, 80px);
+        @include hideText();
+        margin-left: 15px !important;
+        padding: 0;
+    }
+
+    .uk-subnav {
+        li > a {
+            color: rgba(#FFF,.9) !important;
+
+            &:focus,
+            &:hover {
+                color: rgba($primary-clr,.9) !important;
+            }
+        }
+
+        li.uk-active > a {
+            color: rgba($primary-clr,.9) !important;
+        }
+    }
+
+    .uk-navbar-dropdown {
+        left: auto !important;
+        right: 0;
+        background-color: transparent;
+        min-width: 150px;
+        padding: 0;
+        box-shadow: none;
+
+        .uk-nav-divider {
+            margin: 0;
+            border-bottom: 4px solid darken(#CCC,45%);
+        }
+
+        &-nav > li {
+            background-color: rgba(#000,1);
+            text-align: right;
+            border-top: 1px solid darken(#CCC,45%);
+
+            &:first-child { border-top: 0 }
+            &:last-child { border-radius: 0 0 5px 5px }
+
+            &:focus,
+            &:hover {
+                background-color: $primary-clr;
+            
+                a { color: rgba(#FFF,.9); }
+            }
+
+            a {
+                color: rgba(#FFF,.9);
+                padding: 1em;
+            }
+        }
+    }
+
+    // Search
+    .uk-search-icon {
+        font-family: $face-regular;
+
+        svg {
+            @include size(16px);
+        }
+    }
+
+    // Profile Builder Log Out Link
+    p.wppb-front-end-logout {
+        position: relative;
+        height: 100%;
+        margin: 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: calc( 50% - 12px );
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23DDD' d='M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z'/%3E%3C/svg%3E%0A");
+            @include size(24px);
+            transform: translateX(-30px);
+        }
+
+        span {
+            display: none;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            color: rgba(#FFF,.9);
+            text-decoration: none;
+            transition: 300ms ease-out;
+
+            &:focus,
+            &:hover {
+                color: rgba(#FFF,.9);
+            }
+        }
+    }
+
+}

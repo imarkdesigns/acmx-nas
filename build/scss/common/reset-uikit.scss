@@ -1,0 +1,75 @@
+// Headings
+.uk-headings h2 {
+    @include bodoni();
+    font-size: 3rem;
+
+    small {
+        display: block;
+        @include proxima_regular();
+        font-size: 1.125rem;
+        text-transform: uppercase;
+        letter-spacing: normal;
+    }
+}
+
+// Button
+.uk-button {
+    line-height: normal;
+    padding: .75em 1.5em;
+    border-radius: 2px;
+
+    &.uk-button-small {
+        padding: .5em 1em;
+    }
+
+    &.uk-button-large {
+        padding: 2em 2.5em;
+    }
+}
+
+.uk-button-primary {
+    background-color: rgba($primary-clr,1) !important;
+    color: rgba(#FFF,.9) !important;
+
+    &:hover,
+    &:focus {
+        background-color: darken($primary-clr,5%) !important;
+    }
+}
+
+.uk-button-warning {
+    background-color: rgba($secondary-clr,1) !important;
+    color: rgba(#FFF,.9) !important;
+
+    &:hover,
+    &:focus {
+        background-color: darken($secondary-clr,5%) !important;
+    }    
+}
+
+// Section's Color
+.uk-section-dark {
+    background-color: rgba(#000,1);
+}
+
+.uk-section-medium-dark {
+    background-color: rgba(#1D1D1F,1);
+}
+
+.uk-section-light-dark {
+    background-color: rgba(#363742,1);
+}
+
+.uk-section-light-muted,
+.uk-background-light-muted {
+    background-color: rgba(#F6F6EE,1);
+}
+
+.uk-background-light {
+    background-color: rgba(#F3F3F5,1);
+}
+
+// Text Meta
+.uk-text-meta {
+    color: rgba(#999,.9);
+}

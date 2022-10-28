@@ -1,0 +1,351 @@
+.wppb-user-role-investor,
+.wppb-edit-user {
+    padding: 15px;
+
+    ul * {
+        @include proxima_regular();
+        font-size: 1rem;
+        font-style: normal !important;
+    }
+
+    ul > li {
+        position: relative;
+        margin-bottom: 15px !important;
+        padding-bottom: 0 !important;
+
+        //
+
+        label {
+            padding-right: 10px !important;
+        }
+
+        input {
+            height: 35px !important;
+            padding: 6px 12px !important;
+            border-radius: 2px !important;
+        }
+
+        .select2 .select2-selection,
+        .select2-selection__rendered {
+            height: 35px;
+            border-radius: 2px;
+        }
+
+        .select2-selection__rendered {
+            line-height: 35px !important;
+        }
+
+        .select2-selection__arrow {
+            height: 35px !important;
+        }
+
+        &.wppb-select2 span.select2-container {
+            width: auto !important;
+        }
+
+        //
+
+        .wppb-description-delimiter,
+        .wppb-description-delimiter * {
+            font-size: 0.75rem;
+            color: rgba(#000,.75);
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        &.wppb-default-password .wppb-description-delimiter br {
+            content: '';
+            display: inline-block;
+            width: 0;
+        }
+
+        &.wppb-default-password #pass-strength-result {
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+            margin-left: 0 !important;
+        }
+
+        &.wppb-default-password button.wppb-toggle-pw,
+        &.wppb-default-repeat-password button.wppb-toggle-pw {
+            top: 23.52px !important;
+            height: 35px !important;
+        }
+
+        &.wppb-default-e-mail .wppb-description-delimiter strong {
+            @include proxima_regular();
+            font-weight: 400;
+        }
+
+        @media only screen and ( min-width: 501px ) {
+            &.wppb-default-password button.wppb-toggle-pw,
+            &.wppb-default-repeat-password button.wppb-toggle-pw {
+                top: 0 !important;
+            }
+
+            &.wppb-default-password #pass-strength-result {
+                margin-left: 30% !important;
+            }
+        }
+    }
+
+    p.form-submit input[type="submit"] {
+        background-color: $primary-clr !important;
+        @include proxima_regular();
+        font-size: 1rem;
+        color: rgba(#FFF,.9);
+        padding: .75em 1.75em !important;
+        border: 0;
+        border-radius: 2px;
+        cursor: pointer;
+        transition: background 300ms ease-out;
+
+        &:hover {
+            background-color: darken($primary-clr,5%) !important;
+        }
+    }
+
+}
+
+#select_user_to_edit_form,
+#wppb-epaa-admin-review-links {
+    display: none;
+}
+
+.wppb-user-forms {
+    * {
+        @include proxima_regular();
+        font-size: 1rem;
+        font-style: normal !important;
+    }
+
+    form {
+        background-color: rgba(#000,.9);
+        padding: 2em;
+        border-radius: 2px;
+    }
+
+    form p {
+        position: relative;
+        margin-bottom: .75em !important;
+        padding-bottom: 0 !important;
+
+        label {
+            padding-right: 10px !important;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100% !important;
+            height: 35px !important;
+            padding: 6px 12px !important;
+            border-radius: 2px !important;
+            box-shadow: none;
+        }
+
+        input[type="submit"] {
+            height: 35px !important;
+            padding: 6px 12px !important;
+            border-radius: 2px !important;            
+        }
+
+        &.login-remember {
+            display: none !important;
+        }
+
+        .wppb-toggle-pw {
+            top: 0 !important;
+            height: 34px !important;
+        }
+    }
+
+    form .login-submit {
+        text-align: left;
+        margin-bottom: 0 !important;
+        
+        input[type=submit] {
+            background-color: $primary-clr;
+            color: rgba(#FFF,.9);
+            text-align: center;
+            text-transform: uppercase;
+            line-height: normal !important;
+            width: 50%;
+            padding: 0 2em !important;
+            border-radius: 2px;
+            border: 0;
+            cursor: pointer;
+
+            &:focus,
+            &:hover {
+                background-color: darken($primary-clr,5%);
+                color: rgba(#FFF,1);
+            }
+        }
+    }
+}
+
+// Forgot Password
+.login-register-lost-password {
+    background-color: rgba(#000,.9);
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 2px !important;
+    padding: 1em !important;
+    border-radius: 2px;
+
+    a {
+        font-variant-caps: all-small-caps;
+        text-decoration: none;
+
+        &:hover {
+            color: rgba($primary-clr,1);
+        }
+    }
+}
+
+// Errors
+.wppb-error {
+    background-color: rgba($grey,.9) !important;
+    @include proxima_regular();
+    font-size: 0.875rem;
+    margin-bottom: 2px !important;
+    padding-block: 10px !important;
+    border: 0 !important;
+    border-radius: 2px;
+
+    a {
+        font-weight: 600;
+        color: rgba(#FFF,.9) !important;
+        text-decoration: underline;
+
+        &:hover {
+            color: rgba(#DDD,.9) !important;
+        }
+    }
+}
+
+.wppb-warning {
+    background-color: rgba($grey,.9) !important;
+    @include proxima_regular();
+    font-size: 0.875rem;
+    line-height: 1.2;
+    margin-bottom: 2px !important;
+    padding-block: 10px !important;
+    border: 0 !important;
+    border-radius: 2px;
+}
+
+// Reset Password
+#wppb-recover-password {
+    background-color: rgba(#000,.9);
+    padding: 2em;
+    border-radius: 2px;
+
+    * {
+        @include proxima_regular();
+        font-size: 1rem;
+        font-style: normal !important;
+    }
+
+    p {
+        line-height: 1.2;
+        margin: 0 !important;
+    }
+
+    ul {
+        position: relative;
+        margin-block: 10px !important;
+    }
+
+    li.wppb-username-email {
+        padding: 0;
+
+        label {
+            padding-right: 10px !important;
+        }
+
+        input {
+            height: 35px !important;
+            padding: 6px 12px !important;
+            border-radius: 2px !important;
+        }
+    }
+
+    .form-submit {
+        margin-bottom: 0;
+
+        input[type=submit] {
+            background-color: $primary-clr;
+            font-size: .875rem !important;
+            color: rgba(#FFF,.9);
+            text-align: center;
+            text-transform: uppercase;
+            line-height: normal !important;
+            width: 50%;
+            padding: .5em !important;
+            border-radius: 2px;
+            border: 0;
+            cursor: pointer;
+
+            &:focus,
+            &:hover {
+                background-color: darken($primary-clr,5%);
+                color: rgba(#FFF,1);
+            }
+        }
+    }
+}
+
+#wppb-recover-password-container {
+    .wppb-success {
+        background-color: rgba(#000,.9);
+        text-align: center;
+        margin: 0;
+        padding: 2em;
+        border: 0;
+        border-radius: 2px;
+    }
+
+    form {
+
+        ul {
+            position: relative;
+            margin-block: 5px;
+        }
+
+        li { padding: 0 }
+
+        input {
+            float: none;
+            height: 35px !important;
+            padding: 6px 12px !important;
+            border-radius: 2px !important;
+        }
+
+        .wppb-description-delimiter {
+            display: block;
+            @include proxima_regular();
+            font-size: 0.875rem;
+            color: rgba(#FFF,.9) !important;
+            margin: 7px 0 0;
+
+            br {
+                content: '';
+                display: inline-block;
+                width: 0;
+            }
+        }
+
+        #pass-strength-result {
+            font-size: .875rem;
+            color: rgba(#000,.9);
+            width: auto;
+            min-width: 100px;
+            height: auto;
+            margin: 0 0 10px;
+            padding: .25em 1em;
+            border: 0;
+            border-radius: 2px;
+        }
+
+    }
+}
