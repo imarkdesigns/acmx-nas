@@ -193,8 +193,10 @@
     .uk-cover-container {
         border-radius: 2px;
 
-        canvas {
-            min-height: 360px;
+        img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
         }
     }
 
@@ -257,26 +259,55 @@
         border-radius: 10px;
     }
 
+    .uk-modal-close-default {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(#FFF,.5);
+        color: rgba(#000,.5);
+        @include size(34px);
+        border-radius: 50%;
+        transition: background-color 300ms ease-out;
+
+        &:hover {
+            background-color: rgba(#FFF,.75);
+        }
+    }
+
     .uk-modal-header {
         display: flex;
         align-items: center;
 
         position: relative;
-        background-color: #DADAE6;
-        height: 150px;
+        // background-color: #DADAE6;
+        background-color: #000;
+        height: 180px;
+        padding: 0;
         border-radius: 10px 10px 0 0;
+        box-sizing: border-box;
+        overflow: hidden;
+
+        .uk-overlay {
+            display: flex;
+            align-items: center;
+            background-color: rgba(#000,.35);
+            backdrop-filter: saturate(150%) blur(15px);
+        }
 
         h2 {
             position: relative;
             display: block;
             @include proxima_bold();
             font-size: 1.75rem;
+            color: rgba(#FFF,.9);
+            text-shadow: 1px 1px 2px rgba(#000,.5);
             line-height: 1;
             z-index: 1;
 
             small {
                 display: block;
-                @include proxima_light();
+                @include proxima_regular();
+                font-weight: 400;
                 font-size: 1rem;
                 font-variant-caps: all-small-caps;
                 margin-top: 15px;

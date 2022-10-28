@@ -8,7 +8,7 @@ $comment_list = get_posts([
     'posts_per_page' => -1,
     'post_status' => 'publish',
     'has_password' => false,
-    'order' => 'DESC',
+    'order' => 'ASC',
 ]);
 ?>
 
@@ -32,16 +32,16 @@ $comment_list = get_posts([
                 $cc_location = get_field( 'cc_location', $post_id );
                 $cc_designation = get_field( 'cc_designation', $post_id );
                 $cc_property = get_field( 'cc_property', $post_id );
+
+                $featuredID = get_post_thumbnail_id( $post_id );
                 ?>
                 <div>
-                    <figure class="uk-cover-container uk-height-large">
+                    <figure class="uk-cover-container">
                         <?php if ( has_post_thumbnail( $post_id ) ) {
-                            $featuredID = get_post_thumbnail_id( $post_id );
-                            echo wp_get_attachment_image( $featuredID, 'medium', '', [ 'uk-cover' => '' ] );
+                            echo wp_get_attachment_image( $featuredID, 'full' );
                         } else {
-                            echo '<img src="//placem.at/places?w=640&h=360&txt=0&random='.$post_id.'" alt="'.$post_title.'" uk-cover>';
-                        } ?>                        
-                        <canvas width="640" height="450"></canvas>
+                            echo '<img src="//placem.at/places?w=640&h=360&txt=0&random='.$post_id.'" alt="'.$post_title.'">';
+                        } ?>
 
                         <figcaption class="uk-overlay uk-overlay-primary uk-position-bottom">
                             <h2 hidden>Holly Krupnick, Encino, CA <small>Investor | Town East</small></h2>
@@ -54,7 +54,13 @@ $comment_list = get_posts([
                     <div class="uk-modal-dialog uk-margin-auto-vertical">
                         <button class="uk-modal-close-default" type="button" uk-close aria-label="close modal"></button>
                         <div class="uk-modal-header">
-                            <h2><?php echo $post_title.', '.$cc_location.' <small>'.$cc_designation.' | '.$cc_property.'</small>'; ?></h2>
+                            <picture class="uk-cover-container">
+                                <img src="<?php echo get_the_post_thumbnail_url( $post_id ); ?>" alt="<?php echo $post_title; ?>" uk-cover>
+                                <canvas width="600" height="180"></canvas>
+                            </picture>
+                            <div class="uk-overlay uk-position-cover">
+                                <h2><?php echo $post_title.', '.$cc_location.' <small>'.$cc_designation.' | '.$cc_property.'</small>'; ?></h2>
+                            </div>
                         </div>
                         <div class="uk-modal-body uk-padding">
                             <?php echo $cc_content; ?>
