@@ -24,13 +24,17 @@ add_action('wp_enqueue_scripts', function() {
     # Push assets to Scripts
     ## Company Link
     $cvideo = get_field( 'company_video', 'option' );
-    $cvPath = [ 'cvPath' => $cvideo ];
-    wp_localize_script( 'router', 'company_video', $cvPath );
+    if ( is_null($cvideo) ) {
+        $cvPath = [ 'cvPath' => $cvideo ];
+        wp_localize_script( 'router', 'company_video', $cvPath );        
+    }
 
     ## Brochure Download
     $pdf = get_field( 'pdf_brochure', 'option' );
-    $pdfPath = [ 'pdfPath' => $pdf['brochure_download']['url'] ];
-    wp_localize_script( 'router', 'brochure_download', $pdfPath );
+    if ( is_null($pdf) ) {
+        $pdfPath = [ 'pdfPath' => $pdf['brochure_download']['url'] ];
+        wp_localize_script( 'router', 'brochure_download', $pdfPath );
+    }
 
     # Reset PostName
     $postName = '';

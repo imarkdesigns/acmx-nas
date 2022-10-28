@@ -5,8 +5,11 @@
             clearInterval(interval);
 
             // Inject to Company Video & NAS Brochure Download
-            var _cv = company_video.cvPath,
-                _bd = brochure_download.pdfPath;
+            if ( typeof(variable) != "undefined" && variable !== null ) {
+                var _cv = company_video.cvPath,
+                    _bd = brochure_download.pdfPath;
+            }
+
             jQuery('.uk-navbar-nav .uk-parent .uk-navbar-dropdown-nav').find('li.company-video a').attr({ 'href' : _cv, 'target': '_blank' });
             jQuery('.uk-navbar-nav .uk-parent .uk-navbar-dropdown-nav').find('li.nas-brochure a').attr({ 'href' : _bd, 'download': '' });
 

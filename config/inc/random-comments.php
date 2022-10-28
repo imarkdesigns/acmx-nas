@@ -3,7 +3,7 @@ function randomComments() {
 
 $comments = get_posts([
     'post_type' => [ 'nas-comments' ],
-    'posts_per_page' => -1,
+    'posts_per_page' => 1,
     'post_status' => 'publish',
     'has_password' => false,
     'orderby' => 'rand',
@@ -19,25 +19,38 @@ if ( $comments ) : ?>
             <div class="uk-width-1-2@l">
                 <div class="uk-position-relative">
                     <div uk-slideshow="animation: pull; autoplay: true; min-height: 360; max-height: 510">
+                        <?php foreach ( $comments as $gallery ) :  
+                        $post_id = $gallery->ID;
+                        $featured_images = get_field( 'cc_photos', $post_id ); ?>                        
                         <div class="uk-visible-toggle uk-light" tabindex="-1">
                             <ul class="uk-slideshow-items">
-                                <?php for ( $i = 0; $i < 3; $i++ ) : ?>
+                                <?php foreach ( $featured_images as $image ) : ?>
                                 <li>
-                                    <img src="//placem.at/places?w=1280&h=720&txt=0&random=1<?=$i?>" alt="" uk-cover>
+                                    <?php if ( has_post_thumbnail( $post_id ) ) {
+                                        $featuredID = get_post_thumbnail_id( $post_id );
+                                        echo wp_get_attachment_image( $featuredID, 'full', '', [ 'uk-cover' => '' ] );
+                                    } else {
+                                        echo wp_get_attachment_image( $image['ID'], 'full', '', [ 'uk-cover' => '' ] );
+                                    }
+
+                                    if ( !empty( $image['caption'] ) ) : ?>
                                     <div class="slideshow-caption | uk-overlay uk-overlay-primary uk-position-bottom uk-transition-slide-bottom">
-                                        Sample Caption Details
+                                        <?php echo $image['caption']; ?>
                                     </div>
+                                    <?php endif; ?>
                                 </li>
-                                <?php endfor; ?>
+                                <?php endforeach; // End Image ?>
                             </ul>
                         </div>
                         <div class="uk-flex uk-flex-right uk-margin-small-top">                         
                             <ul class="uk-slideshow-nav uk-dotnav">
-                                <?php for ( $i = 0; $i < 3; $i++ ) : ?>
+                                <?php 
+                                for ( $i = 0; $i < count($featured_images); $i++ ) : ?>
                                 <li uk-slideshow-item="<?=$i?>"><a href="#" aria-label="Slide Item"></a></li>
                                 <?php endfor; ?>
                             </ul>
                         </div>
+                        <?php endforeach; // End Gallery ?>
                     </div>
                 </div>
             </div>

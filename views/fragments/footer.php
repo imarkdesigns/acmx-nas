@@ -5,7 +5,13 @@
         <div class="download-brochure">
             <div class="uk-panel">
                 <img src="<?php echo _uri.'/resources/images/icon-download_brochure.png' ?>" alt="Download Brochure">
-                <a href="<?php echo $pdf['brochure_download']['url']; ?>" download>Download <br> <span>NAS</span> Brochure</a>
+                <?php
+                    if ( is_null($pdf) ) {
+                        echo '<a href="'.$pdf['brochure_download']['url'].'" download>Download <br> <span>NAS</span> Brochure</a>';
+                    } else {
+                        echo '<a href="'. get_permalink( 39 ) .'">Contact Us for <br> <span>NAS</span> Brochure</a>';
+                    }
+                ?>
             </div>
         </div>
         <div class="call-nas">
