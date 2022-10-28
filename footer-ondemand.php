@@ -1,7 +1,7 @@
 <?php
     $loggedIn = is_user_logged_in();
     $user = wp_get_current_user();
-    $allowedRole = [ 'investor', 'moderator' ];
+    $allowedRole = [ 'investor', 'moderator', 'administrator' ];
         
     if ( $loggedIn && array_intersect( $allowedRole, $user->roles ) ) {
         get_template_part( _od_footer );
