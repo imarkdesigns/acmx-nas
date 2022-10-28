@@ -6,7 +6,7 @@
             <div class="uk-panel">
                 <img src="<?php echo _uri.'/resources/images/icon-download_brochure.png' ?>" alt="Download Brochure">
                 <?php
-                    if ( is_null($pdf) ) {
+                    if ( !is_null($pdf) ) {
                         echo '<a href="'.$pdf['brochure_download']['url'].'" download>Download <br> <span>NAS</span> Brochure</a>';
                     } else {
                         echo '<a href="'. get_permalink( 39 ) .'">Contact Us for <br> <span>NAS</span> Brochure</a>';
