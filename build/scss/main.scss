@@ -517,6 +517,7 @@
 
 .contact-hdr {
     background-color: rgba(#FFF,1);
+    z-index: 1;
 
     .uk-position-bottom-center {
         bottom: 10%;
@@ -533,6 +534,10 @@
         line-height: 1;
     }
 
+}
+
+.contact-map {
+    z-index: 0;
 }
 
 .contact-form {

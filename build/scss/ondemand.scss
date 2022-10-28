@@ -165,6 +165,14 @@
         .nasis-brochure {
             margin-top: 5px;
 
+            > div {
+                margin-top: 5px;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+
             .uk-card {
                 gap: 15px;
                 border: 1px solid #636367;

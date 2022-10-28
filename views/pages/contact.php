@@ -21,15 +21,19 @@ if ( isset( $_GET['cid'] ) ) {
 
         $_GET['odc'] = get_field( 'profile_email', $id->ID );
         $_GET['doc'] = get_the_title( $id->ID );
-    }   
+    }
 }
+
+// Get content
+$contact_title = get_field( 'hdr_content' );
+$contact_bg = get_field( 'hdr_photo' );
 
 ?>
 <main id="main" class="main" role="main">
-    <section class="contact-hdr | uk-section uk-position-relative uk-background-norepeat uk-background-cover" data-src="//placem.at/places?w=1920&h=920&txt=0&random=10" uk-height-viewport uk-img>
+    <section class="contact-hdr | uk-section uk-position-relative uk-background-norepeat uk-background-cover" data-src="<?php echo $contact_bg['url']; ?>" uk-height-viewport uk-img>
         <div class="uk-overlay-primary uk-position-cover"></div>
         <div class="uk-overlay uk-position-bottom-center uk-text-center uk-light">
-            <h1>Want to know more about <br> National Asset Services?</h1>
+            <?php echo $contact_title; ?>
         </div>
     </section>
 
@@ -41,11 +45,8 @@ if ( isset( $_GET['cid'] ) ) {
 
     <section id="contact-form" class="contact-form | uk-section uk-section-xlarge">
         <div class="uk-container uk-container-small">
-            
-            
             <h2>We’d love to hear from you!</h2>
-            <?php echo do_shortcode( '[wpforms id="1162" title="false"]' ); ?>            
-
+            <?php echo do_shortcode( '[wpforms id="1162" title="false"]' ); ?>
         </div>
     </section>
 </main>
