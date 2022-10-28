@@ -19,7 +19,7 @@ if ( $properties ) : ?>
             <div class="uk-card-media-left uk-cover-container uk-width-auto">
                 <?php if ( has_post_thumbnail( $post_id ) ) {
                     $featuredID = get_post_thumbnail_id( $post_id );
-                    echo wp_get_attachment_image( $featuredID, [ 150, 150, true ], '', [ 'uk-cover' => '' ] );
+                    echo wp_get_attachment_image( $featuredID, 'thumbnail' );
                 } else {
                     echo '<img src="//placem.at/places?w=300&h=300&txt=0&random='.$post_id.'" alt="'.$post_title.'" uk-cover>';
                 } ?>
