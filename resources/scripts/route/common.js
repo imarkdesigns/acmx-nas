@@ -17,7 +17,7 @@
 
             // Change value of the Dashboard link in the Menu Navigation
             var $od_user = '<span uk-icon="icon: user; ratio: .8;"></span>';
-            jQuery('.uk-navbar-nav').find('.od-user a:first').html( $od_user );
+            jQuery('.uk-navbar-nav').find('.od-user a:first').attr('aria-label','Go Back to Dashboard').html( $od_user );
 
             // Toggle Accordion of FAQ
             var util = UIkit.util;
