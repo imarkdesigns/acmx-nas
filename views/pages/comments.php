@@ -32,6 +32,7 @@ $comment_list = get_posts([
                 $cc_location = get_field( 'cc_location', $post_id );
                 $cc_designation = get_field( 'cc_designation', $post_id );
                 $cc_property = get_field( 'cc_property', $post_id );
+                $cc_media = get_field( 'cc_media', $post_id );
 
                 $featuredID = get_post_thumbnail_id( $post_id );
                 ?>
@@ -63,7 +64,13 @@ $comment_list = get_posts([
                             </div>
                         </div>
                         <div class="uk-modal-body uk-padding">
-                            <?php echo $cc_content; ?>
+                            <?php echo $cc_content; 
+
+                            if ( $cc_media ) : 
+                            $url = explode( '=', $cc_media ); ?>
+                            <hr class="uk-divider-small uk-margin">
+                            <iframe src="https://www.youtube-nocookie.com/embed/<?php echo $url[1]; ?>?autoplay=0&amp;showinfo=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=1" width="640" height="360" allowfullscreen uk-responsive uk-video="automute: true"></iframe>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
