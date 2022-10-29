@@ -23,7 +23,7 @@ $story_list = get_posts([
     <section class="stories-lists | uk-section uk-section-light-muted uk-light">
         <div class="uk-container">
 
-            <div class="uk-child-width-1-2@s uk-grid-large" uk-grid uk-scrollspy="target: .uk-position-relative; cls: uk-animation-slide-bottom-small; delay: 500">
+            <div class="uk-child-width-1-2@s" uk-grid uk-scrollspy="target: .uk-position-relative; cls: uk-animation-slide-bottom-small; delay: 500">
                 <?php foreach ( $story_list as $story ) : 
                 $post_id = $story->ID;
                 $post_title = $story->post_title;

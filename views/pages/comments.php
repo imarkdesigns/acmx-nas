@@ -23,7 +23,7 @@ $comment_list = get_posts([
     <section class="comments-lists | uk-section">
         <div class="uk-container uk-container-small">
 
-            <div class="uk-child-width-1-2@m uk-grid-large" uk-grid>
+            <div class="uk-child-width-1-2@m" uk-grid>
                 <?php foreach ( $comment_list as $comment ) :
                 $post_id = $comment->ID;
                 $post_title = $comment->post_title;
