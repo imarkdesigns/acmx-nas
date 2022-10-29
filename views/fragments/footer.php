@@ -1,4 +1,3 @@
-<?php $pdf = get_field( 'pdf_brochure', 'option' ); ?>
 <footer data-fragment="footer" data-src="<?php echo _uri.'/resources/images/img-footer_bg.jpg'; ?>" uk-img>
     
     <div class="ff-links | uk-grid-collapse uk-child-width-auto uk-flex-between uk-flex-middle" uk-grid>
@@ -6,6 +5,12 @@
             <div class="uk-panel">
                 <img src="<?php echo _uri.'/resources/images/icon-download_brochure.png' ?>" alt="Download Brochure">
                 <?php
+                    $pdf = get_field( 'pdf_brochure', 'option' );
+
+                    echo '<!--';
+                    var_dump($pdf);
+                    echo '-->';
+
                     if ( !is_null($pdf) ) {
                         echo '<a href="'.$pdf['brochure_download']['url'].'" download>Download <br> <span>NAS</span> Brochure</a>';
                     } else {
