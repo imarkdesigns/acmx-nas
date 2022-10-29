@@ -956,7 +956,7 @@ body.map {
 
     .news-highlight .uk-card-body .title-headline {
         @include proxima_bold();
-        font-size: 2rem;
+        font-size: clamp(1.125rem, 0.0313rem + 3.5vw, 2rem);
         font-weight: 600;
         line-height: 1;
         @include sharpText();
@@ -964,7 +964,7 @@ body.map {
 
     .listitem-medium .uk-card-body .title-headline {
         @include proxima_semibold();
-        font-size: 1.25rem;
+        font-size: clamp(1rem, 0.6875rem + 1vw, 1.25rem);
         font-weight: 500;
         line-height: 1.2;
         @include sharpText();
@@ -972,7 +972,7 @@ body.map {
 
     .listitem-small .uk-card-body .title-headline {
         @include proxima_semibold();
-        font-size: 1.125rem;
+        font-size: clamp(1rem, 0.8438rem + 0.5vw, 1.125rem);
         line-height: 1.2;
     }
 }
@@ -986,9 +986,13 @@ body.map {
         border-radius: 3px;
     }
 
+    .title-category {
+        margin-bottom: 15px;
+    }
+
     .title-headline {
         @include proxima_semibold();
         font-weight: 500;
-        font-size: 1.125rem;
+        font-size: clamp(1rem, 0.8438rem + 0.5vw, 1.125rem);
     }
 }

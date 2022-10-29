@@ -15,6 +15,7 @@ $fn_config = [
     'config/inc/random-comments.php',
     'config/inc/stories-list.php',
     'config/inc/news-list.php',
+    'config/inc/news-stack.php',
     'config/inc/loan-maturity-list.php',
 
     'config/ondemand/properties-list.php',
