@@ -3,16 +3,14 @@
         'common/fonts';
 
 
-.story-lead {
-
-    .uk-text-lead {
-        @include bodoni();
-        @include sharpText();
-    }
-
-}
-
 .story-details {
+
+    p.uk-text-lead {
+        @include bodoni();
+        font-size: 2rem;
+        @include sharpText();
+        text-align: center;
+    }
 
     blockquote {
         @include proxima_light();

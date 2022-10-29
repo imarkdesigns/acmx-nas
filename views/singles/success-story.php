@@ -17,17 +17,11 @@
 
 <main id="main" class="main" role="main">
 
-    <section class="story-lead | uk-section uk-section-secondary">
-        <div class="uk-container uk-container-small uk-text-center">
-            
-            <p class="uk-text-lead"> <?php the_field( 'ss_lead' ); ?> </p>
-
-        </div>
-    </section>
-
     <section class="story-details | uk-section uk-section-muted">
         <div class="uk-container uk-container-small">
             
+            <p class="uk-text-lead"> <?php the_field( 'ss_lead' ); ?> </p>
+            <div class="uk-text-center"> <hr class="uk-divider-small uk-margin-medium"> </div>
             <?php the_field( 'ss_details' ); ?>
 
         </div>
