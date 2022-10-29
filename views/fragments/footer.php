@@ -6,11 +6,6 @@
                 <img src="<?php echo _uri.'/resources/images/icon-download_brochure.png' ?>" alt="Download Brochure">
                 <?php
                     $pdf = get_field( 'pdf_brochure', 'option' );
-
-                    echo '<!--';
-                    var_dump($pdf);
-                    echo '-->';
-
                     if ( !is_null($pdf) ) {
                         echo '<a href="'.$pdf['brochure_download']['url'].'" download>Download <br> <span>NAS</span> Brochure</a>';
                     } else {
