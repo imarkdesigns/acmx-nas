@@ -1,26 +1,28 @@
 <?php
 // Check user if current logged-in
-$current_user = wp_get_current_user();
-$investor_info = get_user_meta($current_user->ID);
-$_GET['first_name'] = $investor_info['first_name'][0];
-$_GET['last_name'] = $investor_info['last_name'][0];
-$_GET['email'] = $current_user->user_email;
-$_GET['company'] = $investor_info['od_company'][0];
-if ( !empty($investor_info['od_phone_primary'][0]) ) {
-    $_GET['phone'] = $investor_info['od_phone_primary'][0];
-} else {
-    $_GET['phone'] = $investor_info['od_phone_secondary'][0];
-}
+if ( is_user_logged_in() ) {
+    $current_user = wp_get_current_user();
+    $investor_info = get_user_meta($current_user->ID);
+    $_GET['first_name'] = $investor_info['first_name'][0];
+    $_GET['last_name'] = $investor_info['last_name'][0];
+    $_GET['email'] = $current_user->user_email;
+    $_GET['company'] = $investor_info['od_company'][0];
+    if ( !empty($investor_info['od_phone_primary'][0]) ) {
+        $_GET['phone'] = $investor_info['od_phone_primary'][0];
+    } else {
+        $_GET['phone'] = $investor_info['od_phone_secondary'][0];
+    }
 
-// Get contact person's email
-$cpid = get_posts([ 'post_type' => 'nas-team', 'posts_per_page' => -1 ]);
-if ( isset( $_GET['cid'] ) ) {
-    foreach ( $cpid as $id ) {
-        if ( $_GET['cid'] != md5($id->ID) )
-            continue;
+    // Get contact person's email
+    $cpid = get_posts([ 'post_type' => 'nas-team', 'posts_per_page' => -1 ]);
+    if ( isset( $_GET['cid'] ) ) {
+        foreach ( $cpid as $id ) {
+            if ( $_GET['cid'] != md5($id->ID) )
+                continue;
 
-        $_GET['odc'] = get_field( 'profile_email', $id->ID );
-        $_GET['doc'] = get_the_title( $id->ID );
+            $_GET['odc'] = get_field( 'profile_email', $id->ID );
+            $_GET['doc'] = get_the_title( $id->ID );
+        }
     }
 }
 
