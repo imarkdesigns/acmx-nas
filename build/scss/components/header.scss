@@ -518,3 +518,18 @@
         height: 550px;
     }
 }
+
+[data-fragment="hero"].story-single {
+
+    h1 {
+        @include bodoni();
+        font-size: clamp(2rem, 1.5rem + 2.5vw, 4rem);
+        line-height: 1.2;
+    }
+
+    .stories-header img {
+        border-radius: 3px;
+    }
+
+
+}

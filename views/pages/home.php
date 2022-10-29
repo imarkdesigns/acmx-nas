@@ -92,7 +92,7 @@ $video_link = get_field( 'companyVideo_video' );
     do_action( 'randomComments' ); ?>
 
     <?php 
-    do_action( 'storiesList' ); ?>
+    do_action( 'storiesList', null ); ?>
 
     <?php
     get_template_part( _opt.'ondemand-banner' ); ?>

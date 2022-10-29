@@ -1,12 +1,13 @@
 <?php
-function storiesList() {
+function storiesList( $pageID ) {
 
 $stories = get_posts([
     'post_type' => [ 'nas-stories' ],
     'posts_per_page' => 6,
     'post_status' => 'publish',
     'has_password' => false,
-    'order' => 'DESC',
+    'orderby' => 'rand',
+    'post__not_in' => [ $pageID ],
 ]);
 
 $stories_intro = get_post( 21 );
@@ -37,7 +38,7 @@ $stories_intro = get_post( 21 );
                 <figure class="uk-inline">
                     <?php if ( has_post_thumbnail( $post_id ) ) {
                         $featuredID = get_post_thumbnail_id( $post_id );
-                        echo wp_get_attachment_image( $featuredID, 'story-module' );
+                        echo wp_get_attachment_image( $featuredID, 'full' );
                     } else {
                         echo '<img src="//placem.at/places?w=640&h=700&txt=0&random='.$post_id.'" width="640" height="700" alt="'.$post_title.'">';
                     } ?>
@@ -57,4 +58,4 @@ $stories_intro = get_post( 21 );
     </div>
 </section>
 <?php }
-add_action( 'storiesList', 'storiesList' );
+add_action( 'storiesList', 'storiesList', 10, 1 );
