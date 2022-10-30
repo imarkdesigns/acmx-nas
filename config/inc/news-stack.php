@@ -34,7 +34,7 @@ $slider = get_field( 'news_gallery', $post_id ); ?>
                         }
 
                         foreach ( $slider as $slide ) :
-                            echo '<li><picture>'. wp_get_attachment_image( $slide['id'], 'full' ) .'</picture></li>';
+                            echo '<li><picture>'. wp_get_attachment_image( $slide['id'], 'full', '', [ 'uk-cover' => '' ] ) .'</picture></li>';
                         endforeach; ?>
                     </ul>
                 </div>
