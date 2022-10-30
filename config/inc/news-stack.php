@@ -42,7 +42,7 @@ $slider = get_field( 'news_gallery', $post_id ); ?>
                 if ( has_post_thumbnail( $post_id ) ) {
                     $featuredID = get_post_thumbnail_id( $post_id );
                     echo '<div class="uk-cover-container">';
-                    echo '<picture>'.wp_get_attachment_image( $featuredID, 'full', '', [ 'uk-cover' ] ).'</picture>';
+                    echo wp_get_attachment_image( $featuredID, 'full', '', [ 'uk-cover' ] );
                     echo '<canvas width="720" height="550"></canvas>';
                     echo '</div>';
                 } else {
