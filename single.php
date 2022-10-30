@@ -16,6 +16,13 @@
             </section>
         </main>        
 
-    <?php endif;
+    <?php 
+    else :
+
+        if ( is_single() ) {
+            get_template_part( _single.'news-article' );
+        }
+
+    endif;
 
 get_footer();

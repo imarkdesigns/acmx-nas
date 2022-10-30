@@ -2,9 +2,8 @@
 @import 'common/mixins',
         'common/fonts';
 
-
+// Success Stories Single
 .story-details {
-
     p.uk-text-lead {
         @include bodoni();
         font-size: 2rem;
@@ -31,6 +30,37 @@
             display: block;
             font-size: .875rem;
             text-align: right;
+        }
+    }
+}
+
+// News Single
+.type-post {
+
+    .uk-article {
+        font-size: 1.125rem;
+    
+        a {
+            color: rgba($primary-clr,.9);
+            border-bottom: 1px dotted rgba($primary-clr,.75);
+        }
+    }
+
+    h1 {
+        @include bodoni();
+        font-size: clamp(2rem, -0.5rem + 8vw, 4rem);
+        line-height: 1.2;
+        margin-bottom: 0;
+        @include sharpText();
+    }
+
+    picture {
+        display: flex;
+        justify-content: center;
+        margin-block: 60px;
+
+        img {
+            border-radius: 3px;
         }
     }
 
