@@ -43,7 +43,7 @@ $slider = get_field( 'news_gallery', $post_id ); ?>
                     $featuredID = get_post_thumbnail_id( $post_id );
                     echo '<div class="uk-cover-container">';
                     echo wp_get_attachment_image( $featuredID, 'full', '', [ 'uk-cover' => '' ] );
-                    echo '<canvas width="720" height="550"></canvas>';
+                    echo '<canvas width="720" height="450"></canvas>';
                     echo '</div>';
                 } else {
                     echo '<img src="//placem.at/places?w=1280&h=720&txt=0&random='.$post_id.'" width="1280" height="720" alt="'.$post_title.'">';
