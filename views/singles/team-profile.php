@@ -131,7 +131,7 @@ $_GET['user_mail'] = $email;
     <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
         <button class="uk-modal-close-default" type="button" uk-close aria-label="Close Modal"></button>
 
-        <?php echo do_shortcode( '[wpforms id="1162"]' ); ?>
+        <?php echo do_shortcode( '[wpforms id="1906"]' ); ?>
 
     </div>
 </div>
