@@ -48,7 +48,7 @@ $contact_bg = get_field( 'hdr_photo' );
     <section id="contact-form" class="contact-form | uk-section uk-section-xlarge">
         <div class="uk-container uk-container-small">
             <h2>We’d love to hear from you!</h2>
-            <?php echo do_shortcode( '[wpforms id="1162" title="false"]' ); ?>
+            <?php echo do_shortcode( '[wpforms id="1906" title="false"]' ); ?>
         </div>
     </section>
 </main>

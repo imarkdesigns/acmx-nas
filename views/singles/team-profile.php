@@ -16,7 +16,7 @@ $bio = get_field( 'profile_bio' );
 $journal = get_field( 'profile_journal' );
 
 // Trigger for WPForms
-$_GET['user_mail'] = $email;
+$_GET['direct_mail'] = $email;
 
 ?>
 <header data-fragment="hero" class="profile" data-src="<?php echo ( $profile_bg ) ? $profile_bg['url'] : _uri.'/resources/images/novanta-team.jpg'; ?>" uk-img>
@@ -99,7 +99,7 @@ $_GET['user_mail'] = $email;
                     </figure>
                 </div>
                 <div class="uk-flex-last uk-flex-first uk-flex-last@m">
-                    <article class="uk-article uk-dropcap">
+                    <article class="uk-article">
                         <?php echo $bio; ?>
                     </article>
                 </div>
@@ -113,8 +113,8 @@ $_GET['user_mail'] = $email;
     <section class="get-to-know | uk-section">
         <div class="uk-container uk-container-large">
             
-            <h2>Getting to Know <?php echo $title; ?></h2>
             <article class="uk-article">
+                <h2>Getting to Know <?php echo $title; ?></h2>
                 <?php echo $journal; ?>
             </article>
 

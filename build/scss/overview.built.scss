@@ -70,9 +70,23 @@
     padding-top: 70px;
     padding-bottom: 70px;
 
-    .uk-dropcap > p:first-child::first-letter {
+    .uk-dropcap::first-letter {
         @include bodoni();
         @include sharpText();
+    }
+
+    ul {
+        list-style: square;
+        line-height: normal;
+        padding-left: 18px;
+
+        li {
+            margin-top: 15px;
+
+            li:first-child {
+                margin-top: 0;
+            }
+        }
     }
 
     p a,

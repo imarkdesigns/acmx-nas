@@ -21,6 +21,12 @@ var theme = {
         }
     },
 
+    single_nas_team: {
+        finalize: () => {
+            jQuery.getScript( script + 'about.js' );
+        }
+    },
+
     map: {
         finalize: () => {
             jQuery.getScript( script + 'map.js' );
