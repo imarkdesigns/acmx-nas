@@ -996,3 +996,24 @@ body.map {
         font-size: clamp(1rem, 0.8438rem + 0.5vw, 1.125rem);
     }
 }
+
+.property-management {
+
+    .wp-block-image {
+        display: flex;
+        margin-top: 30px;
+
+        img {
+            border-radius: 3px;
+        }
+
+        figcaption {
+            color: rgba(#666,.9);
+            font-size: .875rem;
+            text-align: center;
+            padding: 1em 1.5em;
+        }
+
+    }
+
+}

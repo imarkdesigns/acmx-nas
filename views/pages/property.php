@@ -14,7 +14,7 @@ $pm_hdr_bg = get_field( 'hdr_photo' );
 
 <main id="main" class="main" role="main">
 
-    <section class="loan-intro | uk-section">
+    <section class="property-management | uk-section">
         <div class="uk-container uk-container-small">
             <?php the_content(); ?>
         </div>
