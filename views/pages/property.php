@@ -4,7 +4,7 @@ $pm_hdr_content = get_field( 'hdr_content' );
 $pm_hdr_bg = get_field( 'hdr_photo' );
 
 ?>
-<header data-fragment="hero" class="loan-maturity | uk-flex uk-flex-middle uk-light" data-src="<?php echo ( $pm_hdr_bg ) ? $pm_hdr_bg['url'] : '//placem.at/places?w=1920&h=550&txt=0&random=1' ?>" uk-img>
+<header data-fragment="hero" class="property-hdr | uk-flex uk-flex-middle uk-light" data-src="<?php echo ( $pm_hdr_bg ) ? $pm_hdr_bg['url'] : '//placem.at/places?w=1920&h=550&txt=0&random=1' ?>" uk-img>
     <div class="uk-width-1-1">
         <div class="uk-container uk-container-small">
             <?php echo $pm_hdr_content; ?>

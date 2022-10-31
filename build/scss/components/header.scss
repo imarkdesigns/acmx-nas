@@ -498,7 +498,8 @@
     }
 }
 
-[data-fragment="hero"].loan-maturity {
+[data-fragment="hero"].loan-maturity,
+[data-fragment="hero"].property-hdr {
     background-color: rgba(#000,.25);
     background-blend-mode: multiply;
     background-position: top center;
