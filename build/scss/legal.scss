@@ -3,4 +3,9 @@
 
 .legal-information {
 
+    p > a {
+        color: rgba($primary-clr,.9);
+        border-bottom: 1px dotted rgba($primary-clr,.5);
+    }
+
 }
