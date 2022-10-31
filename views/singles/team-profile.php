@@ -10,12 +10,16 @@ $direct  = get_field( 'profile_phone_direct' );
 $social  = get_field( 'profile_social' );
 $vcard   = get_field( 'profile_vcard' );
 
+$profile_bg = get_field( 'profile_bio_bg' );
 $sidephoto = get_field( 'profile_sidephoto' );
 $bio = get_field( 'profile_bio' );
 $journal = get_field( 'profile_journal' );
 
+// Trigger for WPForms
+$_GET['user_mail'] = $email;
+
 ?>
-<header data-fragment="hero" class="profile" data-src="<?php echo _uri.'/resources/images/novanta-team.jpg'; ?>" uk-img>
+<header data-fragment="hero" class="profile" data-src="<?php echo ( $profile_bg ) ? $profile_bg['url'] : _uri.'/resources/images/novanta-team.jpg'; ?>" uk-img>
     <div class="profile-heading | uk-container uk-container-expand">
         <div class="uk-panel">
             <h1><?php echo $title ?><?php echo !empty($nominal) ? ', <span class="uk-text-meta">'. $nominal .'</span>' : ''; ?></h1>
@@ -29,19 +33,25 @@ $journal = get_field( 'profile_journal' );
                     <?php $featuredID = get_post_thumbnail_id();
                     echo wp_get_attachment_image( $featuredID, [ 450, 9999, true ] ); ?>
                     <ul>
+                        <?php if ( $social ) : ?>
                         <li class="icon-linkedin">
-                            <a href="#" target="_blank">
+                            <a href="<?php echo $social; ?>" target="_blank">
                                 <img src="<?php echo _uri.'/resources/images/icon-linkedin.png'; ?>" alt="LinkedIn">
                             </a>
                         </li>
+                        <?php endif;
+                        if ( $email ) : ?>
                         <li class="icon-connections">
-                            <a href="#" uk-toggle>
+                            <a href="#wpforms-direct-contact" uk-toggle>
                                 <img src="<?php echo _uri.'/resources/images/icon-email.png'; ?>" alt="Send Direct Message">
                             </a>
-                            <a href="#" download>
+                            <?php if ( $vcard ) : ?>
+                            <a href="<?php echo $vcard['url']; ?>" download>
                                 <img src="<?php echo _uri.'/resources/images/icon-vcf_download.png'; ?>" alt="Download Contact Info">
                             </a>
+                            <?php endif; ?>
                         </li>
+                        <?php endif; ?>
                     </ul>
                 </figure>
             </div>
@@ -116,4 +126,14 @@ $journal = get_field( 'profile_journal' );
     get_template_part( _opt.'ondemand-banner' ); ?>
 
 </main>
+
+<div id="wpforms-direct-contact" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+        <button class="uk-modal-close-default" type="button" uk-close aria-label="Close Modal"></button>
+
+        <?php echo do_shortcode( '[wpforms id="1162"]' ); ?>
+
+    </div>
+</div>
+
 <?php get_footer();
