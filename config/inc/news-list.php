@@ -1,13 +1,15 @@
 <?php
-function newsList() {
+function newsList( $postID, $orderby ) {
 
+$sticky = get_option( 'sticky_posts' );
 $news_list = get_posts([
     'post_type' => [ 'post' ],
     'posts_per_page' => 6,
     'post_status' => 'publish',
     'has_password' => false,
+    'orderby' => ( $orderby == null ) ? 'none' : $orderby,
     'order' => 'DESC',
-    'post__not_in' => get_option( 'sticky_posts' ),
+    'post__not_in' => [ $postID, $sticky ],
 ]); ?>
 <section class="news-module | uk-section">
     <div class="uk-container uk-container-expand">
@@ -51,4 +53,4 @@ $news_list = get_posts([
     </div>
 </section>
 <?php }
-add_action( 'newsList', 'newsList' );
+add_action( 'newsList', 'newsList', 10, 2 );

@@ -178,11 +178,9 @@
     float: left;
 }
 
-.wp-block-image {
+.wp-block-image, p {
 
-    &.img150 {
-
-        >.alignleft.size-full {
+        .alignleft.size-full {
             float: left;
             width: 150px;
             height: auto;
@@ -191,12 +189,12 @@
             border-radius: 3px;
         }
 
-        >.alignleft.size-full img {
+        .alignleft.size-full img {
             width: 150px;
             margin-bottom: 15px;
         }
 
-        >.alignright.size-full {
+        .alignright.size-full {
             float: right;
             width: 150px;
             margin: 30px 0 30px 30px;
@@ -204,15 +202,14 @@
             border-radius: 3px;
         }
 
-        >.alignright.size-full img {
+        .alignright.size-full img {
             width: 150px;
             margin-bottom: 15px;
         }
 
-    }
 
     // Right Align
-    >.alignright.size-full {
+    .alignright.size-full {
         float: right;
         width: 300px;
         margin: 30px 0 30px 30px;
@@ -220,11 +217,11 @@
         border-radius: 3px;
     }
 
-    >.alignright.size-full img {
+    .alignright.size-full img {
         width: 300px;
     }
 
-    >.alignright.size-thumbnail {
+    .alignright.size-thumbnail {
         float: right;
         width: 150px;
         margin: 30px 0 30px 30px;
@@ -232,11 +229,11 @@
         border-radius: 3px;
     }
 
-    >.alignright.size-thumbnail img {
+    .alignright.size-thumbnail img {
         width: 150px;
     }
 
-    >.alignright figcaption {
+    .alignright figcaption {
         font-size: 13px;
         color: #888;
         text-align: justify;
@@ -244,8 +241,8 @@
     }
 
     // Left Align
-    >.alignleft.size-large,
-    >.alignleft.size-full {
+    .alignleft.size-large,
+    .alignleft.size-full {
         float: left;
         width: 300px;
         margin: 30px 30px 30px 0;
@@ -253,17 +250,17 @@
         border-radius: 3px;
     }
 
-    >.alignleft.size-large img,
-    >.alignleft.size-full img {
+    .alignleft.size-large img,
+    .alignleft.size-full img {
         float: none !important;
         width: 300px;
     }
 
-    >.alignleft.size-large {
+    .alignleft.size-large {
         margin-top: 0;
     }
 
-    >.alignleft.size-thumbnail {
+    .alignleft.size-thumbnail {
         float: left;
         width: 150px;
         margin: 30px 30px 30px 0;
@@ -271,11 +268,11 @@
         border-radius: 3px;
     }
 
-    >.alignleft.size-thumbnail img {
+    .alignleft.size-thumbnail img {
         width: 150px;
     }
 
-    >.alignleft figcaption {
+    .alignleft figcaption {
         font-size: 13px;
         color: #888;
         text-align: left;

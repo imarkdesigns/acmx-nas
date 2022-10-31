@@ -60,7 +60,7 @@ define('DISALLOW_FILE_EDIT', true);
 function img_caption_shortcode_filter($val, $attr, $content = null) {
   extract(shortcode_atts(array(
     'id'      => '',
-    'align'   => 'aligncenter',
+    'align'   => 'alignright',
     'width'   => '',
     'caption' => ''
   ), $attr));
@@ -73,7 +73,7 @@ function img_caption_shortcode_filter($val, $attr, $content = null) {
     $id = esc_attr( $id );
 
   // Add itemprop="contentURL" to image - Ugly hack
-  $content = str_replace('<img', '<img itemprop="contentURL"', $content);
+  $content = str_replace('<p> <img', '<p> <img itemprop="contentURL"', $content);
   return '<figure id="' . $id . '" aria-describedby="figcaption_' . $id . '" class="wp-caption ' . esc_attr($align) . '" itemscope itemtype="http://schema.org/ImageObject">' . do_shortcode( $content ) . '<figcaption id="figcaption_'. $id . '" class="wp-caption-text uk-text-small" itemprop="description">' . $caption . '</figcaption></figure>';
 }
 add_filter( 'img_caption_shortcode', 'img_caption_shortcode_filter', 10, 3 );

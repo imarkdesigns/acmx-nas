@@ -87,7 +87,7 @@ add_action('wp_enqueue_scripts', function() {
         wp_enqueue_script( 'od-js', _js.'acf-map.js', ['jquery'], null, true );
     }
 
-    elseif ( is_singular( 'nas-stories' ) || is_single() ) {
+    elseif ( is_singular( 'nas-stories' ) || is_singular( 'nas-team' ) || is_single() ) {
         wp_enqueue_style( 'post', _css.'overview.built.css' );
     }
 

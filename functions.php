@@ -17,6 +17,7 @@ $fn_config = [
     'config/inc/news-list.php',
     'config/inc/news-stack.php',
     'config/inc/loan-maturity-list.php',
+    'config/inc/team-list.php',
 
     'config/ondemand/properties-list.php',
     'config/ondemand/news-list.php',

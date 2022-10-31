@@ -24,6 +24,6 @@
     get_template_part( _opt.'ondemand-banner' ); ?>
 
     <?php 
-    do_action( 'newsList' ); ?>
+    do_action( 'newsList', get_the_ID(), 'rand' ); ?>
 
 </main>

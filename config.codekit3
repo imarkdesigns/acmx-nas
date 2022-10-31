@@ -356,6 +356,14 @@
       "oAP" : "\/config\/inc\/stories-list.php",
       "oF" : 0
     },
+    "\/config\/inc\/team-list.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/config\/inc\/team-list.php",
+      "oF" : 0
+    },
     "\/config\/inc\/track-record.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -626,6 +634,58 @@
       "q" : 90,
       "rq" : 75
     },
+    "\/resources\/images\/icon-email.png" : {
+      "ft" : 32768,
+      "iS" : 1072,
+      "oA" : 0,
+      "oAP" : "\/resources\/images\/icon-email.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/resources\/images\/icon-linkedin.png" : {
+      "ft" : 32768,
+      "iS" : 11096,
+      "oA" : 0,
+      "oAP" : "\/resources\/images\/icon-linkedin.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/resources\/images\/icon-vcf_download.png" : {
+      "ft" : 32768,
+      "iS" : 719,
+      "oA" : 0,
+      "oAP" : "\/resources\/images\/icon-vcf_download.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/resources\/images\/img-bio-featured-photo.jpg" : {
+      "ft" : 16384,
+      "iS" : 386295,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/resources\/images\/img-bio-featured-photo.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
     "\/resources\/images\/img-footer_bg.jpg" : {
       "ft" : 16384,
       "iS" : 24521,
@@ -767,6 +827,19 @@
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 90,
+      "rq" : 75
+    },
+    "\/resources\/images\/novanta-team.jpg" : {
+      "ft" : 16384,
+      "iS" : 252642,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/resources\/images\/novanta-team.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
       "rq" : 75
     },
     "\/resources\/images\/ondemand\/file-extesions.psd" : {
