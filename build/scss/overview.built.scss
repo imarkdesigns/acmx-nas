@@ -218,6 +218,19 @@
             width: 360px;
         }
     }
+}
 
+#wpforms-direct-contact {
+
+    .uk-modal-dialog {
+        border-radius: 5px;
+        padding-top: 45px;
+    }
+
+    h2 {
+        @include proxima_semibold;
+        font-size: 1.25rem;
+        margin-bottom: 30px;
+    }
 
 }

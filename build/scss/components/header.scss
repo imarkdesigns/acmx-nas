@@ -674,9 +674,10 @@
 
             ul {
                 left: auto;
-                bottom: -65px;
+                bottom: -60px;
                 flex-flow: row nowrap;
-                width: 170px;
+                max-width: 170px;
+                height: 60px;
                 border-radius: 0 0 3px 0;
 
                 li.icon-linkedin {
@@ -718,6 +719,7 @@
                 bottom: 20px;
                 flex-flow: column wrap;
                 width: 70px;
+                border-radius: 3px 0 0 3px;
 
                 li.icon-linkedin {
                     width: auto;

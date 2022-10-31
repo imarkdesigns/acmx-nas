@@ -58,12 +58,14 @@ $_GET['direct_mail'] = $email;
             <div class="hl-details">
                 <div class="uk-panel uk-padding uk-light">
                     <h2>Professional Profile</h2>
+                    <?php if ( !empty( $office || $direct ) ) : ?>
                     <address>
                         <?php echo !empty($cabreID) ? 'CA BRE: '. $cabreID : ''; ?><br>
-                        Office: <?php echo $office; ?> <br>
-                        Direct: <?php echo $direct; ?>
+                        <?php echo !empty($office) ? 'Office: '.$office : ''; ?> <br>
+                        <?php echo !empty($direct) ? 'Direct: '.$direct : ''; ?>
                     </address>
                     <hr class="uk-divider-small">
+                    <?php endif; ?>
                     <?php the_field( 'profile_lead' ); ?>
                     <div class="uk-button-group uk-margin-medium-top uk-light">
                         <a href="#bio" class="uk-button uk-button-default" uk-scroll>Contnue Reading</a>
@@ -131,6 +133,7 @@ $_GET['direct_mail'] = $email;
     <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
         <button class="uk-modal-close-default" type="button" uk-close aria-label="Close Modal"></button>
 
+        <h2>You're sending message to <?php echo $title; ?></h2>
         <?php echo do_shortcode( '[wpforms id="1906"]' ); ?>
 
     </div>
