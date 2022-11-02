@@ -36,7 +36,7 @@ if ( $news_list ) : ?>
     <li class="tn-item">
         <div class="featured-news | uk-card uk-card-body uk-card-small uk-grid-collapse" uk-grid>
             <div class="uk-card-media-left uk-cover-container uk-width-auto">
-                <?php if ( !has_post_thumbnail( $post_id ) ) {
+                <?php if ( has_post_thumbnail( $post_id ) ) {
                     $featuredID = get_post_thumbnail_id( $post_id );
                     echo wp_get_attachment_image( $featuredID, [ 240, 180 ], '', [ 'uk-cover' => '' ] );
                 } else {

@@ -48,7 +48,7 @@ if ( $folders ) : ?>
             </ul>
             <?php endif; ?>
 
-            <?php if ( $files ) : ?>
+            <?php if ( $files || $subfolders ) : ?>
             <ul>
                 <?php foreach ( $files as $file ) :
                     echo '<li data-filetype="'.$file['subtype'].'"><a href="'. $file['url'] .'" target="_blank" download>'. $file['title'] .'</a></li>';

@@ -87,10 +87,12 @@ $ffolders = get_field( 'file_management', $post_id );
         endif;
 
         // Set the expiration timer
-        if ( expire($expDate) <= '0' ) {
-            $doc_featured = 1;
-        } else {
-            $doc_featured = 0;
+        if (isset($expDate)) {
+            if ( expire($expDate) <= '0' ) {
+                $doc_featured = 1;
+            } else {
+                $doc_featured = 0;
+            }            
         }
 
         // Update the Featured Checkbox
