@@ -39,6 +39,7 @@ $assets = get_field( 'am_list' );
     foreach ( $assets as $asset ) :
 
     $category = strtolower($asset['category_type']);
+    $category = str_replace( ' ', '', $category );
     $readmore = $asset['button_label'];
     $content  = $asset['aml_lead_content'];
     $excerpt  = $asset['asset_excerpt_content'];
