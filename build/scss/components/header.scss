@@ -784,3 +784,29 @@
     }
 }
 
+[data-fragment="hero"].asset-hdr {
+
+    .uk-overlay-primary {
+        background-color: rgba(#000,.75);
+    }
+
+    .uk-overlay {
+        @include proxima_light;
+
+        h1 {
+            line-height: 1.15;
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            line-height: 1.25;
+            margin: 0;
+        }
+    }
+
+    .uk-cover-container img {
+        min-height: 667px;
+        object-fit: cover;
+    }
+
+}

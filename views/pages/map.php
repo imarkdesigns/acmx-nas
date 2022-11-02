@@ -23,6 +23,6 @@
     get_template_part( _opt.'ondemand-banner' ); ?>
 
     <?php 
-    do_action( 'newsList', '', null ); ?>
+    do_action( 'newsList', '', 'rand' ); ?>
 
 </main>

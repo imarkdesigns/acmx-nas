@@ -11,8 +11,18 @@
             jQuery('.uk-navbar-nav .uk-parent .uk-navbar-dropdown-nav').find('li.company-video a').attr({ 'href' : _cv, 'target': '_blank' });
             jQuery('.uk-navbar-nav .uk-parent .uk-navbar-dropdown-nav').find('li.nas-brochure a').attr({ 'href' : _bd, 'download': '' });
 
+            // Asset Management URL
+            jQuery('#menu-item-231 .uk-navbar-dropdown-nav').children().each(function() {
+                var $protocol = window.location.protocol;
+                var $hostname = window.location.hostname;
+                var _assetHost = $protocol +'//'+ $hostname;
+                var _assetURL = '/asset-management';
+                var _assetID = jQuery(this).children().attr('href');
+                jQuery(this).children().attr({'href': _assetHost + _assetURL + _assetID});
+            });
+
             // Remove Search input value when exiting search
-            UIkit.util.on('.nav-overlay', 'beforeshow', function () {
+            UIkit.util.on('.nav-overlay', 'beforeshow', () => {
                 jQuery('.uk-search-input').val('');
             });
 
@@ -47,5 +57,6 @@
 
         }    
     }, 100);
+
 
 })(jQuery);

@@ -16,7 +16,7 @@ add_action('wp_enqueue_scripts', function() {
 
     wp_enqueue_style( 'fragments', _css.'fragments.css' );
     wp_enqueue_script( 'router', _js.'router.js', ['jquery'], null, true );
-        
+    
     # Localize Scripts
     $dirPath = [ 'dirPath' => get_template_directory_uri() ];
     wp_localize_script( 'router', 'directory_uri', $dirPath );
@@ -79,6 +79,9 @@ add_action('wp_enqueue_scripts', function() {
         }
         wp_enqueue_style( 'page', _css.$pageName.'.css' );
 
+        // if ( is_page(31) ) {
+        //     wp_enqueue_style( 'fullPageJS', 'https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.12/fullpage.min.css' );
+        // }
     }
 
     elseif ( is_singular( 'nas-ondemand' ) ) {

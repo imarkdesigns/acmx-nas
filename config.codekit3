@@ -492,6 +492,84 @@
       "oAP" : "\/index.php",
       "oF" : 0
     },
+    "\/resources\/images\/asset\/industrial-asset-mgmt.jpg" : {
+      "ft" : 16384,
+      "iS" : 290579,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/resources\/images\/asset\/industrial-asset-mgmt.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/resources\/images\/asset\/multifamily-asset-mgmt.jpg" : {
+      "ft" : 16384,
+      "iS" : 141806,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/resources\/images\/asset\/multifamily-asset-mgmt.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/resources\/images\/asset\/office-asset-mgmt.jpg" : {
+      "ft" : 16384,
+      "iS" : 159462,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/resources\/images\/asset\/office-asset-mgmt.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/resources\/images\/asset\/retail-asset-mgmt.jpg" : {
+      "ft" : 16384,
+      "iS" : 267716,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/resources\/images\/asset\/retail-asset-mgmt.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/resources\/images\/asset\/senior-asset-mgmt.jpg" : {
+      "ft" : 16384,
+      "iS" : 252841,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/resources\/images\/asset\/senior-asset-mgmt.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/resources\/images\/asset\/student-asset-mgmt.jpg" : {
+      "ft" : 16384,
+      "iS" : 225106,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/resources\/images\/asset\/student-asset-mgmt.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
     "\/resources\/images\/bg-company-video.jpg" : {
       "ft" : 16384,
       "iS" : 669338,
@@ -749,6 +827,19 @@
       "oT" : 1,
       "ou" : "lpckwebp-none",
       "q" : 90,
+      "rq" : 75
+    },
+    "\/resources\/images\/img-waygate-entrance.jpg" : {
+      "ft" : 16384,
+      "iS" : 458669,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/resources\/images\/img-waygate-entrance.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
       "rq" : 75
     },
     "\/resources\/images\/logo-nasassets_footer.png" : {
@@ -1064,6 +1155,17 @@
       "sC" : 0,
       "tS" : 0
     },
+    "\/resources\/scripts\/asset.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/resources\/scripts\/asset.js",
+      "oF" : 0,
+      "sC" : 0,
+      "tS" : 0
+    },
     "\/resources\/scripts\/route\/about.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -1072,6 +1174,17 @@
       "oA" : 1,
       "oAP" : "\/resources\/scripts\/about.js",
       "oF" : 1,
+      "sC" : 0,
+      "tS" : 0
+    },
+    "\/resources\/scripts\/route\/asset.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/resources\/scripts\/asset.js",
+      "oF" : 0,
       "sC" : 0,
       "tS" : 0
     },

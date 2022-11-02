@@ -210,3 +210,27 @@ function disable_author_page() {
     }
 }
 add_action( 'wp', 'disable_author_page' );
+
+// 
+function admin_body_class( $classes ) {
+    $loggedIn = is_user_logged_in();
+    $adminUser = wp_get_current_user();
+
+    if ( $loggedIn && array_intersect( [ 'moderator' ], $adminUser->roles ) ) {
+        $classes .= ' wp-admin-moderator ';
+        return $classes;
+    } else {
+        $classes .= ' wp-admin-super ';
+        return $classes;
+    }
+}
+add_filter( 'admin_body_class', 'admin_body_class' );
+
+// 
+// function wpse28782_remove_menu_items() {
+//     if( !current_user_can( 'administrator' ) ):
+//         remove_menu_page( 'admin.php?page=theme-fragments' );
+//         remove_menu_page( 'edit.php?post_type=nas-comments' );
+//     endif;
+// }
+// add_action( 'admin_menu', 'wpse28782_remove_menu_items' );

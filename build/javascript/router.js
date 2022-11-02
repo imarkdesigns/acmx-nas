@@ -27,6 +27,12 @@ var theme = {
         }
     },
 
+    asset_management: {
+        finalize: () => {
+            jQuery.getScript( script + 'asset.js' );
+        }
+    },
+
     map: {
         finalize: () => {
             jQuery.getScript( script + 'map.js' );

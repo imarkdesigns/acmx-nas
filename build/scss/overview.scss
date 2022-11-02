@@ -743,7 +743,35 @@ body.map {
     @media screen and ( min-width: 1200px ) {
         .uk-subnav { justify-content: flex-end }
     }
+}
 
+.assets-legend {
+    background-color: rgba(#FFF,.75);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba($primary-clr,1);
+    box-sizing: border-box;
+
+    .uk-container {
+        padding-inline: 0;
+    }
+
+    .uk-subnav {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 10px;
+        margin-left: 0;
+
+        li a {
+            font-size: .875rem;
+            color: #000;
+            text-transform: none;
+            text-decoration: none;
+        }
+    }
+
+    @media screen and ( min-width: 1200px ) {
+        .uk-subnav { justify-content: flex-end }
+    }
 }
 
 .property-map {
@@ -998,7 +1026,6 @@ body.map {
 }
 
 .property-management-content {
-
     .wp-block-image {
         display: flex;
         margin-top: 30px;
@@ -1015,5 +1042,76 @@ body.map {
         }
 
     }
+}
 
+.am-office,
+.am-retail,
+.am-multifamily,
+.am-industrial,
+.am-student,
+.am-senior {
+
+    .uk-card {
+        border-radius: 10px;
+        border: 1px solid #DDD;
+        overflow: hidden;
+    }
+
+    .uk-card-media-top {
+        display: block;
+    }
+
+    .uk-card-media-top .uk-overlay-primary {
+        background: linear-gradient( to bottom, rgba(#000,.05), rgba(#000,.75) );
+    }
+
+    .uk-card-body h2 {
+        @include bodoni;
+        margin-bottom: 15px;
+    }
+
+}
+
+// Asset Modal
+#officeModal,
+#retailModal,
+#multifamilyModal,
+#industrialModal,
+#studentModal,
+#seniorModal {
+    .uk-modal-dialog {
+        max-width: 960px !important;
+        width: 100%;
+        padding: 4em 2em !important;
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
+
+    .uk-modal-close-default {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #FFF;
+        @include size(34px);
+        border-radius: 50%;
+        transition: 300ms ease-out;
+
+        &:hover {
+            background-color: #888;
+            color: #FFF;
+        }
+    }
+
+    img {
+        display: inline-block;
+        margin-inline: auto;
+        margin-bottom: 30px;
+        border-radius: 5px;        
+        box-shadow: 0 1px 5px 0 rgba(#000,.15);
+        object-fit: cover;
+    }
+
+    h3 {
+        line-height: 1.2;
+    }
 }

@@ -1,22 +1,47 @@
 /*
  * Style for User Profile Section
  **/
-#your-profile .acf-column-1 h2:nth-child(9),
-#your-profile .acf-column-1 table:nth-child(10) {
+/*
+
+/* Moderator Admin Only */
+body.wp-admin-moderator #edit-slug-box,
+body.wp-admin-moderator #your-profile .acf-column-1 h2:nth-child(8),
+body.wp-admin-moderator #your-profile .acf-column-1 table:nth-child(9),
+body.wp-admin-moderator #your-profile .acf-column-1 h2:nth-child(12),
+body.wp-admin-moderator #your-profile .acf-column-1 table:nth-child(13) {
     display: none !important;
 }
 
-#your-profile .acf-column-1 h2:nth-child(14),
-#your-profile .acf-column-1 table:nth-child(15) {
+/* Moderator - Edit User Only  */
+body.wp-admin-moderator.user-edit-php #your-profile .acf-column-1 h2:nth-child(9),
+body.wp-admin-moderator.user-edit-php #your-profile .acf-column-1 table:nth-child(10),
+body.wp-admin-moderator.user-edit-php #your-profile .acf-column-1 h2:nth-child(13),
+body.wp-admin-moderator.user-edit-php #your-profile .acf-column-1 table:nth-child(14) {
     display: none !important;
 }
 
-#createuser .acf-column-1 table:nth-child(7),
-#your-profile .acf-column-1 table:nth-child(8) {
+/* Moderator - Hide all administators  */
+body.wp-admin-moderator ul.subsubsub li.administrator,
+body.wp-admin-moderator #the-list tr#user-1,
+body.wp-admin-moderator #the-list tr#user-2,
+body.wp-admin-moderator #the-list tr#user-3 {
+    display: none !important;
+}
+
+
+/* Super Admin Only */
+body.wp-admin-super #edit-slug-box,
+body.wp-admin-super #your-profile .acf-column-1 h2:nth-child(9),
+body.wp-admin-super #your-profile .acf-column-1 table:nth-child(10),
+body.wp-admin-super #your-profile .acf-column-1 h2:nth-child(14),
+body.wp-admin-super #your-profile .acf-column-1 table:nth-child(15) {
+    display: none !important;   
+}
+
+body.wp-admin-super #your-profile .acf-column-1 table:nth-child(8) {
     margin-bottom: 0 !important;
 }
 
-#createuser .acf-column-1 table:nth-child(10),
-#your-profile .acf-column-1 table:nth-child(11) {
+body.wp-admin-super #your-profile .acf-column-1 table:nth-child(11) {
     margin-top: 0 !important;
 }
