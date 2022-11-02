@@ -14,9 +14,13 @@ body.wp-admin-moderator #your-profile .acf-column-1 table:nth-child(13) {
 
 /* Moderator - Edit User Only  */
 body.wp-admin-moderator.user-edit-php #your-profile .acf-column-1 h2:nth-child(9),
+body.wp-admin-moderator.profile-php #your-profile .acf-column-1 h2:nth-child(9),
 body.wp-admin-moderator.user-edit-php #your-profile .acf-column-1 table:nth-child(10),
+body.wp-admin-moderator.profile-php #your-profile .acf-column-1 table:nth-child(10),
 body.wp-admin-moderator.user-edit-php #your-profile .acf-column-1 h2:nth-child(13),
-body.wp-admin-moderator.user-edit-php #your-profile .acf-column-1 table:nth-child(14) {
+body.wp-admin-moderator.profile-php #your-profile .acf-column-1 h2:nth-child(13),
+body.wp-admin-moderator.user-edit-php #your-profile .acf-column-1 table:nth-child(14),
+body.wp-admin-moderator.profile-php #your-profile .acf-column-1 table:nth-child(14) {
     display: none !important;
 }
 
