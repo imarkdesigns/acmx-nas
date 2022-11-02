@@ -58,7 +58,7 @@ $assets = get_field( 'am_list' );
                     <?php echo wp_get_attachment_image( $fphoto['id'], 'full' ); ?>
                     <div class="uk-overlay-primary uk-position-cover"></div>
                     <div class="uk-overlay uk-position-bottom-center uk-light">
-                        2200 Bentonville
+                        <?php echo $fphoto['caption'] ?>
                     </div>
                 </picture>
                 <div class="uk-card-body uk-text-center">
