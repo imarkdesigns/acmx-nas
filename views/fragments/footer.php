@@ -1,4 +1,5 @@
-<footer data-fragment="footer" data-src="<?php echo _uri.'/resources/images/img-footer_bg.jpg'; ?>" uk-img>
+<?php $ftr_bg = get_field( 'footer_bg', 'option' ); ?>
+<footer data-fragment="footer" data-src="<?php echo ( $ftr_bg ) ? $ftr_bg : _uri.'/resources/images/img-footer_bg.jpg'; ?>" uk-img>
     
     <div class="ff-links | uk-grid-collapse uk-child-width-auto uk-flex-between uk-flex-middle" uk-grid>
         <div class="download-brochure">

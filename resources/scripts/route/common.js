@@ -15,10 +15,16 @@
             jQuery('#menu-item-231 .uk-navbar-dropdown-nav').children().each(function() {
                 var $protocol = window.location.protocol;
                 var $hostname = window.location.hostname;
+                var $pathname = window.location.pathname;
                 var _assetHost = $protocol +'//'+ $hostname;
                 var _assetURL = '/asset-management';
-                var _assetID = jQuery(this).children().attr('href');
-                jQuery(this).children().attr({'href': _assetHost + _assetURL + _assetID});
+                var _assetID = jQuery(this).children().attr('href').replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-');
+
+                if ( $pathname != _assetURL ) {
+                    jQuery(this).children().attr({'href': _assetHost + _assetURL + '#nas-'+_assetID});    
+                } else {
+                    jQuery(this).children().attr({'href': _assetHost + _assetURL + '#'+_assetID}).attr('uk-scroll','');
+                }
             });
 
             // Remove Search input value when exiting search

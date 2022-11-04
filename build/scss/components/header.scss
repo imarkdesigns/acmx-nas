@@ -678,7 +678,8 @@
                 bottom: -60px;
                 flex-flow: row nowrap;
                 max-width: 170px;
-                height: 60px;
+                width: 100%;
+                // height: 60px;
                 border-radius: 0 0 3px 0;
 
                 li.icon-linkedin {
@@ -794,11 +795,14 @@
         @include proxima_light;
 
         h1 {
-            line-height: 1.15;
-            margin-bottom: 60px;
+            font-size: 1rem;
+            font-variant-caps: all-small-caps;
+            color: rgba(#FFF,.95);
+            margin: 0 0 15px;
         }
 
         h2 {
+            color: rgba(#FFF,.95);
             line-height: 1.25;
             margin: 0;
         }

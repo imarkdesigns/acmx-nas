@@ -160,3 +160,28 @@ em {
         }
     }
 }
+
+.notfound {
+    position: relative;
+    display: block;
+    background-image: url(#{$img}not-found.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    min-height: 667px;
+    height: calc( 100vh - 400px );
+    padding: 0;
+
+    .uk-overlay-primary {
+        background-color: rgba(#000,.25);
+    }
+
+    .uk-overlay {
+        @include proxima_semibold;
+        font-size: 1.5rem;
+        text-align: center;
+        line-height: 1.2;
+        @include sharpText;
+    }
+}

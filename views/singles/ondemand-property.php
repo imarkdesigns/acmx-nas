@@ -1,4 +1,8 @@
-<?php get_header( 'ondemand' ); ?>
+<?php get_header( 'ondemand' );
+
+
+
+?>
 <main id="main" class="main" role="main">
 
     <div class="uk-grid-collapse" uk-grid>
@@ -9,7 +13,7 @@
 
         <div class="property-directory | uk-width-large@m">
             <hgroup id="property-documents"> <h2>Property Documents</h2> </hgroup>
-            <?php do_action( 'documents' ); ?>
+            <?php do_action( 'documents', 4 ); ?>
             <!-- End of File Management -->
 
             <?php // Available Investments Settings

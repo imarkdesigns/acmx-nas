@@ -38,39 +38,39 @@ $nas_services = get_field( 'aboutNAS_services' );
             <article class="uk-article uk-margin-large-bottom">
                 <?php echo $nas_brand; ?>
             </article>
-            <div class="track-record-wrapper | uk-child-width-1-2 uk-child-width-1-3@s uk-grid-collapse uk-text-center" uk-grid>
+            <div class="track-record-wrapper | uk-child-width-1-2 uk-child-width-1-3@s uk-grid-collapse uk-grid-match uk-text-center" uk-grid>
                 <div>
-                    <div class="uk-tile uk-padding-small">
+                    <div class="uk-tile uk-tile-blue uk-padding-small">
                         <span class="track-value"><?php echo $hdr_track['tr_assets_refinanced']; ?></span>
                         <span class="track-caption">Assets Refinanced</span>
                     </div>
                 </div>
                 <div>
-                    <div class="uk-tile uk-padding-small">
+                    <div class="uk-tile uk-tile-blue uk-padding-small">
                         <span class="track-value"><?php echo $hdr_track['tr_assets_sold']; ?></span>
                         <span class="track-caption">Assets Sold</span>
                     </div>
                 </div>
                 <div>
-                    <div class="uk-tile uk-padding-small">
+                    <div class="uk-tile uk-tile-blue uk-padding-small">
                         <span class="track-value"><?php echo $hdr_track['tr_properties']; ?></span>
                         <span class="track-caption">Properties</span>                        
                     </div>
                 </div>
                 <div>
-                    <div class="uk-tile uk-padding-small">
+                    <div class="uk-tile uk-tile-blue uk-padding-small">
                         <span class="track-value"><?php echo $hdr_track['tr_states']; ?></span>
                         <span class="track-caption">States</span>
                     </div>
                 </div>
                 <div>
-                    <div class="uk-tile uk-padding-small">
+                    <div class="uk-tile uk-tile-dark-green uk-padding-small">
                         <span class="track-value"><?php echo '$'.$hdr_track['tr_portfolio_value']; ?> <small>billion</small></span>
                         <span class="track-caption">Managed Portfolio <br> Value</span>
                     </div>
                 </div>
                 <div>
-                    <div class="uk-tile uk-padding-small">
+                    <div class="uk-tile uk-tile-orange uk-padding-small">
                         <span class="track-value"><?php echo $hdr_track['tr_portfolio_sf']; ?> <small>million</small></span>
                         <span class="track-caption">Managed Portfolio <br> Square Footage</span>
                     </div>

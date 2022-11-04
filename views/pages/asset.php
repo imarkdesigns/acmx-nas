@@ -51,7 +51,7 @@ $assets = get_field( 'am_list' );
     // echo '</pre>';
 
     ?>
-    <section id="<?php echo $category; ?>" class="am-<?php echo $category; ?> | uk-section">
+    <section id="<?php echo $category; ?>" class="am-<?php echo $category; ?> | uk-section uk-section-xsmall">
         <div class="uk-container uk-container-small">
 
             <article class="uk-card">

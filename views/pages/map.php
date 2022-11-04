@@ -2,6 +2,7 @@
 
     <aside class="map-legend | uk-panel uk-padding-small">
         <div class="uk-container uk-container-expand" uk-overflow-auto>
+            <h1>NAS Map</h1>
             <ul class="uk-subnav">
                 <li>Office</li>
                 <li>Medical Office</li>

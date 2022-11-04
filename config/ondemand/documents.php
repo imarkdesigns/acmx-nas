@@ -1,7 +1,30 @@
 <?php
-function documents() {
+function documents( $userID ) {
 
+// $user = get_user_by('id', $userID);
+// echo $user->ID;
+
+$authors = [ 'role' => [ 'investor' ] ];
+$authorsQuery = new WP_User_Query( $authors );
+
+if ( ! empty( $authorsQuery->results ) ) {
+    asort($authorsQuery->results);
+    foreach ( $authorsQuery->results as $user ) :
+
+        if ( $userID != $user->ID )
+            continue;
+
+            $userField = get_field( 'document_access', 'user_'.$user->ID );
+            $userAccess = $userField['value'];
+
+    endforeach;
+}
+
+// Folders List
 $folders = get_field( 'file_management' );
+
+// Bypass Partial Access
+$bypass = get_field( 'bypass_partial_access' );
 
 if ( $folders ) : ?>
 <div class="file-management" uk-overflow-auto>
@@ -11,61 +34,33 @@ if ( $folders ) : ?>
     // Check if Files exists
     $files = $folder['document_file'];
 
+    // Check if User for Partial Access to Documents
+    $faccess = $folder['folder_access'];
+
     // Check if Sub-Folder Exists
     $subfolders = $folder['sub_folder_lists'];
 
-    if ( str_contains($folder['folder_name'], 'Tax Packages') ) {
+    if ( str_contains($folder['folder_name'], 'Tax Packages') || str_contains($folder['folder_name'], 'Tax Package') ) {
         $data_folder_label = 'data-folder="tax-packages"';
     } else {
         $data_folder_label = '';
     }
 
-    ?>
-    <li <?php echo $data_folder_label; ?>>
-        <a href="#" class="uk-accordion-title"> <?php echo $folder['folder_name'] ?> </a>
-        <div class="uk-accordion-content">
-            <?php if ( $subfolders ) : ?>
-            <ul uk-accordion>
-                <?php foreach ( $subfolders as $sfolder ) : 
-                $sfiles = $sfolder['sub_document_file']; ?>
-                <li>
-                    <a href="#" class="uk-accordion-title"> <?php echo $sfolder['sub_folder_name']; ?> </a>
-                    <div class="uk-accordion-content">
-                        <?php if ( $sfiles ) : ?>
-                        <ul>
-                            <?php foreach ( $sfiles as $sfile ) :
-                                echo '<li data-filetype="'.$sfile['subtype'].'"><a href="'. $sfile['url'] .'" target="_blank" download>'. $sfile['title'] .'</a></li>';
-                            endforeach; ?>
-                        </ul>
-                        <?php else : ?>
-                        <div class="empty-folder | uk-panel">
-                            <p class="uk-text-muted">Folder is Empty</p>
-                        </div>
-                        <?php endif; ?>
-                    </div>
-                </li>
-                <?php endforeach; ?>
-            </ul>
-            <?php endif; ?>
+        // in favor of Partial Access
+        if ( !$bypass ) {
+            if ( $faccess && $userAccess == 'partial_access' ) {
+                include( locate_template( _od_config.'documents-part.php', false, true ) );
+            } elseif ( $userAccess == 'full_access' ) {
+                include( locate_template( _od_config.'documents-part.php', false, true ) );
+            }
+        } elseif ( $bypass ) {
+            include( locate_template( _od_config.'documents-part.php', false, true ) );
+        }
 
-            <?php if ( $files || $subfolders ) : ?>
-            <ul>
-                <?php foreach ( $files as $file ) :
-                    echo '<li data-filetype="'.$file['subtype'].'"><a href="'. $file['url'] .'" target="_blank" download>'. $file['title'] .'</a></li>';
-                endforeach; ?>
-            </ul>
-            <?php else : ?>
-            <div class="empty-folder | uk-panel">
-                <p class="uk-text-muted">Folder is Empty</p>
-            </div>
-            <?php endif; ?>
-        </div>
-    </li>
-    <?php 
     endforeach; ?>
     </ul>
 </div>
 <?php endif;
 
 }
-add_action( 'documents', 'documents' );
+add_action( 'documents', 'documents', 10, 1 );

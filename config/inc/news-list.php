@@ -10,7 +10,9 @@ $news_list = get_posts([
     'orderby' => ( $orderby == null ) ? 'none' : $orderby,
     'order' => 'DESC',
     'post__not_in' => [ $postID, $sticky ],
-]); ?>
+]); 
+
+if ( $news_list ) : ?>
 <section class="news-module | uk-section">
     <div class="uk-container uk-container-expand">
 
@@ -52,5 +54,7 @@ $news_list = get_posts([
 
     </div>
 </section>
-<?php }
+<?php endif;
+
+}
 add_action( 'newsList', 'newsList', 10, 2 );

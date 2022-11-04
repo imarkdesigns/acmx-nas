@@ -25,6 +25,7 @@
         figcaption h1 {
             @include proxima_black();
             font-size: 2.5rem;
+            color: rgba(#FFF,.95);
             text-transform: uppercase;
             line-height: 1;
             margin: 0;
@@ -37,6 +38,7 @@
         figcaption h2 {
             @include proxima_semibold();
             font-size: 1.5rem;
+            color: rgba(#FFF,.95);
             text-transform: uppercase;
             line-height: 1;
             margin: 0;
@@ -252,7 +254,7 @@
 
 .my-properties {
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
 
     // &::before,
     // &::after {
@@ -287,7 +289,6 @@
     
 }
 
-
 .mp-list,
 .tn-list {
     display: flex;
@@ -299,6 +300,10 @@
 
     .mp-item:first-child {
         margin-top: 15px;
+    }
+
+    .mp-item:last-child {
+        margin-bottom: 15px;
     }
 
     .uk-card {
@@ -605,12 +610,14 @@
     }
 
     // Exclusive for Tax Packages Only
-    .uk-accordion [data-folder="tax-packages"] > .uk-accordion-title::before {
+    .uk-accordion [data-folder="tax-packages"] > .uk-accordion-title::before,
+    .uk-accordion [data-folder="tax-package"] > .uk-accordion-title::before {
         background-image: url(#{$img}/ondemand/folder-tax-packages.png);
         background-size: auto 24px;
     }
 
-    .uk-accordion [data-folder="tax-packages"].uk-open > .uk-accordion-title::before {
+    .uk-accordion [data-folder="tax-packages"].uk-open > .uk-accordion-title::before,
+    .uk-accordion [data-folder="tax-package"].uk-open > .uk-accordion-title::before {
         background-image: url(#{$img}/ondemand/folder-tax-packages-open.png);
         background-size: auto 24px;
     }

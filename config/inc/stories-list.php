@@ -11,18 +11,18 @@ $stories = get_posts([
 ]);
 
 $stories_intro = get_post( 21 );
-?>
+
+if ( $stories ) : ?>
 <section class="stories-module | uk-section">
     <div class="uk-position-relative" tabindex="-1" uk-slider="finite: true" aria-labelledby="success-heading">
         <ul class="uk-slider-items uk-grid-small uk-grid" role="list">
             <!-- Lead Paragraph -->
             <li class="stories-intro | uk-width-1-2@s uk-width-2-3@m uk-width-1-2@l uk-width-2-5@xl" role="listitem">
+                <?php $introduction = get_field( 'slide_introduction', $stories_intro->ID ); ?>
                 <div class="uk-panel">
                     <div id="success-heading" class="uk-headings">
                         <h2><small>National Assets Services</small> Success Stories</h2>
-                        <p>National Asset Services is a nationally respected, owner-entrusted commercial real estate management company that has worked with over 90 ownership groups. With experience in managing diverse properties, located in diverse markets across the country, the NAS team knows that all owners have one goal in common:</p>
-                        <h3>Increase Property Value. Optimize Property Performance.</h3>
-                        <p>If you're looking for a better commercial real estate management company, put the NAS team to work for your asset today. You will quickly see how an experienced commercial property management company can make a real difference in the making of your property's success story.</p>
+                        <?php echo $introduction; ?>
                     </div>
                 </div>
             </li>
@@ -57,5 +57,7 @@ $stories_intro = get_post( 21 );
         <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" aria-label="Next" uk-slidenav-next uk-slider-item="next"></a>
     </div>
 </section>
-<?php }
+<?php endif;
+
+}
 add_action( 'storiesList', 'storiesList', 10, 1 );

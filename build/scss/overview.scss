@@ -27,6 +27,10 @@
         }
     }
 
+    .uk-tile-blue { background-color: rgba(#21314F,1) }
+    .uk-tile-orange { background-color: rgba(#F36F21,1) }
+    .uk-tile-dark-green { background-color: rgba(#78A436,1) }
+
     .uk-tile {
         * { color: rgba(#FFF,.9); }
     }
@@ -342,7 +346,13 @@
 
 .loan-list {
 
+    .uk-tab > li > a {
+        color: rgba(#000,.5);
+    } 
+
     .uk-tab > .uk-active > a {
+        @include proxima_semibold;
+        color: rgba(#000,1);
         border-color: $primary-clr;
     }
 
@@ -384,7 +394,6 @@
 
 }
 
-
 .outreach-people {
     background-color: rgba(#363742,1);
 
@@ -398,65 +407,6 @@
             @include proxima_light();
         }
     }
-
-    
-    // .comments-wrapper {
-    //     display: flex;
-    //     flex-direction: column;
-    //     gap: 30px;
-    // }
-
-    // .comments-wrapper canvas {
-    //     min-height: 360px;
-    // }
-
-    // .comments-wrapper .tile-modal-container {
-    //     position: absolute;
-    //     top: -1px;
-    //     bottom: -1px;
-    //     right: 0;
-    //     width: calc( 100% / 2 + 1px );
-    //     box-sizing: border-box;
-    // }
-
-    // .comments-wrapper .tile-content h2 {
-    //     display: block;
-    //     font-size: 1.5rem;
-    //     line-height: 1;
-
-    //     small {
-    //         display: block;
-    //         font-size: 1rem;
-    //         font-variant-caps: all-small-caps;
-    //         margin-top: 15px;
-    //     }
-
-    //     + div > a {
-    //         color: rgba($primary-clr,.9);
-    //     }
-    // }
-
-    // .comments-wrapper .tile-button-wrapper button {
-    //     appearance: none;
-    //     display: flex;
-    //     align-items: center;
-    //     gap: 10px;
-    //     background-color: transparent;
-    //     @include proxima_light();
-    //     font-size: 1.125rem;
-    //     border: 0;
-    //     cursor: pointer;
-
-    //     span.uk-icon {
-    //         display: flex;
-    //         align-items: center;
-    //         justify-content: center;
-    //         // margin-right: 5px;
-    //         @include size(34px);
-    //         border: 1px solid #222;
-    //         border-radius: 50%;
-    //     }
-    // }
 
     .uk-grid div {
         &:nth-child(1) .uk-overlay {
@@ -709,13 +659,24 @@ body.map {
     box-sizing: border-box;
 
     .uk-container {
+        display: flex;
+        justify-content: space-between;
         padding-inline: 0;
+    }
+
+    h1 {
+        flex: 1 0 150px;
+        display: inline-block;
+        @include bodoni;
+        font-size: 1.5rem;
+        margin: 0;
     }
 
     .uk-subnav {
         flex-wrap: nowrap;
         justify-content: flex-start;
         gap: 10px;
+        margin-top: 0;
         margin-left: 0;
 
         $boxColor: (#F37125, #808080, #E2C239, #223E93, #BB1F2C, #B1D352, #7D3A96, #040707);
@@ -1043,6 +1004,9 @@ body.map {
 
     }
 }
+
+.am-office { padding-top: 40px }
+.am-seniorassistedliving { padding-bottom: 40px }
 
 .am-office,
 .am-retail,

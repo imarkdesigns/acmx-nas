@@ -312,6 +312,23 @@
 
 .contact-map {
     z-index: 0;
+
+    .eapps-google-maps-marker-title,
+    .eapps-google-maps-marker-directions-label {
+        color: rgba(#FFF,.95);
+    }
+
+    .eapps-google-maps-marker-info-item-text {
+        @include proxima_semibold;
+        font-size: .75rem;
+        @include sharpText();
+    }
+
+    .eapps-google-maps-marker-info-item-text a {
+        color: #000 !important;
+    }
+
+
 }
 
 .contact-form {
