@@ -7,6 +7,7 @@ $stories = get_posts([
     'post_status' => 'publish',
     'has_password' => false,
     'orderby' => 'menu_order',
+    'order' => 'DESC',
     'post__not_in' => [ $pageID ],
 ]);
 
