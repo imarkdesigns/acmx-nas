@@ -28,7 +28,7 @@ $fn_config = [
     'config/ondemand/nasis-brochure.php',
     'config/ondemand/property.php',
     'config/ondemand/documents.php',
-    'config/ondemand/documents-part.php',
+    // 'config/ondemand/documents-part.php',
 
 ];
 foreach ( $fn_config as $config ) {
