@@ -28,7 +28,7 @@ $fn_config = [
     'config/ondemand/nasis-brochure.php',
     'config/ondemand/property.php',
     'config/ondemand/documents.php',
-    // 'config/ondemand/documents-part.php',
+    'config/ondemand/documents-part.php',
 
 ];
 foreach ( $fn_config as $config ) {
@@ -71,13 +71,3 @@ define ( '_ondemand', 'views/ondemand/' );
 define ( '_od_menu', 'views/fragments/od-menu' );
 define ( '_od_footer', 'views/fragments/od-footer' );
 define ( '_od_config', 'config/ondemand/' );
-
-
-function my_posts_where( $where ) {
-    
-    $where = str_replace("meta_key = 'property_list_$", "meta_key LIKE 'property_list_%", $where);
-
-    return $where;
-}
-
-add_filter('posts_where', 'my_posts_where');
