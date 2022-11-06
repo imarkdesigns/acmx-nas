@@ -16,8 +16,11 @@ $fn_config = [
     'config/inc/stories-list.php',
     'config/inc/news-list.php',
     'config/inc/news-stack.php',
-    'config/inc/loan-maturity-list.php',
     'config/inc/team-list.php',
+    // 'config/inc/loan-maturity-list.php',
+    'config/inc/lm-refinanced.php',
+    'config/inc/lm-refinanced-tic.php',
+    'config/inc/lm-sold.php',
 
     'config/ondemand/properties-list.php',
     'config/ondemand/news-list.php',
@@ -68,3 +71,13 @@ define ( '_ondemand', 'views/ondemand/' );
 define ( '_od_menu', 'views/fragments/od-menu' );
 define ( '_od_footer', 'views/fragments/od-footer' );
 define ( '_od_config', 'config/ondemand/' );
+
+
+function my_posts_where( $where ) {
+    
+    $where = str_replace("meta_key = 'property_list_$", "meta_key LIKE 'property_list_%", $where);
+
+    return $where;
+}
+
+add_filter('posts_where', 'my_posts_where');

@@ -59,13 +59,13 @@ $loan_goal = get_field( 'loan_speech' );
             </ul>
             <ul class="uk-switcher uk-margin">
                 <li id="refinanced">
-                    <?php do_action( 'loanList', 'Refinanced' ) ?>
+                    <?php do_action( 'lm_refinanced', 'Refinanced' ) ?>
                 </li>
                 <li id="refinanced-tic">
-                    <?php do_action( 'loanList', 'Refinanced with TIC' ) ?>
+                    <?php do_action( 'lm_tic', 'Refinanced with TIC' ) ?>
                 </li>
                 <li id="sold">
-                    <?php do_action( 'loanList', 'Sold' ) ?>
+                    <?php do_action( 'lm_sold', 'Sold' ) ?>
                 </li>
             </ul>
 

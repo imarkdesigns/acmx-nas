@@ -40,6 +40,7 @@ if ( $folders ) : ?>
     // Check if Sub-Folder Exists
     $subfolders = $folder['sub_folder_lists'];
 
+
     if ( str_contains($folder['folder_name'], 'Tax Packages') || str_contains($folder['folder_name'], 'Tax Package') ) {
         $data_folder_label = 'data-folder="tax-packages"';
     } else {

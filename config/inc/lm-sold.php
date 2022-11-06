@@ -1,5 +1,5 @@
 <?php
-function loanList( $type ) {
+function lm_sold( $type ) {
 $terms = get_terms('state-categories');
 ?>
 <ul uk-accordion="active: 0">
@@ -52,4 +52,4 @@ $terms = get_terms('state-categories');
 <?php endforeach; ?>
 </ul>
 <?php }
-add_action( 'loanList', 'loanList', 10, 1 );
+add_action( 'lm_refinanced_tic', 'lm_refinanced_tic', 10, 1 );

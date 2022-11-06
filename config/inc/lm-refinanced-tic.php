@@ -1,7 +1,8 @@
 <?php
-function loanList( $type ) {
+function lm_tic( $type ) {
 $terms = get_terms('state-categories');
-?>
+
+if ( $terms ) : ?>
 <ul uk-accordion="active: 0">
 <?php foreach ( $terms as $term ) :
 
@@ -12,7 +13,9 @@ $terms = get_terms('state-categories');
         'nopaging' => true,
         'meta_key' => 'loan_type',
         'meta_value' => $type
-    ]); ?>
+    ]); 
+
+    if ( $posts ) : ?>
     <li>
         <a href="#" class="uk-accordion-title"> <?php echo $term->name; ?> </a>
         <div class="uk-accordion-content">
@@ -49,7 +52,10 @@ $terms = get_terms('state-categories');
             </div>
         </div>
     </li>
-<?php endforeach; ?>
+<?php endif;
+endforeach; ?>
 </ul>
-<?php }
-add_action( 'loanList', 'loanList', 10, 1 );
+<?php endif;
+
+}
+add_action( 'lm_tic', 'lm_tic', 10, 1 );

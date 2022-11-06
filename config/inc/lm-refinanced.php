@@ -1,7 +1,8 @@
 <?php
-function loanList( $type ) {
+function lm_refinanced( $type ) {
 $terms = get_terms('state-categories');
-?>
+
+if ( $terms ) : ?>
 <ul uk-accordion="active: 0">
 <?php foreach ( $terms as $term ) :
 
@@ -51,5 +52,7 @@ $terms = get_terms('state-categories');
     </li>
 <?php endforeach; ?>
 </ul>
-<?php }
-add_action( 'loanList', 'loanList', 10, 1 );
+<?php endif;
+
+}
+add_action( 'lm_refinanced', 'lm_refinanced', 10, 1 );
