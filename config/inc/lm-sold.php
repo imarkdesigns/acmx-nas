@@ -1,18 +1,21 @@
 <?php
 function lm_sold( $type ) {
-$terms = get_terms('state-categories');
-?>
+$terms = get_terms('state-categories'); 
+
+if ( $terms ) : ?>
 <ul uk-accordion="active: 0">
 <?php foreach ( $terms as $term ) :
 
     $posts = get_posts([
         'post_type' => 'nas-loanmaturity',
         'taxonomy' => $term->taxonomy,
-        'term' => $term->name,
+        'term' => $term->slug,
         'nopaging' => true,
         'meta_key' => 'loan_type',
         'meta_value' => $type
-    ]); ?>
+    ]);
+    
+    if ( $posts ) : ?>
     <li>
         <a href="#" class="uk-accordion-title"> <?php echo $term->name; ?> </a>
         <div class="uk-accordion-content">
@@ -49,7 +52,11 @@ $terms = get_terms('state-categories');
             </div>
         </div>
     </li>
-<?php endforeach; ?>
+<?php endif;
+
+endforeach; ?>
 </ul>
-<?php }
-add_action( 'lm_refinanced_tic', 'lm_refinanced_tic', 10, 1 );
+<?php endif;
+
+}
+add_action( 'lm_sold', 'lm_sold', 10, 1 );

@@ -53,6 +53,7 @@ if ( $terms ) : ?>
         </div>
     </li>
 <?php endif;
+
 endforeach; ?>
 </ul>
 <?php endif;

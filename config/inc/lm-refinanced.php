@@ -13,7 +13,9 @@ if ( $terms ) : ?>
         'nopaging' => true,
         'meta_key' => 'loan_type',
         'meta_value' => $type
-    ]); ?>
+    ]);
+
+    if ( $posts ) : ?>
     <li>
         <a href="#" class="uk-accordion-title"> <?php echo $term->name; ?> </a>
         <div class="uk-accordion-content">
@@ -50,7 +52,9 @@ if ( $terms ) : ?>
             </div>
         </div>
     </li>
-<?php endforeach; ?>
+<?php endif;
+
+endforeach; ?>
 </ul>
 <?php endif;
 
