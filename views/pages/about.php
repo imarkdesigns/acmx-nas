@@ -54,50 +54,50 @@ $nas_services = get_field( 'aboutNAS_services' );
             <div class="track-record-wrapper | uk-grid-collapse uk-grid-match uk-text-center" uk-grid>
                 <div class="uk-width-1-1 uk-width-1-5@s">
                     <div class="uk-tile uk-tile-blue uk-padding-small">
-                        <span class="track-value"><?php echo $hdr_track['tr_clients_served']; ?></span>
+                        <span class="track-value counter"><?php echo $hdr_track['tr_clients_served']; ?></span>
                         <span class="track-caption">Client Served</span>
                     </div>
                 </div>
                 <div class="uk-width-1-2 uk-width-1-5@s">
                     <div class="uk-tile uk-tile-blue uk-padding-small">
-                        <span class="track-value"><?php echo $hdr_track['tr_assets_refinanced']; ?></span>
+                        <span class="track-value counter"><?php echo $hdr_track['tr_assets_refinanced']; ?></span>
                         <span class="track-caption">Assets Refinanced</span>
                     </div>
                 </div>
                 <div class="uk-width-1-2 uk-width-1-5@s">
                     <div class="uk-tile uk-tile-blue uk-padding-small">
-                        <span class="track-value"><?php echo $hdr_track['tr_assets_sold']; ?></span>
+                        <span class="track-value counter"><?php echo $hdr_track['tr_assets_sold']; ?></span>
                         <span class="track-caption">Assets Sold</span>
                     </div>
                 </div>
                 <div class="uk-width-1-2 uk-width-1-5@s">
                     <div class="uk-tile uk-tile-blue uk-padding-small">
-                        <span class="track-value"><?php echo $hdr_track['tr_properties']; ?></span>
+                        <span class="track-value counter"><?php echo $hdr_track['tr_properties']; ?></span>
                         <span class="track-caption">Properties</span>                        
                     </div>
                 </div>
                 <div class="uk-width-1-2 uk-width-1-5@s">
                     <div class="uk-tile uk-tile-blue uk-padding-small">
-                        <span class="track-value"><?php echo $hdr_track['tr_states']; ?></span>
+                        <span class="track-value counter"><?php echo $hdr_track['tr_states']; ?></span>
                         <span class="track-caption">States</span>
                     </div>
                 </div>
 
                 <div class="uk-width-1-1 uk-width-1-3@s">
                     <div class="uk-tile uk-tile-orange uk-padding-small">
-                        <span class="track-value"><?php echo '$'.$hdr_track['tr_cash_distribution']; ?> <small>million</small></span>
+                        <span class="track-value">$<span class="counter"><?php echo $hdr_track['tr_cash_distribution']; ?></span> <small>million</small></span>
                         <span class="track-caption">Total Cash Distribution <br> Delivered</span>
                     </div>
                 </div>                
                 <div class="uk-width-1-1 uk-width-1-3@s">
                     <div class="uk-tile uk-tile-light-orange uk-padding-small">
-                        <span class="track-value"><?php echo '$'.$hdr_track['tr_portfolio_value']; ?> <small>billion</small></span>
+                        <span class="track-value">$<span class="counter"><?php echo $hdr_track['tr_portfolio_value']; ?></span> <small>billion</small></span>
                         <span class="track-caption">Managed Portfolio <br> Value</span>
                     </div>
                 </div>
                 <div class="uk-width-1-1 uk-width-1-3@s">
                     <div class="uk-tile uk-tile-dark-orange uk-padding-small">
-                        <span class="track-value"><?php echo $hdr_track['tr_portfolio_sf']; ?> <small>million</small></span>
+                        <span class="track-value"><span class="counter"><?php echo $hdr_track['tr_portfolio_sf']; ?></span> <small>million</small></span>
                         <span class="track-caption">Managed Portfolio <br> Square Footage</span>
                     </div>
                 </div>
