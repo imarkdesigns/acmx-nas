@@ -615,6 +615,19 @@
       "q" : 100,
       "rq" : 75
     },
+    "\/resources\/images\/bg-ondemand-building.jpg" : {
+      "ft" : 16384,
+      "iS" : 485480,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/resources\/images\/bg-ondemand-building.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
     "\/resources\/images\/bg-team-nas_hdr.png" : {
       "ft" : 32768,
       "iS" : 1777997,
@@ -824,7 +837,7 @@
     },
     "\/resources\/images\/img-outreach-header.jpg" : {
       "ft" : 16384,
-      "iS" : 129005,
+      "iS" : 186047,
       "jF" : 0,
       "oA" : 0,
       "oAP" : "\/resources\/images\/img-outreach-header.jpg",

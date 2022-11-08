@@ -21,8 +21,10 @@ $or_pg_faq = get_field( 'pg_faq' );
 
 ?>
 <header data-fragment="hero" class="outreach | uk-position-relative">
-    <div class="uk-cover-container uk-transform-origin-bottom-center" uk-parallax="scale: 1.2,1; start: 50%; end: 40vh" uk-height-viewport>
-        <?php echo wp_get_attachment_image( $or_hdr_bg['ID'], 'full', '', [ 'uk-cover' => '' ] ); ?>
+    <div class="uk-cover-container uk-transform-origin-bottom-center">
+        <picture uk-parallax="scale: 1.2,1; start: 50%; end: 40vh">
+            <?php echo wp_get_attachment_image( $or_hdr_bg['id'], 'full' ); ?>
+        </picture>
     </div>
     <blockquote class="uk-overlay uk-position-top-center uk-position-medium uk-light">
         <p><?php echo $or_hdr_blockquote['blockquote']; ?></p>
@@ -31,7 +33,7 @@ $or_pg_faq = get_field( 'pg_faq' );
         </footer>
     </blockquote>
     <div class="uk-overlay uk-position-center uk-light">
-        <h1 class="uk-text-center" uk-parallax="start: 100%; end: 50%; opacity: 0,1 10%,1 30%,1; y: 5vh, 0 50%, 0 50%, -5vh"><?php echo strip_tags($or_hdr_content); ?></h1>
+        <h1 class="uk-text-center" uk-parallax="start: 50%; end: 25%; opacity: 0,1 10%,1 30%,1; y: 5vh, 0 50%, 0 25%, -2vh"><?php echo strip_tags($or_hdr_content); ?></h1>
     </div>
 </header>
 
@@ -81,7 +83,7 @@ $or_pg_faq = get_field( 'pg_faq' );
         </div>
     </section>
 
-    <section class="outreach-karen-speech | uk-section uk-section-muted uk-section-large">
+    <section class="outreach-karen-speech | uk-section uk-section-muted">
         <div class="uk-container">
             
             <article class="uk-article">
@@ -100,9 +102,9 @@ $or_pg_faq = get_field( 'pg_faq' );
     </section>
 
     <?php
-    get_template_part( _opt.'ondemand-banner' ); ?>
+    // get_template_part( _opt.'ondemand-banner' ); ?>
 
-    <section class="outreach-community | uk-section uk-section-large">
+    <section class="outreach-community | uk-section">
         <div class="uk-container">
             
             <h2>NAS Supported Community Organizations</h2>
