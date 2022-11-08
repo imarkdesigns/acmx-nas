@@ -382,8 +382,18 @@
         text-decoration: none;
     }
 
+    .uk-text-meta {
+        display: block;
+        font-size: .875rem;
+        font-variant-caps: all-small-caps;
+        color: rgba(#AD9D90,.95);
+        line-height: 1;
+        margin-bottom: 15px;
+    }
+
     .uk-card-title {
         font-size: 1.125rem;
+        line-height: 1;
 
         + small {
             font-size: .875rem;

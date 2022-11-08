@@ -38,6 +38,7 @@ if ( $terms ) : ?>
                             } ?>
                         </div>
                         <div class="uk-card-body">
+                            <span class="uk-text-meta"> <?php echo ( $type == 'Refinanced with TIC' ) ? 'Refinanced with TIC' :null ; ?> </span>
                             <div class="uk-card-title"><?php echo $post_title; ?></div>
                             <small><?php echo $address; ?></small>
                         </div>
