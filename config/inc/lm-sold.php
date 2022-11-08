@@ -9,7 +9,7 @@ if ( $terms ) : ?>
     $posts = get_posts([
         'post_type' => 'nas-loanmaturity',
         'taxonomy' => $term->taxonomy,
-        'term' => $term->slug,
+        'term' => $term->name,
         'nopaging' => true,
         'meta_key' => 'loan_type',
         'meta_value' => $type

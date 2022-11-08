@@ -58,8 +58,8 @@ if ( wp_is_mobile() ) : ?>
                     <div class="uk-flex uk-flex-between uk-visible@l">
                         <div>
                             <div class="uk-subnav">
-                                <li><a href="<?php echo get_permalink( 45 ); ?>">Dashboard</a></li>
-                                <li><a href="<?php echo get_permalink( 47 ); ?>">Profile</a></li>
+                                <li <?php echo ( $post->ID == '45' ) ? 'class="uk-active"' :null ; ?>><a href="<?php echo get_permalink( 45 ); ?>">Dashboard</a></li>
+                                <li <?php echo ( $post->ID == '47' ) ? 'class="uk-active"' :null ; ?>><a href="<?php echo get_permalink( 47 ); ?>">Profile</a></li>
                                 <li><a href="<?php echo get_permalink( 39 ); ?>" target="_blank">Contact NAS</a></li>
                                 <li><a href="<?php echo get_permalink( 35 ); ?>" target="_blank">NAS News</a></li>
                             </div>

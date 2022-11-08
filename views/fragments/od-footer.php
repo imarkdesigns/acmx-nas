@@ -31,7 +31,11 @@
 
 <div id="nas-help" uk-modal>
     <div class="uk-modal-dialog uk-modal-body uk-background-secondary">
-        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <button class="uk-modal-close-default" type="button" aria-label="Close Modal" uk-close></button>
+
+        <img src="<?php echo _uri.'/resources/images/logo-nasassets_footer.png' ?>" width="100" height="30" alt="<?php bloginfo(); ?>">
+        <h2>Trouble Viewing OnDemand?</h2>
+        <hr class="uk-divider-small">
 
         <dl class="uk-description-list uk-description-list-divider uk-light">
             <dt>Clear Cache/Cookies in your Browser</dt>
