@@ -68,7 +68,7 @@ $_GET['direct_mail'] = $email;
                     <?php endif; ?>
                     <?php the_field( 'profile_lead' ); ?>
                     <div class="uk-button-group uk-margin-medium-top uk-light">
-                        <a href="#bio" class="uk-button uk-button-default" uk-scroll>Contnue Reading</a>
+                        <a href="#bio" class="uk-button uk-button-default" uk-scroll="offset: 70">Contnue Reading</a>
                     </div>
                 </div>
             </div>
@@ -86,10 +86,19 @@ $_GET['direct_mail'] = $email;
                 <div>
                     <figure class="side-photo">
                         <?php if ( $sidephoto ) : ?>
-                        <div class="uk-position-relative uk-light" tabindex="-1" uk-slider>
+                        <div class="uk-position-relative uk-light" tabindex="-1" uk-slider="clsActivated: uk-transition-active; center: true">
                             <ul class="uk-slider-items uk-child-width-1-1 uk-flex-middle">
                                 <?php foreach ( $sidephoto as $photo ) : ?>
-                                <li> <img src="<?php echo $photo['url']; ?>" alt="<?php echo $photo['alt']; ?>"> </li>
+                                <li> 
+                                    <div class="uk-panel">
+                                        <img src="<?php echo $photo['url']; ?>" alt="<?php echo $photo['alt']; ?>">
+                                        <?php if ( !empty( $photo['caption'] ) ) : ?>
+                                        <div class="slideshow-caption | uk-overlay uk-overlay-primary uk-position-bottom uk-padding-small uk-transition-slide-bottom">
+                                            <?php echo $photo['caption']; ?>
+                                        </div>
+                                        <?php endif; ?>
+                                    </div>
+                                </li>
                                 <?php endforeach; ?>
                             </ul>
                             <a class="uk-position-center-left uk-position-small" aria-label="Previous" href="#" uk-slidenav-previous uk-slider-item="previous"></a>

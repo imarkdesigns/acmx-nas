@@ -6,15 +6,10 @@ $am_hdr_bg = get_field( 'hdr_photo' );
 $assets = get_field( 'am_list' );
 
 ?>
-<header data-fragment="hero" class="asset-hdr | uk-position-relative">
-    <div class="uk-cover-container">
-        <?php echo wp_get_attachment_image( $am_hdr_bg['id'], 'full' ); ?>
-
-        <div class="uk-overlay-primary uk-position-cover"></div>
-        <div class="uk-overlay uk-position-center uk-light">
-            <div class="uk-text-center uk-width-2xlarge">
-                <?php echo $am_hdr_content; ?>
-            </div>
+<header data-fragment="hero" class="asset-hdr | uk-flex uk-flex-middle uk-light" data-src="<?php echo ( $am_hdr_bg ) ? $am_hdr_bg['url'] : '//placem.at/places?w=1920&h=550&txt=0&random=1' ?>" uk-img>
+    <div class="uk-width-1-1">
+        <div class="uk-container uk-container-small">
+            <?php echo $am_hdr_content; ?>
         </div>
     </div>
 </header>

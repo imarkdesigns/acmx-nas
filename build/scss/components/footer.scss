@@ -222,3 +222,40 @@
         }
 
 }
+
+// NAS Help Modal
+#nas-help {
+    padding: 15px;
+
+    .uk-modal-dialog {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        max-width: 300px !important;
+        width: 100%;
+        margin: 0;
+        padding: 50px 20px 20px;
+        border-radius: 10px;
+        transform: translate(0,0,0);
+    }
+
+    .uk-description-list {
+
+        dt {
+            font-variant-caps: all-small-caps;
+            color: rgba($primary-clr,.95);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        dd {
+            font-size: .813rem;
+            line-height: 1;
+        }
+
+        dd a {
+            @include proxima_semibold;
+        }
+
+    }
+}

@@ -13,7 +13,7 @@
             </figure>
             <?php echo do_shortcode('[wppb-recover-password redirect_url="/ondemand/dashboard"]'); ?>
 
-            <div class="login-return uk-padding-small uk-text-center">
+            <div class="login-return | uk-padding-small uk-text-center" hidden>
                 <a href="<?php echo get_permalink( 43 ); ?>" class="uk-link-reset">Go back to Login</a>
             </div>
         </div>

@@ -24,7 +24,7 @@
     </div>
 
     <div class="ff-logo">
-        <img src="<?php echo _uri.'/resources/images/logo-nasassets_footer.png'; ?>" alt="<?php bloginfo(); ?>">
+        <img src="<?php echo _uri.'/resources/images/logo-nasassets_footer.png'; ?>" width="150" height="45" alt="<?php bloginfo(); ?>">
     </div>
 
     <div class="ff-legal">

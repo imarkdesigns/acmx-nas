@@ -23,9 +23,25 @@
             <ul class="uk-subnav uk-subnav-divider">
                 <li><a href="<?php echo get_permalink( 3 ); ?>" target="_blank">Legal Information</a></li>
                 <li><a>Do you have questions? 310.943.8171</a></li>
-                <li><a href="#">Help</a></li>
+                <li><a href="#nas-help" uk-toggle>Help</a></li>
             </ul>
         </div>
     </div>
 </footer>
+
+<div id="nas-help" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body uk-background-secondary">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+
+        <dl class="uk-description-list uk-description-list-divider uk-light">
+            <dt>Clear Cache/Cookies in your Browser</dt>
+            <dd>Hold the Shift key and Click the Reload button on the navigation toolbar.</dd>
+            <dt>Problem viewing this page?</dt>
+            <dd><a href="//outdatedbrowser.com/en" target="_blank">Click here</a> to upgrade your browser version</dd>
+            <dt>Use the latest version of Adobe Reader plugin to view or download PDF files.</dt>
+            <dd><a href="//acrobat.adobe.com/us/en/products/pdf-reader.html" target="_blank">Click here</a> to download or upgrade version</dd>
+        </dl>
+    </div>
+</div>
+
 <?php endif;

@@ -499,7 +499,8 @@
 }
 
 [data-fragment="hero"].loan-maturity,
-[data-fragment="hero"].property-hdr {
+[data-fragment="hero"].property-hdr,
+[data-fragment="hero"].asset-hdr {
     background-color: rgba(#000,.5);
     background-blend-mode: multiply;
     background-position: center;
@@ -513,6 +514,7 @@
     h1 {
         @include proxima_bold();
         font-size: clamp(2rem, 1.2727rem + 3.6364vw, 4rem);
+        line-height: 1;
     }
 
     @media screen and ( min-width: 960px ) {
@@ -521,10 +523,24 @@
 }
 
 [data-fragment="hero"].story-single {
+    .uk-padding-large {
+        padding-bottom: 0;
+    }
+
     h1 {
+        font-size: 1rem;
+        font-variant-caps: all-small-caps;
+        color: rgba(#000,.9);
+        margin: 0 0 15px;
+    }
+
+    h2 {
         @include bodoni();
         font-size: clamp(2rem, 1.5rem + 2.5vw, 4rem);
         line-height: 1.2;
+        max-width: 960px;
+        width: 100%;
+        margin-inline: auto;
     }
 
     .stories-header img {
@@ -783,34 +799,4 @@
             border-radius: 5px 0 0 5px;
         }
     }
-}
-
-[data-fragment="hero"].asset-hdr {
-
-    .uk-overlay-primary {
-        background-color: rgba(#000,.75);
-    }
-
-    .uk-overlay {
-        @include proxima_light;
-
-        h1 {
-            font-size: 1rem;
-            font-variant-caps: all-small-caps;
-            color: rgba(#FFF,.95);
-            margin: 0 0 15px;
-        }
-
-        h2 {
-            color: rgba(#FFF,.95);
-            line-height: 1.25;
-            margin: 0;
-        }
-    }
-
-    .uk-cover-container img {
-        min-height: 667px;
-        object-fit: cover;
-    }
-
 }

@@ -8,7 +8,7 @@ $loan_intro = get_field( 'introduction' );
 
 // Loan TIC
 $loan_tic = get_field( 'loan_maturity_experience' );
-$loan_pdf = get_field_object('download_pdf');
+// $loan_pdf = get_field_object('download_pdf');
 
 // Loan Goal
 $loan_goal = get_field( 'loan_speech' );
@@ -33,10 +33,6 @@ $loan_goal = get_field( 'loan_speech' );
     <section class="loan-tic | uk-section">
         <div class="uk-container uk-container-small">
             <?php echo $loan_tic; ?>
-
-            <hr class="uk-divider-small uk-margin-medium">
-
-            <a href="<?php echo $loan_pdf['value']['url']; ?>" class="uk-button uk-button-primary" download><?php echo $loan_pdf['label']; ?></a>
         </div>
     </section>
 

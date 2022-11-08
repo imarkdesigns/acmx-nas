@@ -4,6 +4,9 @@
 
 // Success Stories Single
 .story-details {
+    @include proxima_light;
+    font-size: clamp(1rem, 0.9681rem + 0.1307vw, 1.125rem);
+
     p.uk-text-lead {
         @include bodoni();
         font-size: 2rem;

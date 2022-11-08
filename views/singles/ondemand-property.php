@@ -1,8 +1,4 @@
-<?php get_header( 'ondemand' );
-
-
-
-?>
+<?php get_header( 'ondemand' ); ?>
 <main id="main" class="main" role="main">
 
     <div class="uk-grid-collapse" uk-grid>

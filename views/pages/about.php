@@ -27,11 +27,24 @@ $nas_services = get_field( 'aboutNAS_services' );
 ?>
 <main id="main" class="main" role="main">
 
-    <div class="about-lead | uk-section uk-section-xlarge uk-flex uk-flex-center uk-flex-middle uk-text-center <?php echo $cls_light; ?>" uk-height-viewport <?php echo $cls_attr; ?>>
+    <?php if ( $spec_bg['background_photo']['subtype'] == 'mp4' ) : ?>
+    <div class="about-lead-video">
+        <div class="uk-cover-container uk-light">
+            <video src="<?php echo $spec_bg['background_photo']['url']; ?>" muted playsinline loop uk-cover uk-video="autoplay: true"></video>
+            <canvas width="1920" uk-height-viewport="min-height: 667"></canvas>
+
+            <div class="uk-overlay uk-position-cover uk-flex uk-flex-center uk-flex-middle">
+                <h1 class="uk-text-center uk-width-2xlarge" uk-scrollspy="cls: uk-animation-slide-top-medium; delay: 300; repeat: true">National Asset Services has delivered positive results for over 2,500 investment clients at 179 diverse properties in 30 states.</h1>
+            </div>
+        </div>
+    </div>
+    <?php else : ?>
+    <div hidden class="about-lead | uk-section uk-section-xlarge uk-flex uk-flex-center uk-flex-middle uk-text-center <?php echo $cls_light; ?>" uk-height-viewport <?php echo $cls_attr; ?>>
         <div class="uk-container uk-container-small">
             <?php echo $specialization; ?>
         </div>
     </div>
+    <?php endif; ?>
 
     <div class="about-track-record | uk-section uk-section-secondary uk-flex uk-flex-center uk-flex-middle uk-text-center uk-position-z-index-negative" uk-sticky="position: bottom; overflow-flip: true; start: -100%; end: 0">
         <div class="uk-container uk-container-small">
@@ -97,18 +110,22 @@ $nas_services = get_field( 'aboutNAS_services' );
     </section>
 
     <?php
-    get_template_part( _opt.'ondemand-banner' ); ?>
+    get_template_part( _opt.'ondemand-banner' ); 
 
+    if ( !empty( $nas_services_lead ) ) : ?>
     <section class="about-lead-services | uk-section uk-section-xlarge">
         <div class="uk-container uk-container-small uk-text-center">
             <div class="uk-text-lead"><?php echo $nas_services_lead; ?></div>
         </div>
     </section>
+    <?php endif; 
 
+    if ( !empty( $nas_services ) ) : ?>
     <section class="about-services | uk-section uk-section-muted">
         <div class="uk-container uk-container-small">            
             <?php echo $nas_services; ?>
         </div>
     </section>
+    <?php endif; ?>
 
 </main>

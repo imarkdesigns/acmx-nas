@@ -7,7 +7,7 @@ $news_list = get_posts([
     'posts_per_page' => 6,
     'post_status' => 'publish',
     'has_password' => false,
-    'orderby' => ( $orderby == null ) ? 'none' : $orderby,
+    'orderby' => ( $orderby == null ) ? 'menu_order' : $orderby,
     'order' => 'DESC',
     'post__not_in' => [ $postID, $sticky ],
 ]); 

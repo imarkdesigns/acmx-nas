@@ -10,10 +10,16 @@ $news_solo = get_posts([
     'order' => 'DESC',
 ]); 
 
+// echo '<pre>';
+// var_dump($news_solo);
+// echo '</pre>';
+
 $newsOne = [];
 foreach ( $news_solo as $news ) : 
 $post_id = $news->ID;
 $post_title = $news->post_title;
+$date_stamp = strtotime($news->post_date);
+$post_date = date('F j, Y', $date_stamp);
 $newsOne[] = $post_id;
 
 $term_cat = get_the_terms( $post_id, 'category' );
@@ -53,7 +59,8 @@ $slider = get_field( 'news_gallery', $post_id ); ?>
         <div class="uk-width-1-1@s uk-width-1-3@m uk-position-relative">
             <div class="uk-card-body">
                 <div class="title-category | uk-text-meta uk-margin-bottom"> <?php echo $term_cat[0]->name; ?> </div>
-                <h3 class="title-headline"><?php echo $post_title; ?></h3>
+                <h3 class="title-headline | uk-margin-bottom"><?php echo $post_title; ?></h3>
+                <time class="uk-text-meta" datetime="<?php echo $news->post_date; ?>"><?php echo $post_date; ?></time>
             </div>
             <a href="<?php echo get_permalink( $post_id  ); ?>" class="uk-position-cover" aria-label="<?php echo $post_title; ?>" role="link"></a>
         </div>
@@ -76,6 +83,8 @@ $newsSix = [];
 foreach ( $news_six as $news ) :
 $post_id = $news->ID;
 $post_title = $news->post_title;
+$date_stamp = strtotime($news->post_date);
+$post_date = date('F j, Y', $date_stamp);
 $newsSix[] = $post_id;
 
 $term_cat = get_the_terms( $post_id, 'category' ); ?>
@@ -91,7 +100,8 @@ $term_cat = get_the_terms( $post_id, 'category' ); ?>
         </div>
         <div class="uk-card-body">
             <div class="title-category | uk-text-meta uk-margin-bottom"> <?php echo $term_cat[0]->name; ?> </div>
-            <h3 class="title-headline"><?php echo $post_title; ?></h3>
+            <h3 class="title-headline | uk-margin-bottom"><?php echo $post_title; ?></h3>
+            <time class="uk-text-meta" datetime="<?php echo $news->post_date; ?>"><?php echo $post_date; ?></time>
         </div>
         <a href="<?php echo get_permalink( $post_id  ); ?>" class="uk-position-cover" aria-label="<?php echo $post_title; ?>" role="link"></a>
     </div>
@@ -115,6 +125,8 @@ $newsEight = [];
 foreach ( $news_eight as $news ) :
 $post_id = $news->ID;
 $post_title = $news->post_title;
+$date_stamp = strtotime($news->post_date);
+$post_date = date('F j, Y', $date_stamp);
 $newsEight[] = $post_id;
 
 $term_cat = get_the_terms( $post_id, 'category' ); ?>
@@ -130,7 +142,8 @@ $term_cat = get_the_terms( $post_id, 'category' ); ?>
         </div>
         <div class="uk-card-body">
             <div class="title-category | uk-text-meta uk-margin-bottom"> <?php echo $term_cat[0]->name; ?> </div>
-            <h3 class="title-headline"><?php echo $post_title; ?></h3>
+            <h3 class="title-headline | uk-margin-bottom"><?php echo $post_title; ?></h3>
+            <time class="uk-text-meta" datetime="<?php echo $news->post_date; ?>"><?php echo $post_date; ?></time>
         </div>
         <a href="<?php echo get_permalink( $post_id  ); ?>" class="uk-position-cover" aria-label="<?php echo $post_title; ?>" role="link"></a>
     </div>
@@ -147,9 +160,11 @@ add_action( 'newsStack', 'newsStack' );
 function newsMore( $newsIDs ) {
 
 // More News
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $more_news = get_posts([
     'post_type' => [ 'post' ],
-    'posts_per_page' => -1,
+    'posts_per_page' => 10,
+    'paged' => $paged,
     'post_status' => 'publish',
     'has_password' => false,
     'order' => 'DESC',
@@ -159,6 +174,8 @@ $more_news = get_posts([
 foreach ( $more_news as $news ) :
 $post_id = $news->ID;
 $post_title = $news->post_title;
+$date_stamp = strtotime($news->post_date);
+$post_date = date('F j, Y', $date_stamp);
 
 $term_cat = get_the_terms( $post_id, 'category' ); ?>
 <div class="uk-width-1-2@s uk-width-1-2@m">
@@ -174,7 +191,8 @@ $term_cat = get_the_terms( $post_id, 'category' ); ?>
         <div class="uk-width-expand">
             <div class="uk-card-body uk-padding-remove-vertical">
                 <div class="title-category | uk-text-meta"> <?php echo $term_cat[0]->name; ?> </div>
-                <h3 class="title-headline"><?php echo $post_title; ?></h3>
+                <h3 class="title-headline | uk-margin-small-bottom"><?php echo $post_title; ?></h3>
+                <time class="uk-text-meta" datetime="<?php echo $news->post_date; ?>"><?php echo $post_date; ?></time>
             </div>
         </div>
         <a href="<?php echo get_permalink( $post_id  ); ?>" class="uk-position-cover" aria-label="<?php echo $post_title; ?>" role="link"></a>

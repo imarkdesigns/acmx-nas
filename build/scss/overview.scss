@@ -2,6 +2,14 @@
 @import 'common/mixins',
         'common/fonts';
 
+.about-lead-video {
+    h1 {
+        @include proxima_bold;
+        font-size: clamp(1.5rem, 1.2188rem + 1.4063vw, 2.625rem);
+        text-transform: uppercase;
+        @include sharpText();
+    }
+}
 
 .about-lead {
     background-color: rgba(#FFF,1);
