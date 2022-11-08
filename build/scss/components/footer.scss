@@ -44,7 +44,21 @@
 }
 
 .ff-logo {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    @include proxima_light;
+    font-size: .875rem;
+    font-variant-caps: all-small-caps;
+    color: rgba(#FFF,.9);
     text-align: center;
+    line-height: 1.15;
+    max-width: 300px;
+    width: 100%;
+    margin-inline: auto;
 
     img {
         @include size(150px,auto);

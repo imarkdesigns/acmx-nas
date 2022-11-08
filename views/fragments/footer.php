@@ -1,4 +1,8 @@
-<?php $ftr_bg = get_field( 'footer_bg', 'option' ); ?>
+<?php 
+$ftr_bg = get_field( 'footer_bg', 'option' ); 
+$ftr_slogan = get_field( 'NAS_footer_slogan', 'option' );
+
+?>
 <footer data-fragment="footer" data-src="<?php echo ( $ftr_bg ) ? $ftr_bg : _uri.'/resources/images/img-footer_bg.jpg'; ?>" uk-img>
     
     <div class="ff-links | uk-grid-collapse uk-child-width-auto uk-flex-between uk-flex-middle" uk-grid>
@@ -25,6 +29,7 @@
 
     <div class="ff-logo">
         <img src="<?php echo _uri.'/resources/images/logo-nasassets_footer.png'; ?>" width="150" height="45" alt="<?php bloginfo(); ?>">
+        <div class="uk-width-xlarge"><?php echo $ftr_slogan; ?></div>
     </div>
 
     <div class="ff-legal">
