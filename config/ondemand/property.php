@@ -16,7 +16,9 @@ foreach ( $property_info as $pi ) :
     $address = get_field( 'property_address', $post_id );
     $description = get_field( 'property_description', $post_id );
     $gallery = get_field( 'property_additional_photo', $post_id );
+    $map_selector = get_field( 'multi_locations' );
     $map = get_field('property_map', $post_id );
+    $maps = get_field('property_maps', $post_id );
 
     // Contact Person
     $contact_person = get_field( 'property_contact_person', $post_id );
@@ -186,7 +188,15 @@ $ffolders = get_field( 'file_management', $post_id );
         </div>
     </section>
 
-    <?php if ( $map ) : ?>
+    <?php  if ( $map_selector == 'multi' ) : ?>
+    <section class="property-map | uk-section uk-section-xsmall">
+        <div class="acf-map uk-box-shadow-small" data-zoom="17">
+            <?php foreach ( $maps as $multi ) : ?>
+            <div hidden class="marker" data-lat="<?php echo esc_attr($multi['property_map']['lat']); ?>" data-lng="<?php echo esc_attr($multi['property_map']['lng']); ?>"></div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    <?php elseif ( $map_selector == 'single' ) : ?>
     <section class="property-map | uk-section uk-section-xsmall">
         <div class="acf-map uk-box-shadow-small" data-zoom="17">
             <div class="marker" data-lat="<?php echo esc_attr($map['lat']); ?>" data-lng="<?php echo esc_attr($map['lng']); ?>"></div>
