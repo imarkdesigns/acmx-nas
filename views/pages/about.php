@@ -34,7 +34,9 @@ $nas_services = get_field( 'aboutNAS_services' );
             <canvas width="1920" uk-height-viewport="min-height: 667"></canvas>
 
             <div class="uk-overlay uk-position-cover uk-flex uk-flex-center uk-flex-middle">
-                <h1 class="uk-text-center uk-width-2xlarge" uk-scrollspy="cls: uk-animation-slide-top-medium; delay: 300; repeat: true"><?php echo $specialization; ?></h1>
+                <div class="uk-text-center uk-width-2xlarge" uk-scrollspy="cls: uk-animation-slide-top-medium; delay: 300; repeat: true">
+                    <?php echo $specialization; ?>
+                </div>
             </div>
         </div>
     </div>

@@ -9,6 +9,21 @@
         text-transform: uppercase;
         @include sharpText();
     }
+
+    blockquote {
+        @include proxima_bold;
+        font-size: clamp(1rem, 0.7451rem + 1.0458vw, 2rem);
+        font-style: normal;
+        text-transform: uppercase;
+        line-height: 1.2;
+        @include sharpText();
+
+        p:last-child {
+            font-size: clamp(0.875rem, 0.8113rem + 0.2614vw, 1.125rem);
+            font-weight: 400;
+            margin-top: 30px;
+        }
+    }
 }
 
 .about-lead {
