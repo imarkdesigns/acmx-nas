@@ -34,7 +34,7 @@ $nas_services = get_field( 'aboutNAS_services' );
             <canvas width="1920" uk-height-viewport="min-height: 667"></canvas>
 
             <div class="uk-overlay uk-position-cover uk-flex uk-flex-center uk-flex-middle">
-                <h1 class="uk-text-center uk-width-2xlarge" uk-scrollspy="cls: uk-animation-slide-top-medium; delay: 300; repeat: true">National Asset Services has delivered positive results for over 2,500 investment clients at 179 diverse properties in 30 states.</h1>
+                <h1 class="uk-text-center uk-width-2xlarge" uk-scrollspy="cls: uk-animation-slide-top-medium; delay: 300; repeat: true"><?php echo $specialization; ?></h1>
             </div>
         </div>
     </div>
