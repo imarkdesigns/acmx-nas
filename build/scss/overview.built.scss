@@ -82,6 +82,20 @@
             border-radius: 3px;
         }
     }
+
+    ul {
+        list-style: square;
+        line-height: normal;
+        padding-left: 50px;
+
+        li {
+            margin-top: .75em;
+
+            li:first-child {
+                margin-top: 0;
+            }
+        }
+    }
 }
 
 // Team Single

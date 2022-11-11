@@ -66,8 +66,17 @@
             jQuery('.home .uk-thumbnav li').find('a').removeAttr('aria-describedby');
             jQuery('.company-video').find('a').removeAttr('aria-describedby');
 
-            // Fix WP Core Alignment
+            // Fix WP Core Block Alignment / Gutenberg 
             jQuery('.did-you-know .uk-article figure').each(function() {
+                var _this = jQuery(this);
+                var _img = _this.find('img').width();
+
+                // Apply the width
+                _this.css('max-width', _img);
+
+            });
+
+            jQuery('.single .type-post figure').each(function() {
                 var _this = jQuery(this);
                 var _img = _this.find('img').width();
 

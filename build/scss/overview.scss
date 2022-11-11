@@ -337,7 +337,7 @@
             background-size: 75px auto;
             line-height: normal;
             @include size(75px);
-            transform: scaleX(-1);
+            transform: scaleX(-1) scaleY(-1);
             opacity: .15;
         }
     }
@@ -486,7 +486,7 @@
                     background-size: 75px auto;
                     line-height: normal;
                     @include size(75px);
-                    transform: scaleX(-1);
+                    transform: scaleX(-1) scaleY(-1);
                     opacity: .15;
                 }
             }
