@@ -1,56 +1,56 @@
 // Old WP Editor - Block Alignment
-.wp-caption {
+// .wp-caption {
 
-    &.alignleft,
-    &.alignright,
-    &.aligncenter {
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
+//     &.alignleft,
+//     &.alignright,
+//     &.aligncenter {
+//         display: flex;
+//         flex-flow: column wrap;
+//         justify-content: center;
+//         align-items: center;
+//         gap: 15px;
 
-        width: 414px;
-        height: 100%;
-        margin-top: 25px;
-        margin-bottom: 30px;
-        padding: 5px 5px 15px;
-        border: 1px solid rgba(#666,.15);
-        border-radius: 5px;
-        box-shadow: 0 5px 15px rgb(0 0 0 / 8%);
-    }
+//         width: 414px;
+//         height: 100%;
+//         margin-top: 25px;
+//         margin-bottom: 30px;
+//         padding: 5px 5px 15px;
+//         border: 1px solid rgba(#666,.15);
+//         border-radius: 5px;
+//         box-shadow: 0 5px 15px rgb(0 0 0 / 8%);
+//     }
 
-    &.alignright {
-        float: right;
-        margin-left: 30px;
-    }
+//     &.alignright {
+//         float: right;
+//         margin-left: 30px;
+//     }
 
-    &.alignleft {
-        float: left;
-        margin-right: 30px;
-    }
+//     &.alignleft {
+//         float: left;
+//         margin-right: 30px;
+//     }
 
-    &.aligncenter {
-        clear: both;
-        float: none;
-        margin-inline: auto;
-    }
-
-
-    img {
-        object-fit: contain;
-        border-radius: 3px;
-    }
-
-    figcaption {
-        flex: 0 1 auto;
-        font-size: .75rem;
-        color: rgba(#666,.9);
-        text-align: center;
-        line-height: 1.2;
-    }
+//     &.aligncenter {
+//         clear: both;
+//         float: none;
+//         margin-inline: auto;
+//     }
 
 
-}
+//     img {
+//         object-fit: contain;
+//         border-radius: 3px;
+//     }
 
-p:empty { display: none }
+//     figcaption {
+//         flex: 0 1 auto;
+//         font-size: .75rem;
+//         color: rgba(#666,.9);
+//         text-align: center;
+//         line-height: 1.2;
+//     }
+
+
+// }
+
+// p:empty { display: none }
