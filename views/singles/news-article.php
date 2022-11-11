@@ -9,10 +9,12 @@
             the_title( '<h1 class="uk-text-center">', '</h1>' );
 
             // Display attached Photo
+            echo '<figure>';
             if ( has_post_thumbnail( $post_id ) ) {
                 $featuredID = get_post_thumbnail_id( $post_id );
                 echo wp_get_attachment_image( $featuredID, 'full' );
             }
+            echo '</figure>';
             
             // Display Content
             the_content();
@@ -24,6 +26,6 @@
     get_template_part( _opt.'ondemand-banner' ); ?>
 
     <?php 
-    do_action( 'newsList', get_the_ID(), 'rand' ); ?>
+    do_action( 'newsList', get_the_ID(), null ); ?>
 
 </main>
