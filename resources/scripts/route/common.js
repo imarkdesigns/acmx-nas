@@ -67,14 +67,14 @@
             jQuery('.company-video').find('a').removeAttr('aria-describedby');
 
             // Fix WP Core Alignment
-            // jQuery('.get-to-know .uk-article figure').each(function() {
-            //     var _this = jQuery(this);
-            //     var _img = _this.find('img').width();
+            jQuery('.did-you-know .uk-article figure').each(function() {
+                var _this = jQuery(this);
+                var _img = _this.find('img').width();
 
-            //     // Apply the width
-            //     _this.css('max-width', _img);
+                // Apply the width
+                _this.css('max-width', _img);
 
-            // });
+            });
 
         }    
     }, 100);
