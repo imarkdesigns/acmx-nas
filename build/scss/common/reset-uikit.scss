@@ -47,6 +47,12 @@
     }    
 }
 
+// Width
+.uk-width-3xlarge {
+    max-width: 960px;
+    box-sizing: border-box;
+}
+
 // Section's Color
 .uk-section-dark {
     background-color: rgba(#000,1);

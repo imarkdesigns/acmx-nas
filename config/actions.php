@@ -87,13 +87,21 @@ foreach ( $filters as $filter ) {
 }
 
 //* Remove empty <p> tags
+// function remove_empty_p( $content ) {
+//   $content = force_balance_tags( $content );
+//   $content = preg_replace( '#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content );
+//   $content = preg_replace( '~\s?<p>(\s|&nbsp;)+</p>\s?~', '', $content );
+//   return $content;
+// }
+// add_filter('the_content', 'remove_empty_p', 20, 1);
 function remove_empty_p( $content ) {
-  $content = force_balance_tags( $content );
-  $content = preg_replace( '#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content );
-  $content = preg_replace( '~\s?<p>(\s|&nbsp;)+</p>\s?~', '', $content );
-  return $content;
+    $content = force_balance_tags( $content );
+    $content = preg_replace( '#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content );
+    $content = preg_replace( '~\s?<p>(\s|&nbsp;)+</p>\s?~', '', $content );
+    return $content;
 }
 add_filter('the_content', 'remove_empty_p', 20, 1);
+
 
 //* Allow VCard Uploading
 function vcard_upload($mimes) {

@@ -85,8 +85,7 @@
 }
 
 // Team Single
-.bio,
-.get-to-know {
+.bio {
     padding-top: 70px;
     padding-bottom: 70px;
 
@@ -136,8 +135,6 @@
         }
     }
 
-
-
     @media screen and ( min-width: 1366px ) {
         padding-top: 250px;
     }
@@ -147,98 +144,100 @@
 .get-to-know {
     padding-block: 70px;
 
+    + .did-you-know {
+        padding-top: 0;
+    }
+
+    .uk-article {
+        @include proxima_light;
+        text-align: justify;
+    }
+
+    ul {
+        list-style: square;
+        line-height: normal;
+        padding-left: 18px;
+
+        li {
+            margin-top: 15px;
+
+            li:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+
     h2 {
-        @include proxima_bold();
-        font-weight: 700;
+        @include proxima_bold;
+        font-size: 2rem;
+        line-height: 1;
+        @include sharpText;
     }
 
-    h3 {
-        clear: left;
-        @include proxima_semibold();
-        font-weight: 600;
-        margin-top: 30px;
-        // margin-bottom: 30px;
-    }
-
-    .alignnone {
-        clear: both;
-        float: none;
-        display: inline-block;
-        margin: 15px 0;
+    figure {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        padding: 5px 5px 15px;
+        border: 1px solid rgba(#666,.15);
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgb(0 0 0 / 8%);
 
         img {
-            height: auto;
-            object-fit: cover;
+            object-fit: contain;
             border-radius: 3px;
         }
 
         figcaption {
-            clear: both;
+            * { margin: 0 }
+
+            flex: 0 1 auto;
+            font-size: .75rem;
             color: rgba(#666,.9);
             text-align: center;
-            padding: 1em 1.5em;
-            box-sizing: border-box;
+            line-height: 1.2;
         }
     }
 
-    .alignleft {
-        float: left;
-        margin: 30px 30px 30px 0;
+    @media screen and ( min-width: 1366px ) {
+        // padding-top: 250px;
+    }    
+}
 
-        img {
-            height: auto;
-            object-fit: cover;
-            border-radius: 3px;
-        }
+.did-you-know {
+    padding-block: 70px;
+    margin-inline: 15px;
 
-        figcaption {
-            clear: both;
-            color: rgba(#666,.9);
-            text-align: center;
-            padding: 1em 1.5em;
-            box-sizing: border-box;
-        }
+    .uk-article {
+        @include proxima_light;
+        border-radius: 10px;
+        // box-shadow: 0 5px 15px rgb(0 0 0 / 8%);
+    }
 
-        picture.size-full img,
-        picture.size-full ~ figcaption {
-            width: auto;    
-        }
+    h2 {
+        @include bodoni;
+        font-size: 2rem;
+        line-height: 1;
+        @include sharpText;
 
-        picture.size-medium img,
-        picture.size-medium ~ figcaption {
-            width: 360px;
+        &::after {
+            content: '';
+            display: block;
+            width: 100px;
+            margin-inline: auto;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #DDD;
         }
     }
 
-    .alignright {
-        float: right;
-        margin: 30px 0 30px 30px;
-
-        img {
-            height: auto;
-            object-fit: cover;
-            border-radius: 3px;
-        }
-
-        figcaption {
-            clear: both;
-            color: rgba(#666,.9);
-            text-align: center;
-            padding: 1em 1.5em;
-            box-sizing: border-box;
-        }
-
-        picture.size-full img,
-        picture.size-full ~ figcaption {
-            width: auto;
-        }
-
-        picture.size-medium img,
-        picture.size-medium ~ figcaption {
-            width: 360px;
-        }
+    @media screen and ( min-width: 1366px ) {
+        // padding-top: 250px;
     }
 }
+
 
 #wpforms-direct-contact {
 

@@ -1,6 +1,6 @@
 <main id="main" class="main" role="main">
     <div class="login-form | uk-container uk-container-expand uk-cover-container uk-flex uk-flex-middle uk-flex-center" uk-height-viewport>
-        <img src="//placem.at/places?w=1920&h=1024&txt=0&random=1" alt="BG Reset Photos" uk-cover>
+        <img src="<?php echo _uri.'/resources/images/bg-ondemand-building.jpg'; ?>" alt="Photo by Sean Pollock on Unsplash" uk-cover>
         <div class="uk-overlay-primary uk-position-cover"></div>
         <!-- Form -->
         <div class="uk-overlay uk-width-large uk-position-center uk-light">

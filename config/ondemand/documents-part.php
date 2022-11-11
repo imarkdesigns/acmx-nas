@@ -5,7 +5,9 @@
         <ul uk-accordion>
             <?php foreach ( $subfolders as $sfolder ) : 
             $sub_2_folders = $sfolder['sub_2_folder_lists'];
-            $df_folder = $sfolder['df_subfolder2'];
+            if ( !empty($sfolder['df_subfolder2']) ) {
+                $df_folder = $sfolder['df_subfolder2'];
+            }
 
             $sfiles = $sfolder['sub_document_file']; ?>
             <li>

@@ -168,6 +168,7 @@ $more_news = get_posts([
     'post_status' => 'publish',
     'has_password' => false,
     'order' => 'DESC',
+    'orderby' => 'menu_order',
     'post__not_in' => $newsIDs,
 ]); 
 

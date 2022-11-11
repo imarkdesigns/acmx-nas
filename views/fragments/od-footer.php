@@ -21,7 +21,7 @@
         </div>
         <div class="od-footer-links">
             <ul class="uk-subnav uk-subnav-divider">
-                <li><a href="<?php echo get_permalink( 3 ); ?>" target="_blank">Legal Information</a></li>
+                <li><a href="<?php echo get_permalink( 3 ); ?>" target="_blank">Privacy Policy</a></li>
                 <li><a>Do you have questions? 310.943.8171</a></li>
                 <li><a href="#nas-help" uk-toggle>Help</a></li>
             </ul>

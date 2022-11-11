@@ -13,7 +13,9 @@ $vcard   = get_field( 'profile_vcard' );
 $profile_bg = get_field( 'profile_bio_bg' );
 $sidephoto = get_field( 'profile_sidephoto' );
 $bio = get_field( 'profile_bio' );
-$journal = get_field( 'profile_journal' );
+// $journal = get_field( 'profile_journal' );
+$journal = get_field( 'profile_journal_info' );
+$trivia = get_field( 'profile_trivia' );
 
 // Trigger for WPForms
 $_GET['direct_mail'] = $email;
@@ -22,6 +24,7 @@ $_GET['direct_mail'] = $email;
 <header data-fragment="hero" class="profile" data-src="<?php echo ( $profile_bg ) ? $profile_bg['url'] : _uri.'/resources/images/novanta-team.jpg'; ?>" uk-img>
     <div class="profile-heading | uk-container uk-container-expand">
         <div class="uk-panel">
+            <a href="<?php echo get_permalink( 19 ) ?>" class="uk-link-reset" targe="_self"> <span uk-icon="arrow-left"></span> Back to Team </a>
             <h1><?php echo $title ?><?php echo !empty($nominal) ? ', <span class="uk-text-meta">'. $nominal .'</span>' : ''; ?></h1>
             <p><?php echo $designation; ?></p>
         </div>
@@ -67,9 +70,11 @@ $_GET['direct_mail'] = $email;
                     <hr class="uk-divider-small">
                     <?php endif; ?>
                     <?php the_field( 'profile_lead' ); ?>
+                    <?php if ( $bio ) : ?>
                     <div class="uk-button-group uk-margin-medium-top uk-light">
                         <a href="#bio" class="uk-button uk-button-default" uk-scroll="offset: 70">Contnue Reading</a>
                     </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -78,8 +83,8 @@ $_GET['direct_mail'] = $email;
 
 <main id="main" class="main" role="main">
 
-    <?php if ( $bio ) : ?>
     <section class="bio | uk-section uk-section-xlarge uk-section-medium-dark uk-light">
+        <?php if ( $bio ) :  ?>
         <div class="uk-container uk-container-large">
 
             <article id="bio" class="uk-article uk-child-width-1-2@m uk-grid-large uk-flex-middle" uk-grid>
@@ -117,19 +122,49 @@ $_GET['direct_mail'] = $email;
             </article>
 
         </div>
+        <?php endif; ?>
     </section>
-    <?php endif; 
 
-    if ( $journal ) : ?>
+    <?php if ( !empty($journal['featured_photo']) || !empty($journal['journal']) ) : ?>
     <section class="get-to-know | uk-section">
-        <div class="uk-container uk-container-large">
+        <div class="uk-container uk-container-small">
             
             <article class="uk-article">
-                <h2>Getting to Know <?php echo $title; ?></h2>
-                <?php echo $journal; ?>
+                <div class="uk-grid-large uk-flex-middle" uk-grid>
+                    <div class="uk-width-1-2@m">
+                        <div class="uk-panel">
+                            <h2>Get to Know <br> <?php echo $title; ?></h2>
+                            <?php echo $journal['journal']; ?>
+                        </div>
+                    </div>
+                    <?php if ( !empty($journal['featured_photo']) ) : ?>
+                    <div class="uk-width-1-2@m">
+                        <div class="uk-panel">
+                            <figure class="uk-inline">
+                                <?php echo wp_get_attachment_image( $journal['featured_photo']['id'], 'full' ); ?>
+                                <figcaption>
+                                    <p><?php echo $journal['featured_photo']['caption']; ?></p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+                </div>
             </article>
 
         </div>
+    </section>
+    <?php endif; 
+
+    if ( $trivia ) : ?>
+    <section class="did-you-know | uk-section uk-flex uk-flex-center">
+        <article class="uk-article uk-background-muted uk-text-center uk-width-3xlarge uk-padding-large">
+            <h2>Did You Know?</h2>
+            <figure>
+                <img src="https://nasassets.kinsta.cloud/wp-content/uploads/2022/06/Karen-and-Judson-Kennedy.jpg" alt="">
+            </figure>
+            <p>Karen loves to travel internationally with her husband of 36 years and is an avid gardener. She likes to read novels, typically devouring three novels a week and is an excellent swimmer. She speaks Spanish, Hebrew, French, Portuguese, and Italian. She is a proud grandmother of five and lives in Venice, CA with her husband Judson.</p>
+        </article>
     </section>
     <?php endif; ?>
 

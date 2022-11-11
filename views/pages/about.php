@@ -110,12 +110,12 @@ $nas_services = get_field( 'aboutNAS_services' );
             <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
                 <div>
                     <article class="uk-article">
-                        <?php echo $nas_resources; ?>
+                        <?php echo remove_empty_p($nas_resources); ?>
                     </article>
                 </div>
                 <div>
                     <article class="uk-article">
-                        <?php echo $nas_property; ?>
+                        <?php echo remove_empty_p($nas_property); ?>
                     </article>
                 </div>
             </div>
@@ -128,7 +128,7 @@ $nas_services = get_field( 'aboutNAS_services' );
     if ( !empty( $nas_services_lead ) ) : ?>
     <section class="about-lead-services | uk-section uk-section-xlarge">
         <div class="uk-container uk-container-small uk-text-center">
-            <div class="uk-text-lead"><?php echo $nas_services_lead; ?></div>
+            <div class="uk-text-lead"><?php echo remove_empty_p($nas_services_lead); ?></div>
         </div>
     </section>
     <?php endif; 
@@ -136,7 +136,7 @@ $nas_services = get_field( 'aboutNAS_services' );
     if ( !empty( $nas_services ) ) : ?>
     <section class="about-services | uk-section uk-section-muted">
         <div class="uk-container uk-container-small">            
-            <?php echo $nas_services; ?>
+            <?php echo remove_empty_p($nas_services); ?>
         </div>
     </section>
     <?php endif; ?>

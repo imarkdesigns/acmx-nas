@@ -11,6 +11,11 @@
             jQuery('.uk-navbar-nav .uk-parent .uk-navbar-dropdown-nav').find('li.company-video a').attr({ 'href' : _cv, 'target': '_blank' });
             jQuery('.uk-navbar-nav .uk-parent .uk-navbar-dropdown-nav').find('li.nas-brochure a').attr({ 'href' : _bd, 'download': '' });
 
+            // Inject WP Profile Builder Pro Force Login
+            var _wppb = '?wppb_force_wp_login=false';
+            var _href = jQuery('.uk-navbar-nav #menu-item-220').children().attr('href');
+            jQuery('.uk-navbar-nav #menu-item-220').children().attr('href', _href + _wppb);
+
             // Asset Management URL
             jQuery('#menu-item-231 .uk-navbar-dropdown-nav').children().each(function() {
                 var $protocol = window.location.protocol;
@@ -60,6 +65,16 @@
             // Home: Tooltip Hack
             jQuery('.home .uk-thumbnav li').find('a').removeAttr('aria-describedby');
             jQuery('.company-video').find('a').removeAttr('aria-describedby');
+
+            // Fix WP Core Alignment
+            // jQuery('.get-to-know .uk-article figure').each(function() {
+            //     var _this = jQuery(this);
+            //     var _img = _this.find('img').width();
+
+            //     // Apply the width
+            //     _this.css('max-width', _img);
+
+            // });
 
         }    
     }, 100);

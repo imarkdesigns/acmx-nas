@@ -8,6 +8,7 @@ $comment_list = get_posts([
     'posts_per_page' => -1,
     'post_status' => 'publish',
     'has_password' => false,
+    'orderby' => 'menu_order',
     'order' => 'ASC',
 ]);
 ?>
