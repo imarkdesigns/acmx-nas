@@ -160,10 +160,7 @@ $_GET['direct_mail'] = $email;
     <section class="did-you-know | uk-section uk-flex uk-flex-center">
         <article class="uk-article uk-background-muted uk-text-center uk-width-3xlarge uk-padding-large">
             <h2>Did You Know?</h2>
-            <figure>
-                <img src="https://nasassets.kinsta.cloud/wp-content/uploads/2022/06/Karen-and-Judson-Kennedy.jpg" alt="">
-            </figure>
-            <p>Karen loves to travel internationally with her husband of 36 years and is an avid gardener. She likes to read novels, typically devouring three novels a week and is an excellent swimmer. She speaks Spanish, Hebrew, French, Portuguese, and Italian. She is a proud grandmother of five and lives in Venice, CA with her husband Judson.</p>
+            <?php echo $trivia; ?>
         </article>
     </section>
     <?php endif; ?>
