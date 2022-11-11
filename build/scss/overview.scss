@@ -3,24 +3,35 @@
         'common/fonts';
 
 .about-lead-video {
+    // h1 {
+    //     @include proxima_bold;
+    //     font-size: clamp(1.5rem, 1.2188rem + 1.4063vw, 2.625rem);
+    //     text-transform: uppercase;
+    //     @include sharpText();
+    // }
+
     h1 {
-        @include proxima_bold;
-        font-size: clamp(1.5rem, 1.2188rem + 1.4063vw, 2.625rem);
-        text-transform: uppercase;
-        @include sharpText();
+        @include proxima_regular;
+        font-weight: 400;
+        font-size: 1rem;
+        font-variant-caps: all-small-caps;
+        color: rgba(#FFF,.9);
+        margin: 0 0 15px;
     }
 
     blockquote {
         @include proxima_bold;
         font-size: clamp(1rem, 0.7451rem + 1.0458vw, 2rem);
         font-style: normal;
+        color: rgba(#FFF,.9);
         text-transform: uppercase;
+        text-shadow: 0 1px 1px rgba(#000,.75);
         line-height: 1.2;
         @include sharpText();
 
         p:last-child {
             font-size: clamp(0.875rem, 0.8113rem + 0.2614vw, 1.125rem);
-            font-weight: 400;
+            font-weight: 600;
             margin-top: 30px;
         }
     }
