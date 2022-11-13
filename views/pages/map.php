@@ -1,3 +1,7 @@
+<?php
+// Map Header Settings
+$map_hdr_content = get_field( 'hdr_content' );
+?>
 <main id="main" class="main" role="main">
 
     <aside class="map-legend | uk-panel uk-padding-small">
@@ -17,6 +21,9 @@
     </aside>
 
     <section class="property-map | uk-section uk-padding-remove">
+        <div class="uk-panel uk-text-center">
+            <?php echo strip_tags($map_hdr_content); ?>
+        </div>
         <?php echo do_shortcode( '[elfsight_google_maps id="1"]' ); ?>
     </section>
 

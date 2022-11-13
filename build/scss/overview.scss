@@ -773,6 +773,15 @@ body.map {
 .property-map {
     border-bottom: 10px solid $primary-clr;
 
+    > .uk-panel {
+        background-color: darken($primary-clr,10%);
+        @include proxima_light;
+        font-size: .875rem;
+        font-variant-caps: all-small-caps;
+        color: rgba(#FFF,.95);
+        padding: 1em;
+    }
+
     // InfoWindow
     .eapps-google-maps-marker {
         min-width: 270px;
@@ -806,7 +815,7 @@ body.map {
         
             div.uk-text-meta,
             div:first-child {
-                @include proxima_light();
+                @include proxima_light;
                 font-size: .875rem;
                 font-variant-caps: all-small-caps;
             }
