@@ -76,7 +76,7 @@
 
             });
 
-            jQuery('.single .type-post figure').each(function() {
+            jQuery('.single .type-post .wp-block-image figure').each(function() {
                 var _this = jQuery(this);
                 var _img = _this.find('img').width();
 
