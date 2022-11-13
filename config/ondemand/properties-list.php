@@ -2,18 +2,18 @@
 function propertyList() {
 
 $userID = get_current_user_id();
-$properties = get_field( 'client_properties', 'user_'.$userID );
+$directories = get_field( 'directory_list', 'user_'.$userID );
 
-if ( $properties ) : ?>
+if ( $directories ) :
+?>
 <ul class="mp-list">
-    <?php foreach ( $properties as $post ) : setup_postdata( $post );
-    $post_id = $post->ID;
-    $post_title = $post->post_title;
+    <?php foreach ( $directories as $dir ) :
+    $property = $dir['property'];
+    $post_id = $property->ID;
+    $post_title = $property->post_title;
 
     $description = get_field( 'property_description', $post_id );
-    $term_cat = get_the_terms( $post_id, 'ondemand-categories' );
-
-    ?>
+    $term_cat = get_the_terms( $post_id, 'ondemand-categories' ); ?>
     <li class="mp-item">
         <div class="uk-card uk-card-default uk-card-body uk-card-small uk-card-hover uk-grid-collapse" uk-grid>
             <div class="uk-card-media-left uk-cover-container uk-width-auto">
@@ -37,11 +37,50 @@ if ( $properties ) : ?>
             </div>
         </div>
     </li>
-    <?php endforeach; 
-    wp_reset_postdata(); ?>
-
+    <?php endforeach; ?>
 </ul>
 <?php endif;
 
 }
 add_action( 'propertyList', 'propertyList' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

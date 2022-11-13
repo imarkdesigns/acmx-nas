@@ -9,7 +9,7 @@
 
         <div class="property-directory | uk-width-large@m">
             <hgroup id="property-documents"> <h2>Property Documents</h2> </hgroup>
-            <?php do_action( 'documents', 4 ); ?>
+            <?php do_action( 'documents', get_current_user_id() ); ?>
             <!-- End of File Management -->
 
             <?php // Available Investments Settings

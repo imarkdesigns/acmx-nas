@@ -1,67 +1,108 @@
 <?php
 function documents( $userID ) {
 
-// $user = get_user_by('id', $userID);
-// echo $user->ID;
+$users_dir = get_field( 'directory_list', 'user_'.$userID );
+$doc_files = get_field( 'file_management' );
 
-$authors = [ 'role' => [ 'investor' ] ];
-$authorsQuery = new WP_User_Query( $authors );
+foreach ( $users_dir as $dir ) {
+    if ( $dir['property']->post_title != get_the_title() )
+        continue;
 
-if ( ! empty( $authorsQuery->results ) ) {
-    asort($authorsQuery->results);
-    foreach ( $authorsQuery->results as $user ) :
-
-        if ( $userID != $user->ID )
-            continue;
-
-            $userField = get_field( 'document_access', 'user_'.$user->ID );
-            $userAccess = $userField['value'];
-
-    endforeach;
+    $folders = $dir['folder_list'];
 }
 
-// Folders List
-$folders = get_field( 'file_management' );
+if ( $folders ) :
 
-// Bypass Partial Access
-$bypass = get_field( 'bypass_partial_access' );
-
-if ( $folders ) : ?>
-<div class="file-management" uk-overflow-auto>
-    <ul uk-accordion>
-    <?php foreach ( $folders as $folder ) :
-
-    // Check if Files exists
-    $files = $folder['document_file'];
-
-    // Check if User for Partial Access to Documents
-    $faccess = $folder['folder_access'];
-
-    // Check if Sub-Folder Exists
-    $subfolders = $folder['sub_folder_lists'];
-
-
-    if ( str_contains($folder['folder_name'], 'Tax Packages') || str_contains($folder['folder_name'], 'Tax Package') ) {
-        $data_folder_label = 'data-folder="tax-packages"';
-    } else {
-        $data_folder_label = '';
+    foreach ( $folders as $folder_selected ) {
+        $active_folder[] = $folder_selected->name;
     }
 
-        // in favor of Partial Access
-        if ( !$bypass ) {
-            if ( $faccess && $userAccess == 'partial_access' ) {
-                include( locate_template( _od_config.'documents-part.php', false, true ) );
-            } elseif ( $userAccess == 'full_access' ) {
-                include( locate_template( _od_config.'documents-part.php', false, true ) );
-            }
-        } elseif ( $bypass ) {
-            include( locate_template( _od_config.'documents-part.php', false, true ) );
-        }
+    foreach ( $doc_files as $file ) {
+        $folder_name[] = $file['folder_name'];
+    }
 
-    endforeach; ?>
-    </ul>
-</div>
-<?php endif;
+    $folder_labels = array_intersect_key($folder_name, $active_folder); ?>
+    <div class="file-management" uk-overflow-auto>
+        <ul uk-accordion data-folder-level="RootFolder">
+        <?php foreach ( $doc_files as $doc ) : 
+        if ( in_array($doc['folder_name'], array_intersect($folder_name, $active_folder)) ) : 
+            ## Root Folder
+            $RFolder = $doc['folder_name']; // Root folder names
+            $RFName = $doc['document_file']; // Root file names
+            
+            ## Sub Folder Level One       
+            $SFL1 = $doc['df_subfolder']; // Sub-folder Level 1
+            $SFL1Name = $doc['sub_folder_lists']; // Sub-folder file names
+            ?>
+            <li>
+                <a href="#" class="uk-accordion-title"><?php echo $RFolder; ?></a>
+                <div class="uk-accordion-content">
+                    
+                    <?php ## Folder Level 1
+                    if ( $SFL1 ) : ?>
+                    <ul uk-accordion data-folder-level="level-1">
+                    <?php foreach ( $SFL1Name as $doc ) :
+                        $S1Folder = $doc['sub_folder_name']; // Root folder names
+                        $S1FName = $doc['sub_document_file']; // Root file names
+
+                        ## Sub Folder Level One       
+                        $SFL2 = $doc['df2_subfolder']; // Sub-folder Level 1
+                        $SFL2Name = $doc['sub_2_folder_lists']; // Sub-folder file names
+                        ?>
+                        <li>
+                            <a href="#" class="uk-accordion-title"><?php echo $S1Folder; ?></a>
+                            <div class="uk-accordion-content">
+
+                                <?php ## Folder Level 2
+                                if ( $SFL2 ) : ?>
+                                <ul uk-accordion data-folder-level="level-2">
+                                <?php foreach ( $SFL2Name as $doc ) :
+                                    $S2Folder = $doc['sub_2_folder_name']; // Root folder names
+                                    $S2FName = $doc['sub_2_document_file']; // Root file names
+                                    ?>
+                                    <li>
+                                        <a href="#" class="uk-accordion-title"><?php echo $S2Folder; ?></a>
+                                        <div class="uk-accordion-content">
+
+                                            <?php // List all files
+                                            do_action( 'root_files', $S2FName ); ?>
+                                        </div>
+                                    </li>
+                                    <?php 
+                                endforeach; ?>
+                                </ul>
+                                <?php endif;
+
+                                // List all files
+                                do_action( 'root_files', $S1FName ); ?>
+                            </div>
+                        </li>
+                        <?php 
+                    endforeach; ?>
+                    </ul>
+                    <?php endif;
+
+                    // List all files
+                    do_action( 'root_files', $RFName ); ?>
+                </div>
+            </li>
+            <?php endif;
+        endforeach; ?>
+        </ul>
+    </div>
+
+<?php endif; 
 
 }
 add_action( 'documents', 'documents', 10, 1 );
+
+function root_files( $files ) {
+    if ( $files ) :
+    echo '<ul>';
+    foreach ( $files as $file ) {
+        echo '<li data-filetype="'.$file['subtype'].'"> <a href="'.$file['url'].'" download>'.$file['title'].'</a> </li>';
+    }
+    echo '</ul>';
+    endif;
+}
+add_action( 'root_files', 'root_files', 10, 1 );
