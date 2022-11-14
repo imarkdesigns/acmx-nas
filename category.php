@@ -35,8 +35,10 @@
         <div class="uk-container">
 
             <div class="uk-grid-match" uk-grid role="list">
-                <?php $categories = get_the_category();
-                do_action( 'categoryPost', $categories[0]->slug ); ?>
+                <?php // $categories = get_the_category();
+                $category = get_queried_object();
+                // echo $category->term_id;
+                do_action( 'categoryPost', $category->term_id ); ?>
             </div>
 
             <div class="uk-margin-large-top uk-text-center">

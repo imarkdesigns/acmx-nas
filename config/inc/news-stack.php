@@ -228,7 +228,7 @@ $categories = get_posts([
     'post_status' => 'publish',
     'has_password' => false,
     'order' => 'DESC',
-    'category_name' => $term
+    'cat' => $term
 ]); 
 
 foreach ( $categories as $post ) : 
