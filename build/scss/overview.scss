@@ -872,7 +872,7 @@ body.map {
 
 .localnav {
     z-index: 1;
-    
+
     .uk-container {
         display: flex;
         justify-content: space-between;
@@ -905,14 +905,14 @@ body.map {
     }
 
     .uk-dropbar {
-        background-color: rgba(#FFF,.9);
+        background-color: rgba(#FFF,.75);
         max-width: 1920px !important;
         width: 100% !important;
         height: calc( 100vh - 60px );
         padding: 15px;
         box-shadow: none;
         border-top: 1px solid #EEE;
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(20px);
     }
 
     .uk-button-small {
