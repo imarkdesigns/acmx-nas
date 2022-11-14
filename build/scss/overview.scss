@@ -881,9 +881,9 @@ body.map {
     h1 {
         @include bodoni();
         display: block;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         text-transform: capitalize;
-        max-width: 300px;
+        max-width: none;
         margin-right: 60px !important;
     }
 
@@ -926,6 +926,11 @@ body.map {
 
 
     @media screen and ( min-width: 640px ) {
+
+        h1 {
+            font-size: 1.5rem;
+            max-width: 667px;
+        }
         
         .uk-dropbar {
             height: auto !important;
@@ -935,7 +940,8 @@ body.map {
     }
 }
 
-.news-list {
+.news-list,
+.archive-list {
     position: relative;
     overflow: hidden;
 
@@ -1026,6 +1032,17 @@ body.map {
     .title-headline {
         @include proxima_semibold();
         font-weight: 500;
+        font-size: clamp(1rem, 0.8438rem + 0.5vw, 1.125rem);
+    }
+}
+
+.archive-list {
+    .uk-card {
+        background-color: #FFF;
+        border: 0;
+    }
+
+    .title-headline {
         font-size: clamp(1rem, 0.8438rem + 0.5vw, 1.125rem);
     }
 }

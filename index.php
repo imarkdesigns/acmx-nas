@@ -16,6 +16,7 @@
         case '37': $pageName = 'map'; break;
         case '39': $pageName = 'contact'; break;
         case '41': $pageName = 'sitemap'; break;
+        case '7196': $pageName = 'archive'; break;
 
         // Privacy Policy
         case '3': $pageName = 'legal'; break;

@@ -307,6 +307,14 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/category.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/category.php",
+      "oF" : 0
+    },
     "\/config\/acf.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1318,6 +1326,17 @@
       "sC" : 0,
       "tS" : 0
     },
+    "\/resources\/scripts\/route\/news.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/resources\/scripts\/news.js",
+      "oF" : 1,
+      "sC" : 0,
+      "tS" : 0
+    },
     "\/resources\/scripts\/route\/ondemand.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -1632,6 +1651,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/views\/pages\/about.php",
+      "oF" : 0
+    },
+    "\/views\/pages\/archive.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/views\/pages\/archive.php",
       "oF" : 0
     },
     "\/views\/pages\/asset.php" : {

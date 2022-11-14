@@ -14,13 +14,13 @@ $news_solo = get_posts([
 // var_dump($news_solo);
 // echo '</pre>';
 
-$newsOne = [];
+// $newsOne = [];
 foreach ( $news_solo as $news ) : 
 $post_id = $news->ID;
 $post_title = $news->post_title;
 $date_stamp = strtotime($news->post_date);
 $post_date = date('F j, Y', $date_stamp);
-$newsOne[] = $post_id;
+// $newsOne[] = $post_id;
 
 $term_cat = get_the_terms( $post_id, 'category' );
 $slider = get_field( 'news_gallery', $post_id ); ?>
@@ -76,16 +76,17 @@ $news_six = get_posts([
     'post_status' => 'publish',
     'has_password' => false,
     'order' => 'DESC',
-    'post__not_in' => $newsOne,
+    // 'post__not_in' => $newsOne,
+    'offset' => 1
 ]);
 
-$newsSix = [];
+// $newsSix = [];
 foreach ( $news_six as $news ) :
 $post_id = $news->ID;
 $post_title = $news->post_title;
 $date_stamp = strtotime($news->post_date);
 $post_date = date('F j, Y', $date_stamp);
-$newsSix[] = $post_id;
+// $newsSix[] = $post_id;
 
 $term_cat = get_the_terms( $post_id, 'category' ); ?>
 <li class="listitem-medium | uk-width-1-2@s uk-width-1-3@m" role="listitem">
@@ -109,7 +110,7 @@ $term_cat = get_the_terms( $post_id, 'category' ); ?>
 <?php endforeach;
 
 // Small News List  
-$newsIDs = array_merge($newsOne, $newsSix);
+// $newsIDs = array_merge($newsOne, $newsSix);
 
 // 8 Continuous News
 $news_eight = get_posts([
@@ -118,16 +119,17 @@ $news_eight = get_posts([
     'post_status' => 'publish',
     'has_password' => false,
     'order' => 'DESC',
-    'post__not_in' => $newsIDs,
+    // 'post__not_in' => $newsIDs,
+    'offset' => 7
 ]); 
 
-$newsEight = [];
+// $newsEight = [];
 foreach ( $news_eight as $news ) :
 $post_id = $news->ID;
 $post_title = $news->post_title;
 $date_stamp = strtotime($news->post_date);
 $post_date = date('F j, Y', $date_stamp);
-$newsEight[] = $post_id;
+// $newsEight[] = $post_id;
 
 $term_cat = get_the_terms( $post_id, 'category' ); ?>
 <li class="listitem-small | uk-width-1-2@s uk-width-1-3@m uk-width-1-4@l" role="listitem">
@@ -151,26 +153,38 @@ $term_cat = get_the_terms( $post_id, 'category' ); ?>
 <?php endforeach;
 
 // Export ID's
-$_POST['newsIDs'] = array_merge($newsOne, $newsSix, $newsEight);
+// $_POST['newsIDs'] = array_merge($newsOne, $newsSix, $newsEight);
 
 }
 add_action( 'newsStack', 'newsStack' );
 
 
-function newsMore( $newsIDs ) {
+function newsMore() {
 
 // More News
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-$more_news = get_posts([
-    'post_type' => [ 'post' ],
-    'posts_per_page' => 10,
-    'paged' => $paged,
-    'post_status' => 'publish',
-    'has_password' => false,
-    'order' => 'DESC',
-    'orderby' => 'menu_order',
-    'post__not_in' => $newsIDs,
-]); 
+if ( is_category() ) {
+    $more_news = get_posts([
+        'post_type' => [ 'post' ],
+        'posts_per_page' => 10,
+        'paged' => $paged,
+        'post_status' => 'publish',
+        'has_password' => false,
+        'order' => 'ASC',
+        'orderby' => 'rand',
+    ]);
+} elseif ( is_home() ) {
+    $more_news = get_posts([
+        'post_type' => [ 'post' ],
+        'posts_per_page' => 10,
+        'paged' => $paged,
+        'post_status' => 'publish',
+        'has_password' => false,
+        'order' => 'ASC',
+        'orderby' => 'menu_order',
+        'offset' => 15
+    ]);
+}
 
 foreach ( $more_news as $news ) :
 $post_id = $news->ID;
@@ -199,7 +213,111 @@ $term_cat = get_the_terms( $post_id, 'category' ); ?>
         <a href="<?php echo get_permalink( $post_id  ); ?>" class="uk-position-cover" aria-label="<?php echo $post_title; ?>" role="link"></a>
     </div>
 </div>
+
 <?php endforeach;
 
 }
-add_action( 'newsMore', 'newsMore', 10, 1 );
+add_action( 'newsMore', 'newsMore' );
+
+
+function categoryPost( $term ) {
+
+$categories = get_posts([
+    'post_type' => [ 'post' ],
+    'posts_per_page' => -1,
+    'post_status' => 'publish',
+    'has_password' => false,
+    'order' => 'DESC',
+    'category_name' => $term
+]); 
+
+foreach ( $categories as $post ) : 
+$post_id = $post->ID;
+$post_title = $post->post_title;
+$date_stamp = strtotime($post->post_date);
+$post_date = date('F j, Y', $date_stamp); ?>
+<div class="uk-width-1-2@s uk-width-1-2@m">
+    <div class="uk-card uk-card-small uk-grid-collapse uk-flex-middle" uk-grid>
+        <div class="uk-card-media-left uk-cover-container uk-width-auto">
+        <?php if ( has_post_thumbnail( $post_id ) ) {
+            $featuredID = get_post_thumbnail_id( $post_id );
+            echo wp_get_attachment_image( $featuredID, [ 150, 150, true ] );
+        } else {
+            echo '<img src="//placem.at/places?w=300&h=300&txt=0&random='.$post_id.'" width="150" height="150" alt="'.$post_title.'">';
+        } ?>
+        </div>
+        <div class="uk-width-expand">
+            <div class="uk-card-body uk-padding-remove-vertical">
+                <h3 class="title-headline | uk-margin-small-bottom"><?php echo $post_title; ?></h3>
+                <time class="uk-text-meta" datetime="<?php echo $post->post_date; ?>"><?php echo $post_date; ?></time>
+            </div>
+        </div>
+        <a href="<?php echo get_permalink( $post_id  ); ?>" class="uk-position-cover" aria-label="<?php echo $post_title; ?>" role="link"></a>
+    </div>
+</div>
+<?php endforeach;
+
+}
+add_action( 'categoryPost', 'categoryPost', 10, 1 );
+
+
+function newsArchive() {
+
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+$news = [ 
+    'post_type' => [ 'post' ],
+    'posts_per_page' => 10,
+    'paged' => $paged,
+    'post_status' => 'publish',
+    'has_password' => false,
+    'order' => 'ASC',
+    'orderby' => 'menu_order',
+];
+query_posts( $news );
+
+if ( have_posts() ) :
+    while ( have_posts() ) : the_post();
+
+    $date_stamp = strtotime(get_the_date());
+    $post_date = date('F j, Y', $date_stamp); ?>
+    <div class="news-scroll-item | uk-width-1-2@s uk-width-1-2@m">
+        <div class="uk-card uk-card-small uk-grid-collapse uk-flex-middle" uk-grid>
+            <div class="uk-card-media-left uk-cover-container uk-width-auto">
+            <?php if ( has_post_thumbnail() ) {
+                $featuredID = get_post_thumbnail_id();
+                echo wp_get_attachment_image( $featuredID, [ 150, 150, true ] );
+            } else {
+                echo '<img src="//placem.at/places?w=300&h=300&txt=0&random='.get_the_ID().'" width="150" height="150" alt="'.get_the_title().'">';
+            } ?>
+            </div>
+            <div class="uk-width-expand">
+                <div class="uk-card-body uk-padding-remove-vertical">
+                    <h3 class="title-headline | uk-margin-small-bottom"><?php echo get_the_title(); ?></h3>
+                    <time class="uk-text-meta" datetime="<?php echo get_the_date('c'); ?>"><?php echo $post_date; ?></time>
+                </div>
+            </div>
+            <a href="<?php echo get_permalink( get_the_ID() ); ?>" class="uk-position-cover" aria-label="<?php echo get_the_title(); ?>" role="link"></a>
+        </div>
+    </div>
+    <?php endwhile; wp_reset_postdata(); ?>
+    <div class="news-page-load-status | uk-width-1-1">
+        <div class="infinite-scroll-request">
+            <div class="uk-width-1-1 uk-flex uk-flex-center uk-flex-middle uk-text-muted uk-margin-remove">
+                <span class="uk-margin-small-right" uk-spinner></span> Loading, please wait... 
+            </div>
+        </div>
+    </div>
+    <div class="news-pagination | uk-flex uk-flex-between uk-width-1-1">
+        <div class="news-prev-more-link">
+            <?php previous_posts_link( 'Previous News' ); ?>
+        </div>
+        <div class="news-next-more-link uk-text-right">
+            <?php if ( get_next_posts_link() ) :
+                next_posts_link( 'Next News' );
+            endif; ?>
+        </div>
+    </div>    
+<?php endif;
+
+}
+add_action( 'newsArchive', 'newsArchive' );

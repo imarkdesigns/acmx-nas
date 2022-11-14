@@ -55,6 +55,7 @@ add_action('wp_enqueue_scripts', function() {
             case '33': // Property Management
             case '35': // News
             case '37': // Map
+            case '7196': // News Archive
                 $pageName = 'overview';
                 break;
 
@@ -91,7 +92,7 @@ add_action('wp_enqueue_scripts', function() {
         wp_enqueue_style( 'post', _css.'overview.built.css' );
     }
 
-    elseif ( is_home() ) {
+    elseif ( is_home() || is_archive() ) {
         wp_enqueue_style( 'post', _css.'overview.css' );
     }
 

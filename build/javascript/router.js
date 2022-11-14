@@ -39,6 +39,12 @@ var theme = {
         }
     }, 
 
+    archive: {
+        finalize: () => {
+            jQuery.getScript( script + 'news.js' );
+        }
+    }, 
+
     contact: {
         finalize: () => {
             jQuery.getScript( script + 'contact.js' );

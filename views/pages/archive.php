@@ -3,7 +3,7 @@
     <nav class="localnav | uk-panel uk-padding-small">
         <div class="uk-container uk-container-expand" uk-overflow-auto>
             <div>
-                <h1><?php echo 'NAS News'; ?></h1>
+                <h1><?php echo 'NAS News Archive'; ?></h1>
             </div>
             <div>
                 <button type="button" class="uk-button uk-button-small">News Categories <span uk-icon="icon: chevron-down; ratio: .7"></span></button>
@@ -28,19 +28,11 @@
         </div>
     </nav>
 
-    <section class="news-list | uk-section">
+    <section class="archive-list | uk-section">
         <div class="uk-container">
 
-            <div class="uk-headings">
-                <h2>Latest News</h2>
-            </div>
-
-            <div class="uk-grid-match uk-flex-center" uk-grid role="list">
-                <?php do_action( 'newsStack' ); ?>
-            </div>
-
-            <div class="uk-margin-large-top uk-text-center">
-                <a href="#nas-archived-news" class="uk-button uk-button-default" uk-scroll="offset: 80"> View More News </a>
+            <div class="news-scroll-wrapper | uk-grid-match" uk-grid role="list">
+                <?php do_action( 'newsArchive' ); ?>
             </div>
 
         </div>
@@ -48,22 +40,5 @@
 
     <?php
     get_template_part( _opt.'ondemand-banner' ); ?>
-
-    <section class="more-news-lists uk-section">
-        <div class="uk-container">
-
-            <div id="nas-archived-news" class="uk-headings">
-                <h2>More NAS News</h2>
-            </div>
-
-            <div class="uk-grid-match" uk-grid>
-                <?php do_action( 'newsMore' ); ?>
-            </div>
-
-            <div class="uk-margin-large-top uk-text-center">
-                <a href="<?php echo get_permalink( 7149 ); ?>" class="uk-button uk-button-default"> View Archive </a>
-            </div>
-        </div>
-    </section>
 
 </main>

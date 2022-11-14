@@ -73,10 +73,14 @@
         @include sharpText();
     }
 
+    time {
+        margin-top: 15px;
+    }
+
     figure {
         display: flex;
         justify-content: center;
-        margin-block: 60px;
+        margin-block: 30px 60px;
 
         img {
             border-radius: 3px;

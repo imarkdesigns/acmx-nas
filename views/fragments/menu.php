@@ -20,7 +20,7 @@ $mobMenu = [
 ]; 
 
 // Make Menu Top to Other Pages
-if ( !is_home() && !is_page([ 3, 31, 37 ]) && !is_singular( 'nas-stories' ) && !is_singular( 'post' ) ) {
+if ( !is_home() && !is_page([ 3, 31, 37, 7149 ]) && !is_singular( 'nas-stories' ) && !is_singular( 'post' ) && !is_archive() ) {
     if ( wp_is_mobile() ) {
         $class = 'uk-position-top xs';
     } else {
