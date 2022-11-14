@@ -280,7 +280,7 @@ if ( have_posts() ) :
 
     $date_stamp = strtotime(get_the_date());
     $post_date = date('F j, Y', $date_stamp); ?>
-    <div class="news-scroll-item | uk-width-1-2@s uk-width-1-2@m">
+    <div class="news-scroll-item uk-width-1-2@s uk-width-1-2@m">
         <div class="uk-card uk-card-small uk-grid-collapse uk-flex-middle" uk-grid>
             <div class="uk-card-media-left uk-cover-container uk-width-auto">
             <?php if ( has_post_thumbnail() ) {
@@ -300,14 +300,7 @@ if ( have_posts() ) :
         </div>
     </div>
     <?php endwhile; wp_reset_postdata(); ?>
-    <div class="news-page-load-status | uk-width-1-1">
-        <div class="infinite-scroll-request">
-            <div class="uk-width-1-1 uk-flex uk-flex-center uk-flex-middle uk-text-muted uk-margin-remove">
-                <span class="uk-margin-small-right" uk-spinner></span> Loading, please wait... 
-            </div>
-        </div>
-    </div>
-    <div class="news-pagination | uk-flex uk-flex-between uk-width-1-1">
+    <div class="news-pagination uk-flex uk-flex-between uk-width-1-1">
         <div class="news-prev-more-link">
             <?php previous_posts_link( 'Previous News' ); ?>
         </div>

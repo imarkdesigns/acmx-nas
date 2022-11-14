@@ -185,3 +185,9 @@ em {
         @include sharpText;
     }
 }
+
+// News Page Load Status
+.news-page-load-status {
+    @include proxima_light;
+    font-size: .875rem
+}

@@ -1,7 +1,7 @@
 <?php
 // Ajax Fetch JS
 function ajax_fetch() { ?>
-<script>
+<script type="text/javascript" defer>
 function fetch() {
 
     jQuery.ajax({
@@ -21,9 +21,6 @@ function fetch() {
             if ( emptyField.length > 0 ) {
                 jQuery('#datafetch').children().remove();
             }
-        },
-        error: function() {
-            
         }
     });
 }
@@ -34,7 +31,7 @@ add_action( 'wp_footer', 'ajax_fetch' );
 // Ajax Function
 function data_fetch() {
 
-    $search_query = [ 'post_type' => [ 'post', 'page', 'nas-stories', 'nast-team' ], 'nopaging' => true, 's' => esc_attr( $_POST['keyword'] ) ];
+    $search_query = [ 'post_type' => [ 'post', 'page', 'nas-stories', 'nas-team', 'nas-comments' ], 'post_status' => 'publish', 'has_password' => false, 'nopaging' => true, 's' => esc_attr( $_POST['keyword'] ) ];
     query_posts( $search_query );
 
     if ( have_posts() ) {

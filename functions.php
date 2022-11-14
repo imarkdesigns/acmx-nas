@@ -18,7 +18,6 @@ $fn_config = [
     'config/inc/news-list.php',
     'config/inc/news-stack.php',
     'config/inc/team-list.php',
-    // 'config/inc/loan-maturity-list.php',
     'config/inc/lm-refinanced.php',
     'config/inc/lm-refinanced-tic.php',
     'config/inc/lm-sold.php',
@@ -29,7 +28,6 @@ $fn_config = [
     'config/ondemand/nasis-brochure.php',
     'config/ondemand/property.php',
     'config/ondemand/documents.php',
-    // 'config/ondemand/documents-part.php',
 
 ];
 foreach ( $fn_config as $config ) {
