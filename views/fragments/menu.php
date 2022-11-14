@@ -32,7 +32,12 @@ if ( !is_home() && !is_page([ 3, 31, 37, 7196 ]) && !is_singular( 'nas-stories' 
     } else {
         $class = 'uk-position-relative';
     }
-} ?>
+} 
+
+// Quick Links
+$quickLinks = get_field( 'quick_link_list', 'option' );
+
+?>
 
 <a href="#main" id="skipToLink" class="skip-to-content-link">Skip to Content</a>
 <div data-fragment="menu" class="<?php echo $class; ?>">
@@ -46,20 +51,16 @@ if ( !is_home() && !is_page([ 3, 31, 37, 7196 ]) && !is_singular( 'nas-stories' 
                 <form class="uk-search uk-search-default uk-width-1-1" role="search">
                     <span uk-search-icon></span>
                     <label for="navbar-search" aria-label="Search NAS"><span hidden>Search NAS</span></label>
-                    <input id="navbar-search" class="uk-search-input" type="search" name="s" placeholder="Type your subject keywords here & press enter..." autocomplete="off" autofocus>
+                    <input id="navbar-search" class="uk-search-input" type="search" name="s" placeholder="Type your subject keywords here & press enter..." autocomplete="off" autofocus onkeyup="fetch()">
                 </form>
                 <a id="close-search" class="uk-navbar-toggle uk-position-center-right uk-position-small" uk-close uk-toggle="target: .navbar; animation: uk-animation-fade" href="#" aria-label="Close Search"></a>
-                <div class="quick-links | uk-background-muted">
+                <div class="quick-links | uk-background-muted" uk-overflow-auto>
+                    <div id="datafetch"></div>
                     <strong>Quick Links</strong>
                     <ul class="uk-list">
-                        <li><a href="<?php echo esc_url( get_permalink(  ) ); ?>">About NAS</a></li>
-                        <li><a href="<?php echo esc_url( get_permalink(  ) ); ?>">Frequently Asked Questions</a></li>
-                        <li><a href="<?php echo esc_url( get_permalink(  ) ); ?>">Client Comments</a></li>
-                        <li><a href="<?php echo esc_url( get_permalink(  ) ); ?>">Success Stories</a></li>
-                        <li><a href="<?php echo esc_url( get_permalink(  ) ); ?>">Loan Maturity Solutions</a></li>
-                        <li><a href="<?php echo esc_url( get_permalink(  ) ); ?>">Asset Management</a></li>
-                        <li><a href="<?php echo esc_url( get_permalink(  ) ); ?>">Property Management</a></li>
-                        <li><a href="<?php echo esc_url( get_permalink(  ) ); ?>">Our Team</a></li>
+                        <?php foreach ( $quickLinks as $links ) :
+                            echo '<li><a href="'.$links['link_url'].'">'.$links['link_label'].'</a></li>';
+                        endforeach; ?>
                     </ul>
                 </div>
             </div>

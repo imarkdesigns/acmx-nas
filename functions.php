@@ -10,6 +10,7 @@ $fn_config = [
     'config/actions.php',
     'config/assets.php',
     'config/theme.php',
+    'config/search.php',
 
     'config/inc/track-record.php',
     'config/inc/random-comments.php',
@@ -73,44 +74,6 @@ define ( '_od_footer', 'views/fragments/od-footer' );
 define ( '_od_config', 'config/ondemand/' );
 
 
-/**
- * Redirect user after successful login.
- *
- * @param string $redirect_to URL to redirect to.
- * @param string $request URL the user is coming from.
- * @param object $user Logged user's data.
- * @return string
- */
-// function themeprefix_login_redirect( $redirect_to, $request, $user ){
-
-//     $forceLogin = $_GET['wppb_force_wp_login'];
-//     if ( isset( $user->roles ) && is_array( $user->roles ) ) {
-
-//         //check for admins
-//         if ( in_array( 'investor', $user->roles ) ) {
-//             $redirect_to = '/ondemand/dashboard'; // Your redirect URL
-//         }
-//     }
-
-//     return $redirect_to;
-// }
-// add_filter( 'login_redirect', 'themeprefix_login_redirect', 10, 3 );
-
-// add_action( 'admin_menu', 'register_custom_menu_link' );
-// /**
-//  * @author    Brad Dalton
-//  * @example   http://wpsites.net/wordpress-admin/add-top-level-custom-admin-menu-link-in-dashboard-to-any-url/
-//  * @copyright 2014 WP Sites
-//  */
-// function register_custom_menu_link(){
-//     add_menu_page( 'OnDemand Dash', 'OD Dashboard', 'manage_options', '../ondemand/dashboard', wpsites_custom_menu_link(), 'dashicons-admin-site', 5 ); 
-// }
-
-// function wpsites_custom_menu_link(){
-//     site_url('ondemand/dashboard');
-//     // exit;
-// }
-
 add_action('admin_bar_menu', 'add_toolbar_items', 100);
 function add_toolbar_items($admin_bar){
     $admin_bar->add_menu( array(
@@ -121,26 +84,5 @@ function add_toolbar_items($admin_bar){
             'class' => 'od-dashboard',
         ),
     ));
-    // $admin_bar->add_menu( array(
-    //     'id'    => 'my-sub-item',
-    //     'parent' => 'my-item',
-    //     'title' => 'My Sub Menu Item',
-    //     'href'  => '#',
-    //     'meta'  => array(
-    //         'title' => __('My Sub Menu Item'),
-    //         'target' => '_blank',
-    //         'class' => 'my_menu_item_class'
-    //     ),
-    // ));
-    // $admin_bar->add_menu( array(
-    //     'id'    => 'my-second-sub-item',
-    //     'parent' => 'my-item',
-    //     'title' => 'My Second Sub Menu Item',
-    //     'href'  => '#',
-    //     'meta'  => array(
-    //         'title' => __('My Second Sub Menu Item'),
-    //         'target' => '_blank',
-    //         'class' => 'my_menu_item_class'
-    //     ),
-    // ));
 }
+

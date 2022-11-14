@@ -483,6 +483,14 @@
       "oAP" : "\/config\/ondemand\/property.php",
       "oF" : 0
     },
+    "\/config\/search.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/config\/search.php",
+      "oF" : 0
+    },
     "\/config\/theme.php" : {
       "cB" : 0,
       "ft" : 8192,

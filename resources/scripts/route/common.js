@@ -33,7 +33,7 @@
             });
 
             // Remove Search input value when exiting search
-            UIkit.util.on('.nav-overlay', 'beforeshow', () => {
+            UIkit.util.on('.navbar-search-field', 'beforeshow', () => {
                 jQuery('.uk-search-input').val('');
             });
 
