@@ -61,7 +61,7 @@
             </div>
 
             <div class="uk-margin-large-top uk-text-center">
-                <a href="<?php echo get_permalink( 7149 ); ?>" class="uk-button uk-button-default"> View Archive </a>
+                <a href="<?php echo get_permalink( 7196 ); ?>" class="uk-button uk-button-default"> View Archive </a>
             </div>
         </div>
     </section>
