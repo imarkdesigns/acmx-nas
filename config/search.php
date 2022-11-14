@@ -14,9 +14,18 @@ function fetch() {
         success: function(data) {
             jQuery('#datafetch').html(data);
             jQuery('#datafetch .search-result li:empty').remove();
+        
+            var emptyField = jQuery('#navbar-search').filter(function(index, element) {
+                return element.value == '';
+            });
+            if ( emptyField.length > 0 ) {
+                jQuery('#datafetch').children().remove();
+            }
+        },
+        error: function() {
+            
         }
     });
-
 }
 </script>
 <?php }
