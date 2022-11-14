@@ -38,7 +38,7 @@ function data_fetch() {
             $search = get_the_title();
 
             if ( stripos("/{$search}/", $param) != false ) {
-                echo '<a href="'.esc_url( get_post_permalink() ).'">'.get_the_title().'</a>';
+                echo '<a href="'.esc_url( get_permalink( get_the_ID() ) ).'">'.get_the_title().'</a>';
             }
 
             echo '</li>';
@@ -46,7 +46,7 @@ function data_fetch() {
         echo '</ul>';
     } else {
         echo '<strong>Suggested Searches</strong>';
-        echo '<ul class="search-result | uk-list"><li><span class="uk-text-small">No search keyword found.</span></li></ul>';
+        echo '<ul class="search-result | uk-list"><li><span class="uk-text-small">No search keyword found</span></li></ul>';
     }
 
     die();
