@@ -2,7 +2,7 @@
 // Ajax Fetch JS
 function ajax_fetch() { ?>
 <script type="text/javascript" defer>
-function fetch() {
+function fetchMenu() {
 
     jQuery.ajax({
         url: '<?php echo admin_url('admin-ajax.php'); ?>',
@@ -21,6 +21,31 @@ function fetch() {
             if ( emptyField.length > 0 ) {
                 jQuery('#datafetch').children().remove();
             }
+        }
+    });
+}
+
+function fetchMobile() {
+
+    jQuery.ajax({
+        url: '<?php echo admin_url('admin-ajax.php'); ?>',
+        type: 'post',
+        data: {
+            action: 'data_fetch',
+            keyword: jQuery('#dropbar-search').val()
+        },
+        success: function(data) {
+            jQuery('#datafetchMobile').html(data);
+            jQuery('#datafetchMobile .search-result li:empty').remove();
+            
+            // jQuery('#dropbar-search').on('blur', function(e) {
+            var emptyField = jQuery('#dropbar-search').filter(function(index, element) {
+                return element.value == '';
+            });
+            if ( emptyField.length > 0 ) {
+                jQuery('#datafetchMobile').children().remove();
+            }
+            // });
         }
     });
 }

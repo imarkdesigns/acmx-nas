@@ -51,7 +51,7 @@ $quickLinks = get_field( 'quick_link_list', 'option' );
                 <form class="uk-search uk-search-default uk-width-1-1" role="search">
                     <span uk-search-icon></span>
                     <label for="navbar-search" aria-label="Search NAS"><span hidden>Search NAS</span></label>
-                    <input id="navbar-search" class="uk-search-input" type="search" name="s" placeholder="Type your subject keywords here & press enter..." autocomplete="off" autofocus onkeyup="fetch()">
+                    <input id="navbar-search" class="uk-search-input" type="search" name="s" placeholder="Type your subject keywords here..." autocomplete="off" autofocus onkeyup="fetchMenu()">
                 </form>
                 <a id="close-search" class="uk-navbar-toggle uk-position-center-right uk-position-small" uk-close uk-toggle="target: .navbar; animation: uk-animation-fade" href="#" aria-label="Close Search"></a>
                 <div class="quick-links | uk-background-muted" uk-overflow-auto>
@@ -80,8 +80,9 @@ $quickLinks = get_field( 'quick_link_list', 'option' );
                 <form class="uk-search uk-search-default uk-width-1-1" role="search">
                     <span uk-search-icon></span>
                     <label for="dropbar-search" aria-label="Search NAS"><span hidden>Search NAS</span></label>
-                    <input id="dropbar-search" class="uk-search-input" type="search" name="s" placeholder="Type your keywords here & tap go..." autocomplete="off" autofocus>
-                </form>
+                    <input id="dropbar-search" class="uk-search-input" type="search" name="s" placeholder="Type your keywords here..." autocomplete="off" autofocus onkeyup="fetchMobile()">
+                </form>                
+                <div id="datafetchMobile"></div>
                 <?php wp_nav_menu( $mobMenu ); ?>
             </div>
         </div>
