@@ -72,7 +72,7 @@ function data_fetch() {
                 echo '<a href="'.esc_url( get_permalink( get_the_ID() ) ).'">'.get_the_title().'</a>';
             }
 
-            echo '</li>';
+            
         endwhile; wp_reset_postdata();
         echo '</ul>';
     } else {

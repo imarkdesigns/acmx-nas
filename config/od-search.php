@@ -77,11 +77,6 @@ function od_fetch() {
                     echo '<li><a href="'.esc_url( get_permalink( $property->ID ) ).'">'.$property->post_title.'</a></li>';
                 }
             }
-
-            if ( stripos("/{$search}/", $param) == false ) {
-                echo '<li><span class="uk-text-small uk-text-muted">No search keyword found</span></li>';
-            }
-
             echo '</ul>';
         endif;
     }

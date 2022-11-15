@@ -85,6 +85,13 @@
 
             });
 
+            jQuery('form[role="search"]').on('submit', function (e) {
+                // if (event.keyCode === 10 || event.keyCode === 13) {
+                //     event.preventDefault();
+                // }
+                e.preventDefault();
+            });
+
         }    
     }, 100);
 
