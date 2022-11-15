@@ -11,6 +11,7 @@ $fn_config = [
     'config/assets.php',
     'config/theme.php',
     'config/search.php',
+    'config/od-search.php',
 
     'config/inc/track-record.php',
     'config/inc/random-comments.php',

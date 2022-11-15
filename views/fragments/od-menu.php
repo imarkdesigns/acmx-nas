@@ -45,12 +45,16 @@ if ( wp_is_mobile() ) : ?>
         <div class="uk-width-3-4">
             <div class="uk-grid-collapse uk-flex-middle" uk-grid>
 
-                <div class="od-search | uk-width-1-2@s uk-visible@s">
+                <div class="od-search | uk-position-relative uk-width-1-2@s uk-visible@s">
                     <form class="uk-search uk-search-navbar" role="search">
                         <span uk-search-icon></span>
                         <label for="search-property" aria-label="Search NAS"><span hidden>Search NAS</span></label>
-                        <input id="search-property" class="uk-search-input" type="search" placeholder="Search Property">
+                        <input id="search-property" name="s" class="uk-search-input" type="search" placeholder="Search Property" autocomplete="off" onkeyup="OnDemandSearch()">
+                        <a hidden id="close-search" class="uk-navbar-toggle uk-position-center-right uk-position-small" uk-close uk-toggle="target: .navbar; animation: uk-animation-fade" href="#" aria-label="Close Search"></a>
                     </form>
+                    <div class="quick-links" hidden>
+                        <div id="ondemandFetch"></div>
+                    </div>
                 </div>
                 <!-- Search Property -->
 

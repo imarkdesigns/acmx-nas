@@ -427,6 +427,14 @@
       "oAP" : "\/config\/index.php",
       "oF" : 0
     },
+    "\/config\/od-search.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/config\/od-search.php",
+      "oF" : 0
+    },
     "\/config\/ondemand\/documents-part.php" : {
       "cB" : 0,
       "ft" : 8192,

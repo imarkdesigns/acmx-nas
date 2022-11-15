@@ -15,7 +15,7 @@
                 jQuery('.my-properties').find('.property-list').css('height',_window);
             }
 
-        }    
+        }
     }, 100);
 
 })(jQuery);
