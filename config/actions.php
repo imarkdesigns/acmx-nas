@@ -242,3 +242,16 @@ add_filter( 'admin_body_class', 'admin_body_class' );
 //     endif;
 // }
 // add_action( 'admin_menu', 'wpse28782_remove_menu_items' );
+
+// Add hook to WP Admin Top Navigation
+add_action('admin_bar_menu', 'add_toolbar_items', 100);
+function add_toolbar_items($admin_bar){
+    $admin_bar->add_menu( array(
+        'id'    => 'od-dashboard',
+        'title' => 'OnDemand Dashboard',
+        'href'  => site_url( '/ondemand/dashboard' ),
+        'meta'  => array(
+            'class' => 'od-dashboard',
+        ),
+    ));
+}
