@@ -5,12 +5,27 @@ $userID = get_current_user_id();
 $directories = get_field( 'directory_list', 'user_'.$userID );
 
 if ( $directories ) :
+
+foreach ( $directories as $unique_dir ) {
+    $property_IDs[] = $unique_dir['property']->ID;
+    $property_IDs = array_unique($property_IDs);
+}
+
+$myProperties = get_posts([
+    'post_type' => [ 'nas-ondemand' ],
+    'posts_per_page' => -1,
+    'post_status' => 'publish',
+    'has_password' => false,
+    'orderby' => 'post__in',
+    'order' => 'ASC',
+    'post__in' => $property_IDs
+]);
+
 ?>
 <ul class="mp-list">
-    <?php foreach ( $directories as $dir ) :
-    $property = $dir['property'];
-    $post_id = $property->ID;
-    $post_title = $property->post_title;
+    <?php foreach ( $myProperties as $dir ) :
+    $post_id = $dir->ID;
+    $post_title = $dir->post_title;
 
     $description = get_field( 'property_description', $post_id );
     $term_cat = get_the_terms( $post_id, 'ondemand-categories' ); ?>
