@@ -190,6 +190,11 @@
         font-size: 2rem;
         line-height: 1;
         @include sharpText;
+
+        span {
+            font-size: 1.125rem;
+            font-variant-caps: all-small-caps;
+        }
     }
 
     figure {

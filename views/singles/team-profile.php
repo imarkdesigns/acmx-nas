@@ -139,7 +139,7 @@ $_GET['direct_mail'] = $email;
                 <div class="uk-grid-large uk-flex-middle" uk-grid>
                     <div <?php echo $setClass; ?>>
                         <div class="uk-panel">
-                            <h2>Get to Know <br> <?php echo $title; ?></h2>
+                            <h2><span>Get to Know</span> <br> <?php echo $title; ?></h2>
                             <?php echo $journal['journal']; ?>
                         </div>
                     </div>
