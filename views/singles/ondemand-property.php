@@ -16,7 +16,7 @@
             $nasis_ai_link = get_field( 'ai_panel', 'option' ); ?>
             <div class="nasis-investments | uk-background-secondary uk-padding-small">
                 <?php if ( $nasis_ai_link ) : ?>
-                <div class="nasis-availabe-investments | uk-position-relative uk-background-cover uk-height-medium uk-margin-small-bottom" data-src="//placem.at/places?w=640&h=360&txt=0&random=1" uk-img>
+                <div class="nasis-availabe-investments | uk-position-relative uk-background-cover uk-height-medium uk-margin-small-bottom" data-src="<?php echo _uri.'/resources/images/bg-ondemand-building.jpg'; ?>" uk-img>
                     <div class="uk-overlay uk-position-center uk-flex uk-flex-column uk-flex-center uk-flex-middle uk-position-z-index">
                         <img src="<?php echo _uri.'/resources/images/ondemand/nasis-logo.png'; ?>" class="uk-margin-small-bottom" width="200" height="50" alt="NAS Investment Solutions">
                         <a href="<?php echo $nasis_ai_link['nasis_url']; ?>" class="uk-button uk-button-primary" target="_blank"> <?php echo $nasis_ai_link['nasis_btn']; ?> </a>

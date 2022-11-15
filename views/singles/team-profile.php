@@ -125,13 +125,19 @@ $_GET['direct_mail'] = $email;
         <?php endif; ?>
     </section>
 
-    <?php if ( !empty($journal['featured_photo']) || !empty($journal['journal']) ) : ?>
+    <?php if ( !empty($journal['featured_photo']) || !empty($journal['journal']) ) : 
+
+    if ( !empty($journal['featured_photo']) ) {
+        $setClass = 'class="uk-width-1-2@m"';
+    } else {
+        $setClass = 'class="uk-width-1-1"';
+    } ?>
     <section class="get-to-know | uk-section">
         <div class="uk-container uk-container-small">
             
             <article class="uk-article">
                 <div class="uk-grid-large uk-flex-middle" uk-grid>
-                    <div class="uk-width-1-2@m">
+                    <div >
                         <div class="uk-panel">
                             <h2>Get to Know <br> <?php echo $title; ?></h2>
                             <?php echo $journal['journal']; ?>
