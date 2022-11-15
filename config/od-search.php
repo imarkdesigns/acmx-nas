@@ -66,19 +66,24 @@ function od_fetch() {
             'post__in' => $post_id
         ]);
 
-        echo '<strong>Property Search Result:</strong>';
-        echo '<ul class="search-result | uk-list">';
-        foreach ( $search_properties as $property ) {
-            $param = esc_attr($_POST['keyword']);
-            $search = $property->post_title;
+        if ( $search_properties ) :
+            echo '<strong>Property Search Result:</strong>';
+            echo '<ul class="search-result | uk-list">';
+            foreach ( $search_properties as $property ) {
+                $param = esc_attr($_POST['keyword']);
+                $search = $property->post_title;
 
-            if ( stripos("/{$search}/", $param) != false ) {
-                echo '<li><a href="'.esc_url( get_permalink( $property->ID ) ).'">'.$property->post_title.'</a></li>';
-            } elseif ( stripos("/{$search}/", $param) !== false ) {
-                echo '<li><a href="'.esc_url( get_permalink( $property->ID ) ).'">'.$property->post_title.'</a></li>';
+                if ( stripos("/{$search}/", $param) !== false ) {
+                    echo '<li><a href="'.esc_url( get_permalink( $property->ID ) ).'">'.$property->post_title.'</a></li>';
+                }
             }
-        }
-        echo '</ul>';
+
+            if ( stripos("/{$search}/", $param) == false ) {
+                echo '<li><span class="uk-text-small uk-text-muted">No search keyword found</span></li>';
+            }
+
+            echo '</ul>';
+        endif;
     }
 
     die();
