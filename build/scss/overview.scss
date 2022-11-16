@@ -49,6 +49,16 @@
 
 .about-track-record {
     background-image: linear-gradient(120deg, $primary-clr 0%, darken($primary-clr,10%) 100%);
+
+
+    .counter:has(.is-visible) {
+        opacity: 1;
+    }
+
+    .counter:not(.is-visible) {
+        opacity: 0;
+        transition: opacity 300ms ease-out;
+    }
 }
 
 .track-record-wrapper {
