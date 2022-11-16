@@ -3,6 +3,7 @@
         'common/fonts';
 
 .about-lead-video {
+    background-color: #FFF;
     // h1 {
     //     @include proxima_bold;
     //     font-size: clamp(1.5rem, 1.2188rem + 1.4063vw, 2.625rem);
@@ -943,7 +944,8 @@ body.map {
 }
 
 .news-list,
-.archive-list {
+.archive-list,
+.search-list {
     position: relative;
     overflow: hidden;
 
@@ -1018,6 +1020,10 @@ body.map {
     }
 }
 
+.search-list::after {
+    content: 'Search Result';
+}
+
 .more-news-lists {
     .uk-headings {
         margin-bottom: 30px;
@@ -1038,7 +1044,8 @@ body.map {
     }
 }
 
-.archive-list {
+.archive-list,
+.search-list {
     .uk-card {
         background-color: #FFF;
         border: 0;

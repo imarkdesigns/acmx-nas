@@ -385,6 +385,11 @@
     }    
 }
 
+[data-fragment="hero"].story-single {
+
+}
+
+
 [data-fragment="hero"].comments {
     background-color: #F5F5F5;
     min-height: 50vh;
@@ -543,7 +548,7 @@
 
 [data-fragment="hero"].story-single {
     .uk-padding-large {
-        padding-bottom: 0;
+        padding-bottom: 40px;
     }
 
     h1 {

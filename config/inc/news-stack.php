@@ -314,3 +314,61 @@ if ( have_posts() ) :
 
 }
 add_action( 'newsArchive', 'newsArchive' );
+
+
+function searchResult( $param ) {
+
+    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+    $searches = [ 
+        'post_type' => [ 'post', 'page', 'nas-stories', 'nas-team', 'nas-comments' ],
+        's' => $param,
+        'paged' => $paged,
+        'posts_per_page' => 10,
+        'post_status' => 'publish',
+        'has_password' => false,
+    ];
+    query_posts( $searches );
+
+    if ( have_posts() ) :
+        while ( have_posts() ) : the_post();
+
+        $date_stamp = strtotime(get_the_date());
+        $post_date = date('F j, Y', $date_stamp); 
+
+        $param = esc_attr( $param );
+        $search = get_the_title();
+
+        if ( stripos("/{$search}/", $param) !== false ) : ?>
+        <div class="news-scroll-item uk-width-1-2@s uk-width-1-2@m">
+            <div class="uk-card uk-card-small uk-grid-collapse uk-flex-middle" uk-grid>
+                <div class="uk-card-media-left uk-cover-container uk-width-auto">
+                <?php if ( has_post_thumbnail() ) {
+                    $featuredID = get_post_thumbnail_id();
+                    echo wp_get_attachment_image( $featuredID, [ 150, 150, true ] );
+                } else {
+                    echo '<img src="//placem.at/places?w=300&h=300&txt=0&random='.get_the_ID().'" width="150" height="150" alt="'.get_the_title().'">';
+                } ?>
+                </div>
+                <div class="uk-width-expand">
+                    <div class="uk-card-body uk-padding-remove-vertical">
+                        <h3 class="title-headline | uk-margin-small-bottom"><?php echo get_the_title(); ?></h3>
+                        <time class="uk-text-meta" datetime="<?php echo get_the_date('c'); ?>"><?php echo $post_date; ?></time>
+                    </div>
+                </div>
+                <a href="<?php echo get_permalink( get_the_ID() ); ?>" class="uk-position-cover" aria-label="<?php echo get_the_title(); ?>" role="link"></a>
+            </div>
+        </div>
+        <?php
+        endif;
+        
+        endwhile; wp_reset_postdata();
+
+    else : ?>
+
+        <div class="uk-width-expand uk-height-large uk-flex uk-flex-middle uk-text-center">
+            <p class="uk-h3 uk-text-muted">No search keyword found </p>
+        </div>
+
+    <?php endif;
+}
+add_action( 'searchResult', 'searchResult', 10, 1 );

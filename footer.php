@@ -9,7 +9,8 @@
     get_template_part( _kuki );
 
     // Add your custom script below this line
-
+    ?>
+    <?php
     // End
 
     echo '</body>'."\n"; // end of body

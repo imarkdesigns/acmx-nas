@@ -71,3 +71,17 @@ define ( '_ondemand', 'views/ondemand/' );
 define ( '_od_menu', 'views/fragments/od-menu' );
 define ( '_od_footer', 'views/fragments/od-footer' );
 define ( '_od_config', 'config/ondemand/' );
+
+
+function bnfw_shortcode_futuredate() {
+    $future_date = date( 'F j, Y', strtotime( '+1 year' ) );
+    return $future_date;
+}
+add_shortcode( 'future_date', 'bnfw_shortcode_futuredate' );
+
+add_filter( 'wp_mail', function( $args ) {
+    $args['message'] = do_shortcode( $args['message'] );
+    return $args;
+}, 1, 1 );
+
+

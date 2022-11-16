@@ -93,7 +93,32 @@
                 e.preventDefault();
             });
 
+            var _niceName = getUrlParameter('nnid');
+            if ( window.location.href.indexOf('?nnid=') > 0 ) {
+                jQuery('.login-form #wppb-recover-password').find('#username_email').val(_niceName);
+            } else {
+                jQuery('.login-form #wppb-recover-password').find('#username_email').val();
+            }
+            
+
         }    
     }, 100);
 
 })(jQuery);
+
+// Get the Parameter
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+    return false;
+};

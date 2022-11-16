@@ -2,7 +2,7 @@
 
 <header data-fragment="hero" class="story-single | uk-flex uk-flex-center uk-flex-middle uk-text-center">
     <div class="stories-header | uk-padding-large">
-        <h1><?php the_title(); ?></h1>
+        <h1><?php the_title(); ?>, <span class="uk-text-muted"><?php the_field( 'ss_location' ); ?></span></h1>
         <div class="uk-text-center"> <hr class="uk-divider-small uk-margin-medium"> </div>
         <h2 class="uk-margin-bottom"><?php the_field( 'ss_lead' ); ?></h2>
         <figure>
@@ -14,9 +14,6 @@
                 echo '<picture class="story-item-image"> <img src="//placem.at/places?w=1280&h=720&txt=0&random='.get_the_ID().'" alt="'.get_the_title().'"> </picture>';
             } ?>
             </picture>
-            <figcaption class="uk-padding-small">
-                <address class="property-location | uk-text-meta"><?php the_field( 'ss_location' ); ?></address>
-            </figcaption>
         </figure>
     </div>
 </header>

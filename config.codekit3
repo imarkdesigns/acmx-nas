@@ -1508,6 +1508,14 @@
       "oAP" : "\/resources\/video\/About-NAS.mp4",
       "oF" : 0
     },
+    "\/search.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/search.php",
+      "oF" : 0
+    },
     "\/single.php" : {
       "cB" : 0,
       "ft" : 8192,
