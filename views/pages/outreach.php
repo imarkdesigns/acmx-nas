@@ -39,6 +39,24 @@ $or_pg_faq = get_field( 'pg_faq' );
 
 <main id="main" class="main" role="main">
 
+    <section class="outreach-karen-speech | uk-section uk-section-muted">
+        <div class="uk-container">
+            
+            <article class="uk-article">
+                <div class="uk-flex-top uk-margin-top" uk-grid>
+                    <div class="uk-width-1-3@m uk-text-center uk-flex-last uk-flex-first@m">
+                        <?php $photo = $or_community['upload_photo'];
+                        echo wp_get_attachment_image( $photo['ID'], 'full', '', [ 'class' => 'uk-border-rounded uk-box-shadow-medium' ] ); ?>
+                    </div>
+                    <div class="uk-width-2-3@m">
+                        <?php echo $or_community['content']; ?>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
     <section class="outreach-people | uk-section uk-section-medium-dark uk-section-large uk-light">
         <div class="uk-container uk-container-small">
             <div class="uk-panel uk-margin-large-bottom uk-text-center">
@@ -80,24 +98,6 @@ $or_pg_faq = get_field( 'pg_faq' );
                 </div>
                 <?php endforeach; ?>
             </div>
-        </div>
-    </section>
-
-    <section class="outreach-karen-speech | uk-section uk-section-muted">
-        <div class="uk-container">
-            
-            <article class="uk-article">
-                <div class="uk-flex-top uk-margin-top" uk-grid>
-                    <div class="uk-width-1-3@m uk-text-center uk-flex-last uk-flex-first@m">
-                        <?php $photo = $or_community['upload_photo'];
-                        echo wp_get_attachment_image( $photo['ID'], 'full', '', [ 'class' => 'uk-border-rounded uk-box-shadow-medium' ] ); ?>
-                    </div>
-                    <div class="uk-width-2-3@m">
-                        <?php echo $or_community['content']; ?>
-                    </div>
-                </div>
-            </article>
-
         </div>
     </section>
 
