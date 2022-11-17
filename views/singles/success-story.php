@@ -2,7 +2,7 @@
 
 <header data-fragment="hero" class="story-single | uk-flex uk-flex-center uk-flex-middle uk-text-center">
     <div class="stories-header | uk-padding-large">
-        <h1><?php the_title(); ?>, <span class="uk-text-muted"><?php the_field( 'ss_location' ); ?></span></h1>
+        <h1><?php the_title(); ?> | <span class="uk-text-muted"><?php the_field( 'ss_location' ); ?></span></h1>
         <div class="uk-text-center"> <hr class="uk-divider-small uk-margin-medium"> </div>
         <h2 class="uk-margin-bottom"><?php the_field( 'ss_lead' ); ?></h2>
         <figure>
