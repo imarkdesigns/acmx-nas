@@ -77,3 +77,32 @@ function unique_repeater_sub_field($valid, $value, $field, $input) {
   
   return $valid;
 }
+
+// Shortcode for Gallery
+function pm_gallery_func() {
+
+$images = get_field( 'pmgmt_photos' );
+
+if ( $images ) :
+$gallery = '<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="clsActivated: uk-transition-active; center: true">';
+    $gallery .= '<ul class="uk-slider-items uk-grid uk-flex-middle">';
+    foreach ( $images as $img ) :
+    $gallery .= '<li class="uk-width-1-1">';
+        $gallery .= '<div class="uk-panel">';
+            $gallery .= wp_get_attachment_image( $img['id'], 'full' );
+            $gallery .= '<div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">';
+                $gallery .= '<p class="uk-margin-remove">'.$img['caption'].'</p>';
+            $gallery .= '</div>';
+        $gallery .= '</div>';
+    $gallery .= '</li>';
+    endforeach;
+    $gallery .= '</ul>';
+    $gallery .= '<a class="uk-position-center-left uk-position-small uk-hidden-hover" aria-label="Previous" href="#" uk-slidenav-previous uk-slider-item="previous"></a>';
+    $gallery .= '<a class="uk-position-center-right uk-position-small uk-hidden-hover" aria-label="Next" href="#" uk-slidenav-next uk-slider-item="next"></a>';
+$gallery .= '</div>';
+endif;
+
+return $gallery;
+
+}
+add_shortcode( 'pm_gallery', 'pm_gallery_func' );
