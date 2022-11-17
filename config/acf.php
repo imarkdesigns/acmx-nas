@@ -84,7 +84,7 @@ function pm_gallery_func() {
 $images = get_field( 'pmgmt_photos' );
 
 if ( $images ) :
-$gallery = '<div class="pm-gallery | uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="clsActivated: uk-transition-active; center: true">';
+$gallery = '<div class="pm-gallery | uk-position-relative uk-visible-toggle uk-margin-bottom uk-light" tabindex="-1" uk-slider="clsActivated: uk-transition-active; center: true">';
     $gallery .= '<ul class="uk-slider-items uk-grid uk-flex-middle">';
     foreach ( $images as $img ) :
     $gallery .= '<li class="uk-width-1-1">';
