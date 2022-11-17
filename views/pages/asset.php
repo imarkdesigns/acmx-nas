@@ -65,7 +65,7 @@ $assets = get_field( 'am_list' );
                             <div class="uk-panel">
                                 <?php echo wp_get_attachment_image( $photos['id'], 'full' );
 
-                                if ( empty($photos['caption']) ) : ?>
+                                if ( !empty($photos['caption']) ) : ?>
                                 <div class="slideshow-caption | uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
                                     <?php echo $photos['caption'] ?>
                                 </div>
