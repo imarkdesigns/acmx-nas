@@ -47,10 +47,10 @@ $assets = get_field( 'am_list' );
     $content  = $asset['aml_lead_content'];
     $excerpt  = $asset['asset_excerpt_content'];
 
-    $fphoto   = $asset['aml_photo'];
+    $fphotos  = $asset['aml_photo'];
 
     // echo '<pre>';
-    // var_dump($asset);
+    // var_dump($fphoto);
     // echo '</pre>';
 
     ?>
@@ -60,17 +60,19 @@ $assets = get_field( 'am_list' );
             <article class="uk-card">
                 <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="clsActivated: uk-transition-active; center: true">
                     <ul class="uk-slider-items uk-grid">
+                        <?php foreach ( $fphotos as $photos ) : ?>
                         <li class="uk-width-1-1">
                             <div class="uk-panel">
-                                <?php echo wp_get_attachment_image( $fphoto['id'], 'full' );
-                                
-                                if ( empty($fphoto['caption']) ) : ?>
+                                <?php echo wp_get_attachment_image( $photos['id'], 'full' );
+
+                                if ( empty($photos['caption']) ) : ?>
                                 <div class="slideshow-caption | uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
-                                    <?php echo $fphoto['caption'] ?>
+                                    <?php echo $photos['caption'] ?>
                                 </div>
                                 <?php endif; ?>
                             </div>
                         </li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
 
