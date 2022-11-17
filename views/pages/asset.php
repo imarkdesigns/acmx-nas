@@ -74,6 +74,8 @@ $assets = get_field( 'am_list' );
                         </li>
                         <?php endforeach; ?>
                     </ul>
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" aria-label="Previous" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" aria-label="Next" href="#" uk-slidenav-next uk-slider-item="next"></a>
                 </div>
 
                 <div class="uk-card-body uk-text-center">
