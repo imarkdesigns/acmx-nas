@@ -68,12 +68,35 @@ if ( $folders ) :
                                 <?php foreach ( $SFL2Name as $doc ) :
                                     $S2Folder = $doc['sub_2_folder_name']; // Root folder names
                                     $S2FName = $doc['sub_2_document_file']; // Root file names
+
+                                    ## Sub Folder Level One       
+                                    $SFL3 = $doc['df3_subfolder']; // Sub-folder Level 2
+                                    $SFL3Name = $doc['sub_3_folder_lists']; // Sub-folder file names                                    
                                     ?>
                                     <li>
                                         <a href="#" class="uk-accordion-title"><?php echo $S2Folder; ?></a>
                                         <div class="uk-accordion-content">
 
-                                            <?php // List all files
+                                            <?php ## Folder Level 3
+                                            if ( $SFL2 ) : ?>
+                                            <ul uk-accordion data-folder-level="level-3">
+                                            <?php foreach ( $SFL3Name as $doc ) :
+                                                $S3Folder = $doc['sub_3_folder_name']; // Root folder names
+                                                $S3FName = $doc['sub_3_document_file']; // Root file names
+                                                ?>
+                                                <li>
+                                                    <a href="#" class="uk-accordion-title"><?php echo $S3Folder; ?></a>
+                                                    <div class="uk-accordion-content">
+
+                                                        <?php // List all files
+                                                        do_action( 'root_files', $S3FName ); ?>
+                                                    </div>
+                                                </li>
+                                                <?php 
+                                            endforeach; ?>
+                                            </ul>
+                                            <?php endif; 
+                                            // List all files
                                             do_action( 'root_files', $S2FName ); ?>
                                         </div>
                                     </li>
