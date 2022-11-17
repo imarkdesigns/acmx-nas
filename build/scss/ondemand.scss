@@ -626,6 +626,19 @@
         background-size: auto 24px;
     }
 
+    // Exclusive for Empty Folders
+    .uk-accordion [data-folder="empty"] > .uk-accordion-title::before,
+    .uk-accordion [data-folder="empty"] > .uk-accordion-title::before {
+        background-image: url(#{$img}/ondemand/folder-grey-close.png);
+        background-size: auto 24px;
+    }
+
+    .uk-accordion [data-folder="empty"].uk-open > .uk-accordion-title::before,
+    .uk-accordion [data-folder="empty"].uk-open > .uk-accordion-title::before {
+        background-image: url(#{$img}/ondemand/folder-grey-open.png);
+        background-size: auto 24px;
+    }
+
     .uk-accordion .uk-accordion-content ul:not(.uk-accordion) {
         display: flex;
         flex-flow: row wrap;

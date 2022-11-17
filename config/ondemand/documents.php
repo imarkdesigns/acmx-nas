@@ -33,8 +33,17 @@ if ( $folders ) :
             ## Sub Folder Level One       
             $SFL1 = $doc['df_subfolder']; // Sub-folder Level 1
             $SFL1Name = $doc['sub_folder_lists']; // Sub-folder file names
+
+            // For Tax Packages Folder
+            if ( str_contains($doc['folder_name'], 'Tax Packages') ) {
+                $data_folder_label = 'data-folder="tax-packages"';
+            } else if ( empty($RFName) && $SFL1 == false ) {
+                $data_folder_label = 'data-folder="empty"';
+            } else {
+                $data_folder_label = '';
+            }
             ?>
-            <li>
+            <li <?php echo $data_folder_label; ?>>
                 <a href="#" class="uk-accordion-title"><?php echo $RFolder; ?></a>
                 <div class="uk-accordion-content">
                     

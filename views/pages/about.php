@@ -48,6 +48,7 @@ $nas_services = get_field( 'aboutNAS_services' );
     </div>
     <?php endif; ?>
 
+    <?php /* <div class="about-track-record | uk-section uk-section-secondary uk-section-large uk-flex uk-flex-center uk-flex-middle uk-text-center uk-position-z-index-negative" uk-sticky="position: bottom; overflow-flip: true; start: -100%; end: 0"> */ ?>
     <div class="about-track-record | uk-section uk-section-secondary uk-section-large uk-flex uk-flex-center uk-flex-middle uk-text-center">
         <div class="uk-container uk-container-small">
             <article class="uk-article uk-margin-large-bottom">
