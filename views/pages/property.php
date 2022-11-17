@@ -10,6 +10,12 @@ $pm_hdr_bg = get_field( 'hdr_photo' );
             <?php echo $pm_hdr_content; ?>
         </div>
     </div>
+
+    <div class="uk-position-small uk-position-bottom-left uk-width-1-1 uk-light">
+        <div class="hdr-caption | uk-container uk-container-small">
+            <?php echo nl2br($pm_hdr_bg['description']); ?>
+        </div>
+    </div>     
 </header>
 
 <main id="main" class="main" role="main">
