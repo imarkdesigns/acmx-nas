@@ -339,3 +339,83 @@
     }
 
 }
+
+.localnav {
+    z-index: 1;
+    border-bottom: 1px solid #EEE;
+
+    .uk-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-inline: 0;
+    }
+
+    h1 {
+        @include bodoni();
+        display: block;
+        font-size: 1.25rem;
+        text-transform: capitalize;
+        max-width: none;
+        margin: 0;
+    }
+
+
+    @media screen and ( min-width: 640px ) {
+
+        h1 {
+            font-size: 1.5rem;
+            max-width: 667px;
+        }
+
+    }
+}
+
+.sitemap {
+
+    div.uk-text-bold {
+        @include proxima_semibold;
+        font-size: 1.125rem;
+        font-weight: 600;
+    }
+
+    .sitemap-news ul.uk-list {
+        li {
+            padding-right: 30px;
+            margin-top: 15px;
+        }
+    }
+
+    ul.uk-list > li {
+        font-size: 1rem;
+        margin-top: 5px !important;
+    }
+
+    ul.uk-list > li > a,
+    [uk-grid] > ul ul a {
+        color: #888;
+
+        &:focus,
+        &:hover {
+            color: $primary-clr;
+        }
+    }
+
+    [uk-grid] > ul li {
+        list-style-type: none;
+        font-size: 1rem;
+        color: #444;
+        margin-top: 5px;
+        padding: 0;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    [uk-grid] > ul ul {
+        margin-top: 10px;
+        padding: 0;
+    }
+
+}
