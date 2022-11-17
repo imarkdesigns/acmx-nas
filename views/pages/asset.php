@@ -17,7 +17,7 @@ $assets = get_field( 'am_list' );
 <main id="main" class="main" role="main">
 
     <?php /*
-    <aside class="assets-legend | uk-panel uk-padding-small" uk-sticky hidden>
+    <aside class="assets-legend | uk-panel uk-padding-small" uk-sticky="start: 0; animation: uk-animation-slide-top; end: 1920" hidden>
         <div class="uk-container uk-container-expand" uk-overflow-auto>
             <ul class="uk-subnav">
                 <li><a href="#office" uk-scroll="">Office</a></li>
@@ -29,6 +29,14 @@ $assets = get_field( 'am_list' );
             </ul>
         </div>
     </aside>
+
+    <picture class="uk-card-media-top uk-cover-container" hidden>
+        echo wp_get_attachment_image( $fphoto['id'], 'full' );
+        <div class="uk-overlay-primary uk-position-cover"></div>
+        <div class="uk-overlay uk-position-bottom-center uk-light">
+            echo $fphoto['caption']
+        </div>
+    </picture>    
     */
 
     foreach ( $assets as $asset ) :
@@ -50,13 +58,22 @@ $assets = get_field( 'am_list' );
         <div class="uk-container uk-container-small">
 
             <article class="uk-card">
-                <picture class="uk-card-media-top uk-cover-container">
-                    <?php echo wp_get_attachment_image( $fphoto['id'], 'full' ); ?>
-                    <div class="uk-overlay-primary uk-position-cover"></div>
-                    <div class="uk-overlay uk-position-bottom-center uk-light">
-                        <?php echo $fphoto['caption'] ?>
-                    </div>
-                </picture>
+                <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="clsActivated: uk-transition-active; center: true">
+                    <ul class="uk-slider-items uk-grid">
+                        <li class="uk-width-1-1">
+                            <div class="uk-panel">
+                                <?php echo wp_get_attachment_image( $fphoto['id'], 'full' );
+                                
+                                if ( empty($fphoto['caption']) ) : ?>
+                                <div class="slideshow-caption | uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+                                    <?php echo $fphoto['caption'] ?>
+                                </div>
+                                <?php endif; ?>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
                 <div class="uk-card-body uk-text-center">
                     <?php echo $content; ?>
                     <div class="uk-text-center uk-margin-medium-top">
