@@ -12,6 +12,12 @@ $assets = get_field( 'am_list' );
             <?php echo $am_hdr_content; ?>
         </div>
     </div>
+
+    <div class="uk-position-small uk-position-bottom-left uk-width-1-1 uk-light">
+        <div class="hdr-caption | uk-container uk-container-small">
+            <?php echo nl2br($am_hdr_bg['description']); ?>
+        </div>
+    </div>
 </header>
 
 <main id="main" class="main" role="main">
