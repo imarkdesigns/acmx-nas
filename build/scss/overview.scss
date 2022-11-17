@@ -1084,6 +1084,21 @@ body.map {
         }
 
     }
+
+    .pm-gallery {
+        .uk-slidenav {
+            background-color: rgba(#90C43D,.8) !important;
+            padding-block: 1em;
+            border-radius: 2px;
+        }
+
+        .slideshow-caption {
+            background-color: rgba($primary-clr,.9);
+            font-size: .875rem;
+            color: rgba(#FFF,.9);
+            padding: 1em;
+        }
+    }
 }
 
 .am-office { padding-top: 40px }
@@ -1116,26 +1131,10 @@ body.map {
         margin-bottom: 15px;
     } 
 
-    .uk-slideshow-nav {
-        gap: 10px;
-
-        position: relative;
-        margin-top: 5px;
-        margin-left: 0;
-        margin-right: 65px;
-        z-index: 10001;
-
-        * { padding-left: 0 }
-        a {
-            background: rgba(#FFF,.75);
-            @include size(10px);
-            border-radius: 0;
-            border: 0;
-        }
-
-        li.uk-active a {
-            background: $primary-clr;
-        }
+    .uk-slidenav {
+        background-color: rgba(#90C43D,.8);
+        padding-block: 1em;
+        border-radius: 2px;
     }
 
     .slideshow-caption {

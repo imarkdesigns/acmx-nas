@@ -84,13 +84,13 @@ function pm_gallery_func() {
 $images = get_field( 'pmgmt_photos' );
 
 if ( $images ) :
-$gallery = '<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="clsActivated: uk-transition-active; center: true">';
+$gallery = '<div class="pm-gallery | uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="clsActivated: uk-transition-active; center: true">';
     $gallery .= '<ul class="uk-slider-items uk-grid uk-flex-middle">';
     foreach ( $images as $img ) :
     $gallery .= '<li class="uk-width-1-1">';
         $gallery .= '<div class="uk-panel">';
             $gallery .= wp_get_attachment_image( $img['id'], 'full' );
-            $gallery .= '<div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">';
+            $gallery .= '<div class="slideshow-caption | uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">';
                 $gallery .= '<p class="uk-margin-remove">'.$img['caption'].'</p>';
             $gallery .= '</div>';
         $gallery .= '</div>';
