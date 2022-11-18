@@ -85,6 +85,15 @@
 
             });
 
+            jQuery('.uk-modal figure img').each(function() {
+                var _this = jQuery(this);
+                var _img = _this.width();
+
+                // Apply the width
+                _this.css('max-width', _img);
+            });
+
+
             // Hack all search forms to not send/submit
             jQuery('form[role="search"]').on('submit', function (e) {
                 // if (event.keyCode === 10 || event.keyCode === 13) {
