@@ -149,7 +149,7 @@ $ffolders = get_field( 'file_management', $post_id );
                         <a href="<?php echo get_permalink( $contact_id ); ?>"> <?php echo 'Visit '. $contact_name .' Bio'; ?> </a>
                     </div>
                     <div class="link-to-contact | uk-width-auto">
-                        <a href="<?php echo get_permalink( 39 ).'?cid='.md5($contact_id); ?>"> <span uk-icon="icon: mail"></span> </a>
+                        <a href="<?php echo get_permalink( 39 ).'?cid='.md5($contact_id); ?>" aria-label="Contact Person"> <span uk-icon="icon: mail"></span> </a>
                     </div>
                 </div>
             </div>
