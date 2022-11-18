@@ -20,21 +20,17 @@ $or_pg_gallery = get_field( 'pg_gallery' );
 $or_pg_faq = get_field( 'pg_faq' );
 
 ?>
-<header data-fragment="hero" class="outreach | uk-position-relative">
-    <div class="uk-cover-container uk-transform-origin-bottom-center">
-        <picture uk-parallax="scale: 1.2,1; start: 50%; end: 40vh">
-            <?php echo wp_get_attachment_image( $or_hdr_bg['id'], 'full' ); ?>
-        </picture>
+<header data-fragment="hero" class="outreach | uk-flex uk-flex-middle uk-light" data-src="<?php echo ( $or_hdr_bg ) ? $or_hdr_bg['url'] : '//placem.at/places?w=1920&h=550&txt=0&random=1' ?>" uk-img>
+    <div class="uk-overlay uk-position-center uk-light">
+        <h1 class="uk-text-center"><?php echo strip_tags($or_hdr_content); ?></h1>
     </div>
-    <blockquote class="uk-overlay uk-position-top-center uk-position-medium uk-light">
+
+    <blockquote class="uk-overlay uk-position-bottom-center uk-position-medium uk-light">
         <p><?php echo $or_hdr_blockquote['blockquote']; ?></p>
         <footer class="uk-text-right uk-light">
             <?php echo $or_hdr_blockquote['citation']; ?>
         </footer>
-    </blockquote>
-    <div class="uk-overlay uk-position-center uk-light">
-        <h1 class="uk-text-center" uk-parallax="start: 50%; end: 25%; opacity: 0,1 10%,1 30%,1; y: 5vh, 0 50%, 0 25%, -2vh"><?php echo strip_tags($or_hdr_content); ?></h1>
-    </div>
+    </blockquote>    
 </header>
 
 <main id="main" class="main" role="main">

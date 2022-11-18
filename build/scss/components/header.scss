@@ -431,7 +431,16 @@
 }
 
 [data-fragment="hero"].outreach {
-    overflow: hidden;
+    position: relative;
+    background-color: rgba(#000,.5);
+    background-blend-mode: multiply;
+    background-position: center 90%;
+    // background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 568px;
+    padding-top: 80px;
+    box-sizing: border-box;
 
     h1 {
         @include bodoni();
@@ -459,8 +468,8 @@
         }
     }
 
-    .uk-position-top-center {
-        top: calc(5% + 80px);
+    .uk-position-bottom-center {
+        // bottom: 80px;
         max-width: 640px;
         width: 100%;
 
