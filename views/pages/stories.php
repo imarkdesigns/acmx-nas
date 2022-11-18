@@ -8,7 +8,7 @@ $story_list = get_posts([
     'posts_per_page' => -1,
     'post_status' => 'publish',
     'has_password' => false,
-    'order' => 'DESC',
+    'order' => 'ASC',
     'orderby' => 'menu_order',
 ]);
 ?>
