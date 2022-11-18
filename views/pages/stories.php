@@ -9,6 +9,7 @@ $story_list = get_posts([
     'post_status' => 'publish',
     'has_password' => false,
     'order' => 'DESC',
+    'orderby' => 'menu_order',
 ]);
 ?>
 
