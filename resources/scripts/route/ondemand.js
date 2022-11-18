@@ -11,9 +11,9 @@
             _topNews   = jQuery('.news-list').height();
 
             if ( _window <= _topNews ) {
-                jQuery('.my-properties').find('.property-list').css('height',_window);
-            } else {
                 jQuery('.my-properties').find('.property-list').css('height',_topNews);
+            } else {
+                jQuery('.my-properties').find('.property-list').css('height',_window);
             }
 
         }
