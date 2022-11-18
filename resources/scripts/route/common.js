@@ -85,9 +85,9 @@
 
             });
 
-            jQuery('.uk-modal figure img').each(function() {
+            jQuery('.uk-modal figure').each(function() {
                 var _this = jQuery(this);
-                var _img = _this.width();
+                var _img = _this.find('img').width();
 
                 // Apply the width
                 _this.css('max-width', _img);
