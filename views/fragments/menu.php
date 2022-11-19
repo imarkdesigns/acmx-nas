@@ -40,7 +40,7 @@ $quickLinks = get_field( 'quick_link_list', 'option' );
 ?>
 
 <a href="#main" id="skipToLink" class="skip-to-content-link">Skip to Content</a>
-<div data-fragment="menu" class="<?php echo $class; ?>">
+<div data-fragment="menu" class="menu-wrapper | <?php echo $class; ?>">
 
     <nav class="uk-navbar-container" uk-navbar uk-sticky="show-on-up: true; animation: uk-animation-slide-top">
         <div class="navbar | uk-navbar-left">
@@ -72,11 +72,11 @@ $quickLinks = get_field( 'quick_link_list', 'option' );
             </div>
         </div>
         <div class="uk-navbar-right uk-hidden@l">
-            <button type="button" class="mobile-menu | uk-navbar-toggle" aria-label="Sidebar Menu" uk-toggle>
+            <button type="button" class="mobile-menu | uk-navbar-toggle" aria-label="Sidebar Menu">
                 <span>menu</span>
                 <span uk-navbar-toggle-icon></span>
             </button>
-            <div class="navbar-mobile-menu | uk-dropbar uk-dropbar-top uk-background-secondary" uk-drop="mode: click; stretch: true; target: !.uk-navbar-container; animation: slide-top; animate-out: true; duration: 300">
+            <div class="navbar-mobile-menu | uk-dropbar uk-dropbar-top uk-background-secondary" uk-drop="mode: click; stretch: true; auto-update: false; target: !.menu-wrapper; animation: slide-top; animate-out: true; duration: 300">
                 <form class="uk-search uk-search-default uk-width-1-1" role="search">
                     <span uk-search-icon></span>
                     <label for="dropbar-search" aria-label="Search NAS"><span hidden>Search NAS</span></label>

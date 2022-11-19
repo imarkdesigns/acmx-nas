@@ -37,6 +37,16 @@
                 jQuery('.uk-search-input').val('');
             });
 
+            // Toggle the scroll-y hidden when mobile menu are active
+            jQuery('html').on('click', '.mobile-menu', function() {
+                var state = jQuery(this).data('state');
+                switch(state){
+                    case 1 :
+                    case undefined : jQuery('html').css({ 'overflow-y':'hidden', 'touch-action':'none' }); jQuery(this).data('state', 2); break;
+                    case 2 : jQuery('html').removeAttr('style'); jQuery(this).data('state', 1); break;
+                }
+            });
+
             // Change value of the Dashboard link in the Menu Navigation
             var $od_user = '<span uk-icon="icon: user; ratio: .8;"></span>';
             jQuery('.uk-navbar-nav').find('.od-user a:first').attr('aria-label','Go Back to Dashboard').html( $od_user );
