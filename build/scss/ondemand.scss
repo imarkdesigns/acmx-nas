@@ -527,10 +527,15 @@
                 margin-top: 0 !important
             }
 
+            strong + ul {
+                margin-top: 0 !important;
+            }
+
             h2, h3 {
                 @include proxima_bold;
                 font-size: 1.1235rem;
                 color: rgba($primary-clr,.95);
+                text-transform: uppercase;
             }
         }
 
