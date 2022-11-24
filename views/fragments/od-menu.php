@@ -21,7 +21,7 @@ if ( wp_is_mobile() ) : ?>
                             <li><a href="<?php echo get_permalink( 35 ); ?>" target="_blank">NAS News</a></li>
                             <li><a href="<?php echo get_permalink( 3 ); ?>" target="_blank">Legal Information</a></li>
                             <li><a>Questions? 310 943 8171</a></li>
-                            <li><a href="#modal-help" uk-toggle>Help</a></li>
+                            <li><a href="#nas-help" uk-toggle>Help</a></li>
                             <li class="uk-nav-divider"></li>
                             <li><?php echo do_shortcode('[wppb-logout text="" redirect_url="/ondemand" link_text="Log Out"]'); ?></li>
                         </ul>
@@ -32,6 +32,25 @@ if ( wp_is_mobile() ) : ?>
         <!-- OnDemand Menu Navigation -->
         
     </nav>
+</div>
+
+<div id="nas-help" class="help-mobile" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body uk-background-secondary">
+        <button class="uk-modal-close-default" type="button" aria-label="Close Modal" uk-close></button>
+
+        <img src="<?php echo _uri.'/resources/images/logo-nasassets_footer.png' ?>" width="100" height="30" alt="<?php bloginfo(); ?>">
+        <h2>Trouble Viewing OnDemand?</h2>
+        <hr class="uk-divider-small">
+
+        <dl class="uk-description-list uk-description-list-divider uk-light">
+            <dt>Clear Cache/Cookies in your Browser</dt>
+            <dd>Hold the Shift key and Click the Reload button on the navigation toolbar.</dd>
+            <dt>Problem viewing this page?</dt>
+            <dd><a href="//outdatedbrowser.com/en" target="_blank">Click here</a> to upgrade your browser version</dd>
+            <dt>Use the latest version of Adobe Reader plugin to view or download PDF files.</dt>
+            <dd><a href="//acrobat.adobe.com/us/en/products/pdf-reader.html" target="_blank">Click here</a> to download or upgrade version</dd>
+        </dl>
+    </div>
 </div>
 <?php else : ?>
 <a href="#main" id="skipToLink" class="skip-to-content-link">Skip to Content</a>

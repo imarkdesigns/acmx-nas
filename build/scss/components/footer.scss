@@ -194,7 +194,7 @@
 
 @media only screen 
     and ( max-device-width: 1366px )
-    and ( -webkit-min-device-pixel-ratio: 2 )
+    and ( -webkit-min-device-pixel-ratio: 3 )
     and ( -webkit-max-device-pixel-ratio: 5 ) {
 
         .main {
@@ -251,6 +251,12 @@
         padding: 50px 20px 20px;
         border-radius: 10px;
         transform: translate(0,0,0);
+    }
+
+    &.help-mobile .uk-modal-dialog {
+        bottom: 75px;
+        right: 50%;
+        transform: translateX(50%);
     }
 
     h2 {
