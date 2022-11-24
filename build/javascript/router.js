@@ -23,7 +23,7 @@ var theme = {
 
     single_nas_team: {
         finalize: () => {
-            jQuery.getScript( script + 'about.js' );
+            jQuery.getScript( script + 'team.js' );
         }
     },
 

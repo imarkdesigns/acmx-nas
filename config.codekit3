@@ -1375,6 +1375,17 @@
       "sC" : 0,
       "tS" : 0
     },
+    "\/resources\/scripts\/route\/team.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/resources\/scripts\/team.js",
+      "oF" : 0,
+      "sC" : 0,
+      "tS" : 0
+    },
     "\/resources\/scripts\/router.js" : {
       "bF" : 0,
       "ft" : 64,

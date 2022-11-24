@@ -5,11 +5,11 @@
 
 //* Schema.Org
 function schema() {
-    if ( is_single() ) :
+    if ( is_single() && !is_singular( 'nas-team' ) ) :
         $type = 'Article';
 
-    elseif ( is_author() ) :
-        $type = 'ProfilePage';
+    elseif ( is_singular( 'nas-team' ) ) :
+        $type = 'Person';
 
     elseif ( is_search() ) :
         $type = 'SearchResultsPage';

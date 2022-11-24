@@ -25,8 +25,8 @@ $_GET['direct_mail'] = $email;
     <div class="profile-heading | uk-container uk-container-expand">
         <div class="uk-panel">
             <a href="<?php echo get_permalink( 19 ) ?>" class="uk-link-reset" targe="_self"> <span uk-icon="arrow-left"></span> Back to Team </a>
-            <h1><?php echo $title ?><?php echo !empty($nominal) ? ', <span class="uk-text-meta">'. $nominal .'</span>' : ''; ?></h1>
-            <p><?php echo $designation; ?></p>
+            <h1 itemprop="name"><?php echo $title ?><?php echo !empty($nominal) ? ', <span class="uk-text-meta">'. $nominal .'</span>' : ''; ?></h1>
+            <p><span itemprop="jobTitle"><?php echo $designation; ?></span></p>
         </div>
     </div>
     <div class="profile-headline">
@@ -34,7 +34,7 @@ $_GET['direct_mail'] = $email;
             <div class="hl-image">
                 <figure>
                     <?php $featuredID = get_post_thumbnail_id();
-                    echo wp_get_attachment_image( $featuredID, [ 450, 9999, true ] ); ?>
+                    echo wp_get_attachment_image( $featuredID, [ 450, 9999, true ], '', [ 'itemprop' => 'image' ] ); ?>
                     <ul>
                         <?php if ( $social ) : ?>
                         <li class="icon-linkedin">
@@ -64,12 +64,14 @@ $_GET['direct_mail'] = $email;
                     <?php if ( !empty( $office || $direct ) ) : ?>
                     <address>
                         <?php echo !empty($cabreID) ? 'CA BRE: '. $cabreID : ''; ?><br>
-                        <?php echo !empty($office) ? 'Office: '.$office : ''; ?> <br>
+                        <span itemprop="telephone"><?php echo !empty($office) ? 'Office: '.$office : ''; ?></span> <br>
                         <?php echo !empty($direct) ? 'Direct: '.$direct : ''; ?>
                     </address>
                     <hr class="uk-divider-small">
                     <?php endif; ?>
+                    <div itemprop="disambiguatingDescription">
                     <?php the_field( 'profile_lead' ); ?>
+                    </div>
                     <?php if ( $bio ) : ?>
                     <div class="uk-button-group uk-margin-medium-top uk-light">
                         <a href="#bio" class="uk-button uk-button-default" uk-scroll="offset: 70">Contnue Reading</a>
@@ -115,7 +117,7 @@ $_GET['direct_mail'] = $email;
                     </figure>
                 </div>
                 <div class="uk-flex-last uk-flex-first uk-flex-last@m">
-                    <article class="uk-article">
+                    <article class="uk-article" itemprop="description">
                         <?php echo $bio; ?>
                     </article>
                 </div>
@@ -146,7 +148,7 @@ $_GET['direct_mail'] = $email;
                     <?php if ( !empty($journal['featured_photo']) ) : ?>
                     <div class="uk-width-1-2@m">
                         <div class="uk-panel">
-                            <figure class="uk-inline">
+                            <figure class="uk-inline <?php echo ( empty($journal['featured_photo']['caption']) ) ? 'no-caption' :null; ?>">
                                 <?php echo wp_get_attachment_image( $journal['featured_photo']['id'], 'full' ); ?>
                                 <figcaption>
                                     <p><?php echo $journal['featured_photo']['caption']; ?></p>

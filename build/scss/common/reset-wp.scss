@@ -1,4 +1,38 @@
 // Old WP Editor - Block Alignment
+img.alignleft,
+img.alignright,
+img.aligncenter,
+img.alignnone {
+    margin-block: 5px; 
+    border: 1px solid rgba(#FFF,.15);
+    border-radius: 5px;
+    box-shadow: 0 0 0 5px rgba(#FFF,1), 0 5px 15px rgb(0 0 0 / 8%);
+}
+
+img.alignleft {
+    float: left;
+    display: inline-block;
+    margin-top: 25px;
+    margin-bottom: 30px;
+    margin-right: 30px;
+}
+
+img.alignright {
+    float: right;
+    display: inline-block;
+    margin-top: 25px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+img.aligncenter {
+    clear: both;
+    float: none;
+    display: block;
+    margin-block: 15px; 
+    margin-inline: auto;
+}
+
 .wp-caption {
 
     &.alignleft,
@@ -55,8 +89,6 @@
         text-align: center;
         line-height: 1.2;
     }
-
-
 }
 
 

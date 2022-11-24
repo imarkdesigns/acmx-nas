@@ -208,6 +208,11 @@
         border-radius: 5px;
         box-shadow: 0 5px 15px rgb(0 0 0 / 8%);
 
+        &.no-caption {
+            gap: 0;
+            padding: 5px;
+        }
+
         img {
             object-fit: contain;
             border-radius: 3px;
