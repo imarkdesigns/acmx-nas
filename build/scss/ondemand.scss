@@ -507,7 +507,7 @@
             flex-flow: row wrap;
             justify-content: space-evenly;
             align-items: center;
-            gap: 30px;
+            gap: 15px;
             min-height: 400px;
 
             strong { 
@@ -517,10 +517,19 @@
         }
 
         .pd-info {
-            flex: 1 1 calc( 50% - 15px );
+            flex: 1 1 50%;
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 30px;
+            box-sizing: border-box;
 
             strong + p { 
                 margin-top: 0 !important
+            }
+
+            h2, h3 {
+                font-size: 1.1235rem;
+                color: rgba($primary-clr,.95);
             }
         }
 
