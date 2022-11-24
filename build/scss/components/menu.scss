@@ -354,6 +354,7 @@
 [data-ondemand="menu"] {
 
     .uk-navbar-container {
+        position: relative;
         background-color: rgba(#131215,1);
 
         *:not(.uk-navbar-dropdown):not(.uk-navbar-dropdown *) {
@@ -397,6 +398,7 @@
     }
 
     .uk-navbar-dropdown {
+        top: 80px !important;
         left: auto !important;
         right: 0;
         background-color: transparent;
@@ -410,7 +412,7 @@
         }
 
         &-nav > li {
-            background-color: rgba(#000,1);
+            background-color: rgba(#131215,1);
             text-align: right;
             border-top: 1px solid darken(#CCC,45%);
 

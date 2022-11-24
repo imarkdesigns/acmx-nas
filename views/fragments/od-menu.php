@@ -15,7 +15,7 @@ if ( wp_is_mobile() ) : ?>
             <div class="uk-navbar-nav uk-margin-right">
                 <li>
                     <a href="#" title=""><?php echo $display_name; ?></a>
-                    <div class="uk-navbar-dropdown" uk-dropdown="mode: click; offset: 0">
+                    <div class="uk-navbar-dropdown" uk-dropdown="mode: click">
                         <ul class="uk-nav uk-navbar-dropdown-nav">
                             <li><a href="<?php echo get_permalink( 39 ); ?>" target="_blank">Contact NAS</a></li>
                             <li><a href="<?php echo get_permalink( 35 ); ?>" target="_blank">NAS News</a></li>
