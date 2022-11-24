@@ -3,7 +3,7 @@
 $hdr_slides = get_field( 'hdr_slide' );
 $hdr_overlay = get_field( 'hdr_slide_overlay' ); ?>
 <header class="home | uk-position-relative" data-fragment="hero">
-    <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="autoplay-interval: 15000; pause-on-hover: true; autoplay: true; animation: fade; min-height: 667">
+    <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="autoplay-interval: 2000; pause-on-hover: false; autoplay: true; animation: fade; min-height: 667">
         <ul class="uk-slideshow-items">
             <?php foreach ( $hdr_slides as $slide ) : ?>
             <li>
