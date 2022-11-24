@@ -37,9 +37,9 @@ add_action('after_setup_theme', function() {
     // add_editor_style( $editor_stylesheet_path );
 
     //* Additional Size
-    add_image_size( 'story-module', 512, 720, [ 'center', 'center' ] ); // Success Stories Thumbnail
-    add_image_size( 'news-module', 390, 550, [ 'center', 'center' ] ); // News Thumbnail
-    add_image_size( 'loan-module', 640, 450, [ 'center', 'center' ] ); // News Thumbnail
+    add_image_size( 'homeSlide-img', 135, 135, [ 'center', 'center' ] ); // Homepage Slider Thumbnail
+    add_image_size( 'storyList-img', 615, 720, [ 'center', 'center' ] ); // Success Stories Thumbnail
+    add_image_size( 'newsList-img', 615, 550, [ 'center', 'center' ] ); // News Thumbnail
     // add_image_size( 'cp-thumb', 45, 45, [ 'center', 'center' ] ); // Contact Person Thumbnail
 
     //* Menu

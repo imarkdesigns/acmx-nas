@@ -39,7 +39,7 @@ if ( $stories ) : ?>
                 <figure class="uk-inline">
                     <?php if ( has_post_thumbnail( $post_id ) ) {
                         $featuredID = get_post_thumbnail_id( $post_id );
-                        echo wp_get_attachment_image( $featuredID, 'full' );
+                        echo wp_get_attachment_image( $featuredID, 'story-list' );
                     } else {
                         echo '<img src="//placem.at/places?w=640&h=700&txt=0&random='.$post_id.'" width="640" height="700" alt="'.$post_title.'">';
                     } ?>

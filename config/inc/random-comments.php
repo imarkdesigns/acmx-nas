@@ -28,9 +28,9 @@ if ( $comments ) : ?>
                                 <li>
                                     <?php if ( has_post_thumbnail( $post_id ) ) {
                                         $featuredID = get_post_thumbnail_id( $post_id );
-                                        echo wp_get_attachment_image( $featuredID, 'full', '', [ 'uk-cover' => '' ] );
+                                        echo wp_get_attachment_image( $featuredID, 'medium', '', [ 'uk-cover' => '' ] );
                                     } else {
-                                        echo wp_get_attachment_image( $image['ID'], 'full', '', [ 'uk-cover' => '' ] );
+                                        echo wp_get_attachment_image( $image['ID'], 'medium', '', [ 'uk-cover' => '' ] );
                                     }
 
                                     if ( !empty( $image['caption'] ) ) : ?>

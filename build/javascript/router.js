@@ -51,6 +51,12 @@ var theme = {
         }
     },    
 
+    ondemand: {
+        finalize: () => {
+            jQuery.getScript( script + 'ondemand.js' );
+        }
+    },    
+
     dashboard: {
         finalize: () => {
             jQuery.getScript( script + 'ondemand.js' );

@@ -3,12 +3,13 @@
 $hdr_slides = get_field( 'hdr_slide' );
 $hdr_overlay = get_field( 'hdr_slide_overlay' ); ?>
 <header class="home | uk-position-relative" data-fragment="hero">
-    <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="autoplay-interval: 2000; pause-on-hover: false; autoplay: true; animation: fade; min-height: 667">
+    <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="autoplay-interval: 15000; pause-on-hover: true; autoplay: true; animation: fade; min-height: 667">
         <ul class="uk-slideshow-items">
             <?php foreach ( $hdr_slides as $slide ) : ?>
             <li>
                 <?php
                     echo wp_get_attachment_image( $slide['ID'], 'full', '', [ 'uk-cover' => '' ] );
+                    // echo '<img src="'.$slide['url'].'" alt="'.$slide['alt'].'" uk-cover>';
                     $description = '';
                     $description .= '<div class="description | uk-overlay uk-position-bottom-left">';
                     $description .= '<div>'.$slide['title'].' <small>'.$slide['description'].'</small></div>';
@@ -77,7 +78,7 @@ $video_link = get_field( 'companyVideo_video' );
                             </figcaption>
                             <?php echo wp_get_attachment_image( $video_bg['ID'], 'full' ); ?>
                         </figure>
-                        <a href="<?php echo $video_link.'&rel=0'; ?>" aria-label="Play Video" aria-describedby="watch-video" class="play-btn" uk-tooltip="title: Watch Video; pos: bottom;" data-attrs="width: 1280; height: 720;">
+                        <a href="<?php echo $video_link.'&rel=0'; ?>" aria-label="Play Video" aria-describedby="watch-video" class="play-btn" data-attrs="width: 1280; height: 720;">
                             <span uk-icon="icon: play; ratio: 3"></span>
                         </a>
                         <div id="watch-video" class="uk-tooltip" role="tooltip"> <div class="uk-tooltip-inner">Watch Video</div> </div>
