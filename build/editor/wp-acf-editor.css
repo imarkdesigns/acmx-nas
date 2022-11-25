@@ -9,6 +9,16 @@
     margin-right: 10px;
 }
 
+#wpadminbar #wp-admin-bar-od-tutorials .ab-item::before {
+    content: '\f236';
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    width: 15px;
+    height: 28px;
+    margin-right: 10px;
+}
+
 /*
  * Style for User Profile Section
  **/

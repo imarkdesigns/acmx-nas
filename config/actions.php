@@ -255,3 +255,15 @@ function add_toolbar_items($admin_bar){
         ),
     ));
 }
+
+add_action('admin_bar_menu', 'add_toolbar_tutorial', 100);
+function add_toolbar_tutorial($admin_bar){
+    $admin_bar->add_menu( array(
+        'id'    => 'od-tutorials',
+        'title' => 'OnDemand Tutorials',
+        'href'  => site_url( '//youtu.be/ZQhox4dCjoA' ),
+        'meta'  => array(
+            'class' => 'od-tutorials',
+        ),
+    ));
+}
