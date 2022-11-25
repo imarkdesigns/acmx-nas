@@ -261,7 +261,7 @@ function add_toolbar_tutorial($admin_bar){
     $admin_bar->add_menu( array(
         'id'    => 'od-tutorials',
         'title' => 'OnDemand Tutorials',
-        'href'  => site_url( '//youtu.be/ZQhox4dCjoA' ),
+        'href'  => site_url( 'https://youtu.be/ZQhox4dCjoA' ),
         'meta'  => array(
             'class' => 'od-tutorials',
         ),
