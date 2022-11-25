@@ -24,7 +24,7 @@ $hdr_overlay = get_field( 'hdr_slide_overlay' ); ?>
             <?php $i = 0;
             foreach ( $hdr_slides as $slide ) : ?>
             <li uk-slideshow-item="<?php echo $i++; ?>">
-                <?php echo '<a href="#" uk-tooltip="title: '.$slide['caption'].'; pos: bottom"> '.wp_get_attachment_image( $slide['ID'], 'thumbnail' ).' </a>'; ?>
+                <?php echo '<a href="#" uk-tooltip="title: '.$slide['caption'].'; pos: bottom"> '.wp_get_attachment_image( $slide['ID'], 'homeSlide-img' ).' </a>'; ?>
             </li>
             <?php endforeach; ?>
         </ul>
