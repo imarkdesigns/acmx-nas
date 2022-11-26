@@ -1,4 +1,4 @@
-<main id="main" class="main" role="main">
+<main id="main" class="main <?php echo ( wp_is_mobile() ) ? 'main-touch' :null; ?>" role="main">
     <div class="dashboard | uk-grid-collapse uk-grid-match" uk-grid>
 
         <div class="uk-width-3-4@l uk-flex-stretch">

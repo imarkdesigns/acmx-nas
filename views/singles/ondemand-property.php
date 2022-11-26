@@ -1,5 +1,5 @@
 <?php get_header( 'ondemand' ); ?>
-<main id="main" class="main" role="main">
+<main id="main" class="main <?php echo ( wp_is_mobile() ) ? 'main-touch' :null; ?>" role="main">
 
     <div class="uk-grid-collapse" uk-grid>
         <div class="my-property | uk-width-expand@m">
