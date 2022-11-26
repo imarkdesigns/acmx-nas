@@ -76,7 +76,7 @@ $quickLinks = get_field( 'quick_link_list', 'option' );
                 <span>menu</span>
                 <span uk-navbar-toggle-icon></span>
             </button>
-            <div class="navbar-mobile-menu | uk-dropbar uk-dropbar-top uk-background-secondary" uk-drop="mode: click; stretch: true; auto-update: false; target: !.menu-wrapper; animation: slide-top; animate-out: true; duration: 300">
+            <div class="navbar-mobile-menu | uk-dropbar uk-dropbar-top uk-background-secondary" uk-drop="mode: click; stretch: true; auto-update: false; target: !.uk-navbar-container; animation: slide-top; animate-out: true; duration: 300">
                 <form class="uk-search uk-search-default uk-width-1-1" role="search">
                     <span uk-search-icon></span>
                     <label for="dropbar-search" aria-label="Search NAS"><span hidden>Search NAS</span></label>

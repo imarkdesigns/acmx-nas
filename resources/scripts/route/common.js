@@ -17,7 +17,7 @@
             jQuery('.uk-navbar-nav #menu-item-220').children().attr('href', _href + _wppb);
 
             // Asset Management URL
-            jQuery('#menu-item-231 .uk-navbar-dropdown-nav').children().each(function() {
+            jQuery('#menu-item-231 .uk-navbar-dropdown-nav, #menu-item-252 .uk-nav-sub').children().each(function() {
                 var $protocol = window.location.protocol;
                 var $hostname = window.location.hostname;
                 var $pathname = window.location.pathname;
@@ -31,6 +31,8 @@
                     jQuery(this).children().attr({'href': _assetHost + _assetURL + '#'+_assetID}).attr('uk-scroll','');
                 }
             });
+
+
 
             // Remove Search input value when exiting search
             UIkit.util.on('.navbar-search-field', 'beforeshow', () => {
