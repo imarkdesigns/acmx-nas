@@ -8,7 +8,7 @@
             var _cv = company_video.cvPath,
                 _bd = brochure_download.pdfPath;
 
-            jQuery('.uk-navbar-nav .uk-parent .uk-navbar-dropdown-nav').find('li.company-video a').attr({ 'href' : _cv, 'target': '_blank' });
+            jQuery('.uk-navbar-nav .uk-parent .uk-navbar-dropdown-nav').find('li.company-video').attr({ 'uk-lightbox' : '' }).children().attr({ 'href' : _cv, 'data-attrs' : 'width: 1280; height: 720' });
             jQuery('.uk-navbar-nav .uk-parent .uk-navbar-dropdown-nav').find('li.nas-brochure a').attr({ 'href' : _bd, 'download': '' });
 
             // Inject WP Profile Builder Pro Force Login
