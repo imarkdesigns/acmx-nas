@@ -49,6 +49,6 @@ $ftr_slogan = get_field( 'NAS_footer_slogan', 'option' );
 </footer>
 
 <aside class="wave-webaim | uk-background-dark uk-padding-small uk-light uk-flex-between uk-grid-small" uk-grid>
-    <span class="uk-link-muted">This site conforms to web accessibility standards using the Web Accessibility Evaluation Tool. <a href="<?php echo 'https://wave.webaim.org/report#/'.site_url(); ?>" class="uk-link-muted" target="_blank">Validate Page Here</a></span>
+    <span class="uk-link-muted">This site conforms to web accessibility standards using the Web Accessibility Evaluation Tool. <a href="<?php echo 'https://wave.webaim.org/report#/'.get_permalink( get_the_ID() ); ?>" class="uk-link-muted" target="_blank">Validate Page Here</a></span>
     <span class="uk-link-muted">Professionally Designed By: <a href="//www.ohwowmarketing.com" class="uk-link-muted" target="_blank">Oh Wow Marketing</a>
 </aside>
