@@ -130,6 +130,24 @@
     }
 }
 
+.wave-webaim {
+
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    @include proxima_light;
+    font-size: .75rem;
+    text-decoration: none;
+
+    @media screen and ( min-width: 960px ) {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: inherit;
+    }
+
+}
+
 
 //
 // OnDemand Settings
