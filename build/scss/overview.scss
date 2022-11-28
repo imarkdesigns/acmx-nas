@@ -886,6 +886,10 @@ body.map {
         }
     }
 
+    .eapps-google-maps-bar-list::-webkit-scrollbar-thumb {
+        background-color: darken($primary-clr,15%);
+    }
+
     .eapps-google-maps-bar-search-location {
         display: none;
     }
