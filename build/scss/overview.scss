@@ -887,7 +887,7 @@ body.map {
     }
 
     .eapps-google-maps-bar-list::-webkit-scrollbar-thumb {
-        background-color: darken($primary-clr,15%);
+        background-color: darken($primary-clr,15%) !important;
     }
 
     .eapps-google-maps-bar-search-location {
