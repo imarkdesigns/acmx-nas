@@ -33,17 +33,17 @@
             });
 
             // Setup the Cookie
-            jQuery.getScript('https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js', function(){
-                // Session Cookie
-                $kukie = Cookies.get('accept-cookies');
-                if ( ! $kukie ) {
-                    jQuery('.accept-cookies').removeAttr('hidden').attr('uk-scrollspy', 'cls: uk-animation-fast uk-animation-slide-bottom; delay: 2500');
-                    jQuery('.accept-cookies').find('.uk-alert-accept').on('click', function() {
-                        Cookies.set('accept-cookies', 'true', { expires: 7 });
-                        UIkit.alert('.accept-cookies').close();
-                    });
-                }
-            });
+            // jQuery.getScript('https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js', function(){
+            //     // Session Cookie
+            //     $kukie = Cookies.get('accept-cookies');
+            //     if ( ! $kukie ) {
+            //         jQuery('.accept-cookies').removeAttr('hidden').attr('uk-scrollspy', 'cls: uk-animation-fast uk-animation-slide-bottom; delay: 2500');
+            //         jQuery('.accept-cookies').find('.uk-alert-accept').on('click', function() {
+            //             Cookies.set('accept-cookies', 'true', { expires: 7 });
+            //             UIkit.alert('.accept-cookies').close();
+            //         });
+            //     }
+            // });
 
             // Remove Search input value when exiting search
             UIkit.util.on('.navbar-search-field', 'beforeshow', () => {

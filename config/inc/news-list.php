@@ -37,7 +37,7 @@ if ( $news_list ) : ?>
                             $featuredID = get_post_thumbnail_id( $post_id );
                             echo wp_get_attachment_image( $featuredID, 'news-module' );
                         } else {
-                            echo '<img src="//placem.at/places?w=640&h=550&txt=0&random='.$post_id.'" width="640" height="550" alt="'.$post_title.'">';
+                            echo '<img src="https://placem.at/places?w=640&h=550&txt=0&random='.$post_id.'" width="640" height="550" alt="'.$post_title.'">';
                         } ?>                        
                         <figcaption class="uk-overlay-primary uk-position-cover uk-padding">
                             <span class="news-category | uk-text-meta"><?php echo $term_cat[0]->name; ?></span>

@@ -36,7 +36,7 @@ $slider = get_field( 'news_gallery', $post_id ); ?>
                             $featuredID = get_post_thumbnail_id( $post_id );
                             echo '<li><picture>'. wp_get_attachment_image( $featuredID, [ 720, 550 ], '', [ 'uk-cover' => '' ] ) .'</picture></li>';
                         } else {
-                            echo '<li><img src="//placem.at/places?w=1280&h=720&txt=0&random='.$post_id.'" width="1280" height="720" alt="'.$post_title.'"></li>';
+                            echo '<li><img src="https://placem.at/places?w=1280&h=720&txt=0&random='.$post_id.'" width="1280" height="720" alt="'.$post_title.'"></li>';
                         }
 
                         foreach ( $slider as $slide ) :
@@ -52,7 +52,7 @@ $slider = get_field( 'news_gallery', $post_id ); ?>
                     echo '<canvas width="720" height="450"></canvas>';
                     echo '</div>';
                 } else {
-                    echo '<img src="//placem.at/places?w=1280&h=720&txt=0&random='.$post_id.'" width="1280" height="720" alt="'.$post_title.'">';
+                    echo '<img src="https://placem.at/places?w=1280&h=720&txt=0&random='.$post_id.'" width="1280" height="720" alt="'.$post_title.'">';
                 } ?>
             <?php endif; ?>
         </div>
@@ -96,7 +96,7 @@ $term_cat = get_the_terms( $post_id, 'category' ); ?>
             $featuredID = get_post_thumbnail_id( $post_id );
             echo wp_get_attachment_image( $featuredID, 'full' );
         } else {
-            echo '<img src="//placem.at/places?w=640&h=360&txt=0&random='.$post_id.'" width="640" height="360" alt="'.$post_title.'">';
+            echo '<img src="https://placem.at/places?w=640&h=360&txt=0&random='.$post_id.'" width="640" height="360" alt="'.$post_title.'">';
         } ?>
         </div>
         <div class="uk-card-body">
@@ -139,7 +139,7 @@ $term_cat = get_the_terms( $post_id, 'category' ); ?>
             $featuredID = get_post_thumbnail_id( $post_id );
             echo wp_get_attachment_image( $featuredID, 'full' );
         } else {
-            echo '<img src="//placem.at/places?w=640&h=360&txt=0&random='.$post_id.'" width="640" height="360" alt="'.$post_title.'">';
+            echo '<img src="https://placem.at/places?w=640&h=360&txt=0&random='.$post_id.'" width="640" height="360" alt="'.$post_title.'">';
         } ?>
         </div>
         <div class="uk-card-body">
@@ -200,7 +200,7 @@ $term_cat = get_the_terms( $post_id, 'category' ); ?>
             $featuredID = get_post_thumbnail_id( $post_id );
             echo wp_get_attachment_image( $featuredID, [ 150, 150, true ] );
         } else {
-            echo '<img src="//placem.at/places?w=300&h=300&txt=0&random='.$post_id.'" width="150" height="150" alt="'.$post_title.'">';
+            echo '<img src="https://placem.at/places?w=300&h=300&txt=0&random='.$post_id.'" width="150" height="150" alt="'.$post_title.'">';
         } ?>
         </div>
         <div class="uk-width-expand">
@@ -243,7 +243,7 @@ $post_date = date('F j, Y', $date_stamp); ?>
             $featuredID = get_post_thumbnail_id( $post_id );
             echo wp_get_attachment_image( $featuredID, [ 150, 150, true ] );
         } else {
-            echo '<img src="//placem.at/places?w=300&h=300&txt=0&random='.$post_id.'" width="150" height="150" alt="'.$post_title.'">';
+            echo '<img src="https://placem.at/places?w=300&h=300&txt=0&random='.$post_id.'" width="150" height="150" alt="'.$post_title.'">';
         } ?>
         </div>
         <div class="uk-width-expand">
@@ -287,7 +287,7 @@ if ( have_posts() ) :
                 $featuredID = get_post_thumbnail_id();
                 echo wp_get_attachment_image( $featuredID, [ 150, 150, true ] );
             } else {
-                echo '<img src="//placem.at/places?w=300&h=300&txt=0&random='.get_the_ID().'" width="150" height="150" alt="'.get_the_title().'">';
+                echo '<img src="https://placem.at/places?w=300&h=300&txt=0&random='.get_the_ID().'" width="150" height="150" alt="'.get_the_title().'">';
             } ?>
             </div>
             <div class="uk-width-expand">
@@ -346,7 +346,7 @@ function searchResult( $param ) {
                     $featuredID = get_post_thumbnail_id();
                     echo wp_get_attachment_image( $featuredID, [ 150, 150, true ] );
                 } else {
-                    echo '<img src="//placem.at/places?w=300&h=300&txt=0&random='.get_the_ID().'" width="150" height="150" alt="'.get_the_title().'">';
+                    echo '<img src="https://placem.at/places?w=300&h=300&txt=0&random='.get_the_ID().'" width="150" height="150" alt="'.get_the_title().'">';
                 } ?>
                 </div>
                 <div class="uk-width-expand">
