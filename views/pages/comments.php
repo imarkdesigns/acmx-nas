@@ -42,7 +42,7 @@ $comment_list = get_posts([
                         <?php if ( has_post_thumbnail( $post_id ) ) {
                             echo wp_get_attachment_image( $featuredID, 'full' );
                         } else {
-                            echo '<img src="//placem.at/places?w=640&h=360&txt=0&random='.$post_id.'" alt="'.$post_title.'">';
+                            echo '<img src="https://placem.at/places?w=640&h=360&txt=0&random='.$post_id.'" alt="'.$post_title.'">';
                         } ?>
 
                         <figcaption class="uk-overlay uk-overlay-primary uk-position-bottom">

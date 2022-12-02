@@ -11,7 +11,7 @@
                 $featuredID = get_post_thumbnail_id( get_the_ID() );
                 echo wp_get_attachment_image( $featuredID, 'full' );
             } else {
-                echo '<picture class="story-item-image"> <img src="//placem.at/places?w=1280&h=720&txt=0&random='.get_the_ID().'" alt="'.get_the_title().'"> </picture>';
+                echo '<picture class="story-item-image"> <img src="https://placem.at/places?w=1280&h=720&txt=0&random='.get_the_ID().'" alt="'.get_the_title().'"> </picture>';
             } ?>
             </picture>
         </figure>

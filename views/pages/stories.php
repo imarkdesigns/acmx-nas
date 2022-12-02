@@ -38,7 +38,7 @@ $story_list = get_posts([
                                 $featuredID = get_post_thumbnail_id( $post_id );
                                 echo wp_get_attachment_image( $featuredID, 'full' );
                             } else {
-                                echo '<picture class="story-item-image"> <img src="//placem.at/places?w=1280&h=720&txt=0&random='.$post_id.'" alt="'.$post_title.'"> </picture>';
+                                echo '<picture class="story-item-image"> <img src="https://placem.at/places?w=1280&h=720&txt=0&random='.$post_id.'" alt="'.$post_title.'"> </picture>';
                             } ?>
                         </div>
                         <figcaption>

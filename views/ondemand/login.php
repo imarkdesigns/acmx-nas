@@ -5,7 +5,6 @@
         <img src="<?php echo _uri.'/resources/images/bg-ondemand-building.jpg'; ?>" alt="Photo by Sean Pollock on Unsplash" uk-cover>
         <div class="uk-overlay-primary uk-position-cover"></div>
 
-  
         <!-- Form -->
         <div class="uk-overlay uk-position-center uk-light">
             <figure class="uk-width-large uk-text-center">

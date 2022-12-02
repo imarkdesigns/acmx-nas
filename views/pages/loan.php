@@ -14,7 +14,7 @@ $loan_tic = get_field( 'loan_maturity_experience' );
 $loan_goal = get_field( 'loan_speech' );
 
 ?>
-<header data-fragment="hero" class="loan-maturity | uk-flex uk-flex-middle uk-light" data-src="<?php echo ( $loan_hdr_bg ) ? $loan_hdr_bg['url'] : '//placem.at/places?w=1920&h=550&txt=0&random=1' ?>" uk-img>
+<header data-fragment="hero" class="loan-maturity | uk-flex uk-flex-middle uk-light" data-src="<?php echo ( $loan_hdr_bg ) ? $loan_hdr_bg['url'] : 'https://placem.at/places?w=1920&h=550&txt=0&random=1' ?>" uk-img>
     <div class="uk-width-1-1">
         <div class="uk-container uk-container-small">
             <?php echo $loan_hdr_content; ?>

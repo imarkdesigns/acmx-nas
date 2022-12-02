@@ -969,6 +969,10 @@ body.map {
             box-shadow: 0 12px 7px -6px rgb(0 0 0 / 5%);
         }
 
+        .category-tray .uk-grid > div::before {
+            display: none;
+        }
+
     }
 }
 

@@ -6,7 +6,7 @@ $am_hdr_bg = get_field( 'hdr_photo' );
 $assets = get_field( 'am_list' );
 
 ?>
-<header data-fragment="hero" class="asset-hdr | uk-flex uk-flex-middle uk-light" data-src="<?php echo ( $am_hdr_bg ) ? $am_hdr_bg['url'] : '//placem.at/places?w=1920&h=550&txt=0&random=1' ?>" uk-img>
+<header data-fragment="hero" class="asset-hdr | uk-flex uk-flex-middle uk-light" data-src="<?php echo ( $am_hdr_bg ) ? $am_hdr_bg['url'] : 'https://placem.at/places?w=1920&h=550&txt=0&random=1' ?>" uk-img>
     <div class="uk-width-1-1">
         <div class="uk-container uk-container-small">
             <?php echo $am_hdr_content; ?>

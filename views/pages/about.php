@@ -30,7 +30,9 @@ $nas_services = get_field( 'aboutNAS_services' );
     <?php if ( $spec_bg['background_photo']['subtype'] == 'mp4' ) : ?>
     <div class="about-lead-video">
         <div class="uk-cover-container uk-light">
-            <video src="<?php echo $spec_bg['background_photo']['url']; ?>" muted playsinline loop uk-cover uk-video="autoplay: true"></video>
+            <video poster="<?php echo _uri.'/resources/images/about-us_bg-vide.png'; ?>" muted playsinline loop uk-cover uk-video="autoplay: true">
+                <source src="<?php echo $spec_bg['background_photo']['url']; ?>" type="video/mp4">
+            </video>
             <canvas width="1920" uk-height-viewport="min-height: 667"></canvas>
 
             <div class="uk-overlay uk-position-cover uk-flex uk-flex-center uk-flex-middle">

@@ -563,6 +563,19 @@
       "oAP" : "\/index.php",
       "oF" : 0
     },
+    "\/resources\/images\/about-us_bg-vide.png" : {
+      "ft" : 32768,
+      "iS" : 2608948,
+      "oA" : 0,
+      "oAP" : "\/resources\/images\/about-us_bg-vide.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
     "\/resources\/images\/asset\/industrial-asset-mgmt.jpg" : {
       "ft" : 16384,
       "iS" : 290579,
@@ -1535,14 +1548,6 @@
       "oAP" : "\/single.php",
       "oF" : 0
     },
-    "\/stories.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/stories.php",
-      "oF" : 0
-    },
     "\/style.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -1841,14 +1846,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/views\/singles\/ondemand-property.php",
-      "oF" : 0
-    },
-    "\/views\/singles\/single.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/views\/singles\/single.php",
       "oF" : 0
     },
     "\/views\/singles\/success-story.php" : {

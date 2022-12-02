@@ -63,13 +63,9 @@
                         endwhile; ?>
                     </ul>
                 </div>
-
-
             </div>
-
 
         </div>
     </section>
-
 
 </main>

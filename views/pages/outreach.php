@@ -20,7 +20,7 @@ $or_pg_gallery = get_field( 'pg_gallery' );
 $or_pg_faq = get_field( 'pg_faq' );
 
 ?>
-<header data-fragment="hero" class="outreach | uk-flex uk-flex-middle uk-light" data-src="<?php echo ( $or_hdr_bg ) ? $or_hdr_bg['url'] : '//placem.at/places?w=1920&h=550&txt=0&random=1' ?>" uk-img>
+<header data-fragment="hero" class="outreach | uk-flex uk-flex-middle uk-light" data-src="<?php echo ( $or_hdr_bg ) ? $or_hdr_bg['url'] : 'https://placem.at/places?w=1920&h=550&txt=0&random=1' ?>" uk-img>
     <div class="uk-overlay uk-position-center uk-light">
         <h1 class="uk-text-center"><?php echo strip_tags($or_hdr_content); ?></h1>
     </div>
