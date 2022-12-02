@@ -14,7 +14,7 @@
     </div>
 </footer>
 <?php else : ?>
-<footer data-ondemand="footer">
+<footer data-ondemand="footer" class="no-touch">
     <div class="uk-child-width-auto@s uk-grid-collapse uk-flex-between uk-flex-middle uk-light" uk-grid>
         <div class="od-footer-copyright">
             Copyright <?php echo date('Y'); ?>. <?php bloginfo(); ?>
