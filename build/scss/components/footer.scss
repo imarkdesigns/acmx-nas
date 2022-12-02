@@ -153,7 +153,6 @@
 // OnDemand Settings
 //
 @media only screen and ( min-width: 640px ) {
-
     [data-ondemand="footer"] {
         position: relative;
         background-color: rgba(#2A292C,1);
@@ -197,7 +196,6 @@
             }
         }
     }
-
 }
 
 // @media screen and ( min-width: 640px ) {
@@ -210,7 +208,6 @@
 
 @media only screen 
     and ( max-device-width: 1366px ) {
-
         .main-touch {
             margin-bottom: 54px;
         }
@@ -248,7 +245,6 @@
                 padding: .5em 0;
             }
         }
-
 }
 
 // NAS Help Modal
