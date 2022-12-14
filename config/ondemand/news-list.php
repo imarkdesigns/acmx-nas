@@ -21,11 +21,11 @@ if ( $sticky ) {
     $userID = get_current_user_id();
     $directories = get_field( 'directory_list', 'user_'.$userID );
 
-    if ( count($directories) >= 2 ) {
-        $postPerPage = '5';
-    } elseif ( count($directories) >= 5 ) {
-        $postPerPage = '7';
-    }
+    // if ( count($directories) >= 2 ) {
+    //     $postPerPage = '5';
+    // } elseif ( count($directories) >= 5 ) {
+    //     $postPerPage = '7';
+    // }
 }
 
 $not_sticky = get_option( 'sticky_posts' );
