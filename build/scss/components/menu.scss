@@ -173,6 +173,10 @@
                     color: rgba($primary-clr,.9);
                 }
             }
+
+            label span {
+                color: rgba(#FFF,.8);
+            }
         }
 
         #datafetch .search-result li {
@@ -300,6 +304,10 @@
                 -webkit-tap-highlight-color: rgba(0,0,0,0);
                 outline: none;
                 border-radius: 0;
+            }
+
+            label span {
+                color: rgba(#FFF,.8);
             }
         }
 
