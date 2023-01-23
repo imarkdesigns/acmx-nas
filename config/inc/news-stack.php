@@ -55,6 +55,7 @@ $slider = get_field( 'news_gallery', $post_id ); ?>
                     echo '<img src="https://placem.at/places?w=1280&h=720&txt=0&random='.$post_id.'" width="1280" height="720" alt="'.$post_title.'">';
                 } ?>
             <?php endif; ?>
+            <a href="<?php echo get_permalink( $post_id  ); ?>" class="uk-position-cover" aria-label="<?php echo $post_title; ?>" role="link"></a>
         </div>
         <div class="uk-width-1-1@s uk-width-1-3@m uk-position-relative">
             <div class="uk-card-body">
