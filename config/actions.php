@@ -48,7 +48,9 @@ function remove_protected_text() {
 add_filter( 'protected_title_format', 'remove_protected_text' );
 
 //* Allow Unfiltered Uploads & Edit themes/plugins
-define('ALLOW_UNFILTERED_UPLOADS', true);
+// define('ALLOW_UNFILTERED_UPLOADS', true);
+// define('DISALLOW_FILE_EDIT', true);
+// define('WP_DEBUG', false);
 
 // add_action('admin_menu', function() {
 //     add_options_page( 'Discussion Settings', 'Discussion', 'manage_options', 'options-discussion.php' );
