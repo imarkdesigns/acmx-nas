@@ -37,12 +37,12 @@ $ftr_slogan = get_field( 'NAS_footer_slogan', 'option' );
             <span>Copyright <?php echo date('Y'); ?>. <?php bloginfo() ?>.</span> All Rights Reserved.
         </div>
         <div class="legal-links">
-            <div class="uk-subnav">
+            <ul class="uk-subnav">
                 <li><a href="https://goo.gl/4Tuehz" target="_blank">Twitter</a></li>
                 <li><a href="https://goo.gl/RWn92o" target="_blank">Facebook</a></li>
                 <li><a href="<?php echo get_permalink( 3 ); ?>">Privacy Policy</a></li>
                 <li><a href="<?php echo get_permalink( 41 ); ?>">Sitemap</a></li>
-            </div>
+            </ul>
         </div>
     </div>
 

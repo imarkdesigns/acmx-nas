@@ -152,47 +152,45 @@
 //
 // OnDemand Settings
 //
-@media only screen and ( min-width: 640px ) {
-    [data-ondemand="footer"] {
-        position: relative;
-        background-color: rgba(#2A292C,1);
+[data-ondemand="footer"] {
+    position: relative;
+    background-color: rgba(#2A292C,1);
 
-        .uk-grid {
-            padding: 0 1em;
-            min-height: 60px;
+    .uk-grid {
+        padding: 0 1em;
+        min-height: 60px;
 
-            * { font-size: .75rem }
+        * { font-size: .75rem }
 
-            .od-footer-copyright {
-                text-align: center;
+        .od-footer-copyright {
+            text-align: center;
+        }
+
+        .uk-subnav {
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            gap: 16px;
+        }
+
+        .uk-subnav li {
+            position: relative;
+            padding: 0;
+
+            &::before {
+                position: absolute;
+                top: 0;
+                margin-right: 0;
+                transform: translateX(-8px);
             }
+        }
 
-            .uk-subnav {
-                justify-content: center;
-                margin: 0;
-                padding: 0;
-                gap: 16px;
-            }
+        .uk-subnav li > a {
+            color: rgba(#A7ABB4,.9);
+            text-transform: none;
 
-            .uk-subnav li {
-                position: relative;
-                padding: 0;
-
-                &::before {
-                    position: absolute;
-                    top: 0;
-                    margin-right: 0;
-                    transform: translateX(-8px);
-                }
-            }
-
-            .uk-subnav li > a {
-                color: rgba(#A7ABB4,.9);
-                text-transform: none;
-
-                &:hover {
-                    color: rgba($primary-clr,.9);
-                }
+            &:hover {
+                color: rgba($primary-clr,.9);
             }
         }
     }

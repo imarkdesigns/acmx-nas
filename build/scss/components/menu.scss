@@ -173,10 +173,10 @@
                     color: rgba($primary-clr,.9);
                 }
             }
+        }
 
-            label span {
-                color: rgba(#FFF,.8);
-            }
+        label[for="navbar-search"] span {
+            color: rgba(#FFF,.8) !important;
         }
 
         #datafetch .search-result li {
@@ -305,10 +305,10 @@
                 outline: none;
                 border-radius: 0;
             }
+        }
 
-            label span {
-                color: rgba(#FFF,.8);
-            }
+        label[for="dropbar-search"] span {
+            color: rgba(#FFF,.8) !important;
         }
 
         .uk-search {
