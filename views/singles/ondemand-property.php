@@ -1,4 +1,11 @@
-<?php get_header( 'ondemand' ); ?>
+<?php 
+// Bail out if user is not logged-in
+if ( !is_user_logged_in() && is_page([ 45, 47 ]) || is_singular( 'nas-ondemand' ) ) {
+    wp_redirect( get_permalink( 43 ) );
+    exit;
+}
+
+get_header( 'ondemand' ); ?>
 <main id="main" class="main <?php echo ( wp_is_mobile() ) ? 'main-touch' :null; ?>" role="main">
 
     <div class="uk-grid-collapse" uk-grid>
