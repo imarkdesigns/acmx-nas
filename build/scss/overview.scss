@@ -290,6 +290,13 @@
             border: 1px solid rgba(#FFF,.9);
             border-radius: 50%;
         }
+
+        span.video-comment {
+            background-color: rgba($primary-clr,.9);
+            color: rgba(#FFF,.9);
+            @include size(30px);
+            border: 0;
+        }
     }
 }
 

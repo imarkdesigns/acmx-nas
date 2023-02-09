@@ -30,6 +30,13 @@ $hdr_overlay = get_field( 'hdr_slide_overlay' ); ?>
         </ul>
         <div class="headings | uk-overlay uk-position-bottom-left uk-light">
             <?php echo $hdr_overlay; ?>
+            <div class="uk-button-group uk-margin-top">
+                <?php $pdf = get_field( 'pdf_brochure', 'option' );
+                if ( !is_null($pdf) ) {
+                    echo '<a href="'.$pdf['brochure_download']['url'].'" class="uk-button" download>Download NAS Brochure</a>';
+                } ?>                
+                <a href="#company-video" role="button" class="uk-button" uk-scroll="offset: 100">Watch Video</a>
+            </div>
         </div>
     </div>
     <!-- End of Slide -->
@@ -70,7 +77,7 @@ $video_link = get_field( 'companyVideo_video' );
                         <button type="button" class="toggle-excerpt" uk-toggle="target: .excerpt; animation: uk-animation-fade" role="button"> Read More </button>
                     </div>
                 </div>
-                <div class="company-video | uk-width-1-1">
+                <div id="company-video" class="company-video | uk-width-1-1">
                     <div class="uk-panel" uk-lightbox>
                         <figure class="uk-position-relative">
                             <figcaption class="uk-overlay uk-position-center uk-light">

@@ -36,6 +36,19 @@
             padding: .5em 0 0;
             border-top: 3px solid rgba(#FFF,.75);
         }
+
+        .uk-button-group {
+            font-size: .875rem;
+
+            .uk-button {
+                border: 1px solid #FFF;
+
+                &:hover,
+                &:focus {
+                    color: $primary-clr;
+                }
+            }
+        }
     }
 
     // Slide Description

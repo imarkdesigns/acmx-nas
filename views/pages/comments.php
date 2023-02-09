@@ -48,7 +48,10 @@ $comment_list = get_posts([
                         <figcaption class="uk-overlay uk-overlay-primary uk-position-bottom">
                             <h2 hidden>Holly Krupnick, Encino, CA <small>Investor | Town East</small></h2>
                             <h2><?php echo $post_title.', '.$cc_location.' <small>'.$cc_designation.' | '.$cc_property.'</small>'; ?></h2>
-                            <button type="button" tabindex="0" uk-toggle="target: #modal-containerID<?php echo $post_id; ?>; animation: uk-animation-fade" aria-label="read comment"><span uk-icon="icon: plus; ratio: .8"></span></button>
+                            <button type="button" tabindex="0" uk-toggle="target: #modal-containerID<?php echo $post_id; ?>; animation: uk-animation-fade" aria-label="read comment">
+                                <span uk-icon="icon: plus; ratio: .8"></span>
+                                <?php echo ( $cc_media ) ? '<span uk-icon="icon: video-camera; ratio: 1" class="video-comment |"></span>' : '' ; ?>
+                            </button>
                         </figcaption>
                     </figure>
                 </div>
