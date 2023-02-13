@@ -18,6 +18,10 @@
         }
     }
 
+    .excerpt a {
+        color: rgba($primary-clr,.9);
+    }
+
     .toggle-excerpt {
         appearance: none;
         background-color: transparent;

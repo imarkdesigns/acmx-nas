@@ -1,6 +1,6 @@
 <?php 
 // Bail out if user is not logged-in
-if ( !is_user_logged_in() && is_page([ 45, 47 ]) || is_singular( 'nas-ondemand' ) ) {
+if ( !is_user_logged_in() || is_page([ 45, 47 ]) ) {
     wp_redirect( get_permalink( 43 ) );
     exit;
 }
