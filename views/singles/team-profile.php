@@ -49,7 +49,7 @@ $_GET['direct_mail'] = $email;
                                 <img src="<?php echo _uri.'/resources/images/icon-email.png'; ?>" alt="Send Direct Message">
                             </a>
                             <?php if ( $vcard ) : ?>
-                            <a href="<?php echo $vcard['url']; ?>" download>
+                            <a href="<?php echo $vcard['url']; ?>" download rel="nofollow">
                                 <img src="<?php echo _uri.'/resources/images/icon-vcf_download.png'; ?>" alt="Download Contact Info">
                             </a>
                             <?php endif; ?>
