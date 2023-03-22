@@ -3,29 +3,24 @@
 function sticky_newsList() {
 
 $sticky = get_option( 'sticky_posts' );
-$sticky = array_slice( $sticky, 0, 2 );
+$sticky = array_slice( $sticky, 0, 2 ); // Get the top 2 Sticky
+$sticky_count = count($sticky); // Count the Sticky
 $sticky_list = get_posts([
     'post_type' => [ 'post' ],
-    'posts_per_page' => 2,
+    'posts_per_page' => ($sticky_count == 1) ? 1 : 2,
     'post_status' => 'publish',
     'has_password' => false,
     'order' => 'ASC',
     'orderby' => 'menu_order',
-    'ignore_sticky_posts' => 1,
-    'post__not_in' => $sticky
+    'ignore_sticky_posts' => 2,
 ]);
 
-if ( $sticky ) {
-    $postPerPage = '4';
+if ( $sticky_count == 1 ) {
+    $postPerPage = '5';
 } else {
     $userID = get_current_user_id();
     $directories = get_field( 'directory_list', 'user_'.$userID );
-
-    // if ( count($directories) >= 2 ) {
-    //     $postPerPage = '5';
-    // } elseif ( count($directories) >= 5 ) {
-    //     $postPerPage = '7';
-    // }
+    $postPerPage = '4';
 }
 
 $not_sticky = get_option( 'sticky_posts' );
@@ -39,7 +34,7 @@ $news_list = get_posts([
     'post__not_in' => $not_sticky
 ]);
 
-if ( $news_list ) : ?>
+if ( $news_list ) :?>
 <ul class="tn-list">
     <?php 
     if ( $sticky ) :
@@ -99,7 +94,7 @@ if ( $news_list ) : ?>
     </li>
     <?php endforeach; ?>
 </ul>
-<?php endif; 
+<?php endif;
 
 }
 add_action( 'sticky_newsList', 'sticky_newsList' );
