@@ -3,7 +3,6 @@
 function sticky_newsList() {
 
 $sticky = get_option( 'sticky_posts' );
-$sticky = array_slice( $sticky, 0, 2 ); // Get the top 2 Sticky
 $sticky_count = count($sticky); // Count the Sticky
 $sticky_list = get_posts([
     'post_type' => [ 'post' ],
@@ -12,7 +11,8 @@ $sticky_list = get_posts([
     'has_password' => false,
     'order' => 'ASC',
     'orderby' => 'menu_order',
-    'ignore_sticky_posts' => 2,
+    'ignore_sticky_posts' => true,
+    'post__in' => $sticky
 ]);
 
 if ( $sticky_count == 1 ) {

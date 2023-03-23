@@ -947,7 +947,6 @@ body.map {
         width: 100% !important;
         height: calc( 100vh - 60px );
         padding: 15px;
-        box-shadow: none;
         border-top: 1px solid #EEE;
         backdrop-filter: blur(20px);
     }
@@ -972,7 +971,8 @@ body.map {
         }
         
         .uk-dropbar {
-            height: auto !important;
+            height: auto;
+            max-height: 405px;
             box-shadow: 0 12px 7px -6px rgb(0 0 0 / 5%);
         }
 

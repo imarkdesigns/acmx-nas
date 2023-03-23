@@ -83,5 +83,3 @@ define ( '_od_config', 'config/ondemand/' );
 //     $args['message'] = do_shortcode( $args['message'] );
 //     return $args;
 // }, 1, 1 );
-
-

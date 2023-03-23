@@ -25,6 +25,14 @@
       "oAP" : "\/404.php",
       "oF" : 0
     },
+    "\/archive.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/archive.php",
+      "oF" : 0
+    },
     "\/build\/editor\/wp-acf-editor.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -306,14 +314,6 @@
       "oS" : 3,
       "pg" : 0,
       "sct" : 0
-    },
-    "\/category.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/category.php",
-      "oF" : 0
     },
     "\/config\/acf.php" : {
       "cB" : 0,

@@ -164,7 +164,7 @@ function newsMore() {
 
 // More News
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-if ( is_category() ) {
+if ( is_category() || is_tag() ) {
     $more_news = get_posts([
         'post_type' => [ 'post' ],
         'posts_per_page' => 10,
@@ -221,16 +221,31 @@ $term_cat = get_the_terms( $post_id, 'category' ); ?>
 add_action( 'newsMore', 'newsMore' );
 
 
-function categoryPost( $term ) {
+function categoryPost( $term, $term_type ) {
 
-$categories = get_posts([
-    'post_type' => [ 'post' ],
-    'posts_per_page' => -1,
-    'post_status' => 'publish',
-    'has_password' => false,
-    'order' => 'DESC',
-    'cat' => $term
-]); 
+if ( $term_type == 'category' ) {
+
+    $categories = get_posts([
+        'post_type' => [ 'post' ],
+        'posts_per_page' => -1,
+        'post_status' => 'publish',
+        'has_password' => false,
+        'order' => 'DESC',
+        'cat' => $term,
+    ]);
+
+} elseif ( $term_type == 'post_tag' ) {
+
+    $categories = get_posts([
+        'post_type' => [ 'post' ],
+        'posts_per_page' => -1,
+        'post_status' => 'publish',
+        'has_password' => false,
+        'order' => 'DESC',
+        'tag_id' => $term,
+    ]);
+
+}
 
 foreach ( $categories as $post ) : 
 $post_id = $post->ID;
@@ -259,7 +274,7 @@ $post_date = date('F j, Y', $date_stamp); ?>
 <?php endforeach;
 
 }
-add_action( 'categoryPost', 'categoryPost', 10, 1 );
+add_action( 'categoryPost', 'categoryPost', 10, 2 );
 
 
 function newsArchive() {
