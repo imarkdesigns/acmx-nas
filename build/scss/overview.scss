@@ -1058,7 +1058,30 @@ body.map {
         font-size: clamp(1rem, 0.8438rem + 0.5vw, 1.125rem);
         line-height: 1.2;
     }
+
+    // Pagination
+    .news-prev-more-link a,
+    .news-next-more-link a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba($primary-clr,1);
+        color: rgba(#FFF,.9);
+        @include size(44px);
+        border-radius: 50%;
+
+        svg polyline {
+            stroke-width: 2;
+        }
+    }
+
+    .news-pagination .uk-width-auto {
+        margin-inline: 30px;
+    }
+
 }
+
+
 
 .search-list::after {
     content: 'Search Result';

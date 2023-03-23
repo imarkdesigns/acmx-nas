@@ -316,13 +316,14 @@ if ( have_posts() ) :
         </div>
     </div>
     <?php endwhile; wp_reset_postdata(); ?>
-    <div class="news-pagination uk-flex uk-flex-between uk-width-1-1">
-        <div class="news-prev-more-link">
-            <?php previous_posts_link( 'Previous News' ); ?>
+    <div class="news-pagination | uk-flex uk-flex-center uk-flex-middle uk-width-1-1">
+        <div class="news-prev-more-link | uk-width-auto">
+            <?php previous_posts_link( 'Previous News Articles' ); ?>
         </div>
-        <div class="news-next-more-link uk-text-right">
+        <div class="uk-width-auto"><?php current_paged(); ?></div>
+        <div class="news-next-more-link | uk-width-auto">
             <?php if ( get_next_posts_link() ) :
-                next_posts_link( 'Next News' );
+                next_posts_link( 'Next News Articles' );
             endif; ?>
         </div>
     </div>    
@@ -330,6 +331,28 @@ if ( have_posts() ) :
 
 }
 add_action( 'newsArchive', 'newsArchive' );
+
+// News Archive Pagination
+function current_paged( $var = '' ) {
+    if( empty( $var ) ) {
+        global $wp_query;
+        if( !isset( $wp_query->max_num_pages ) )
+            return;
+        $pages = $wp_query->max_num_pages;
+    }
+    else {
+        global $$var;
+            if( !is_a( $$var, 'WP_Query' ) )
+                return;
+        if( !isset( $$var->max_num_pages ) || !isset( $$var ) )
+            return;
+        $pages = absint( $$var->max_num_pages );
+    }
+    if( $pages < 1 )
+        return;
+    $page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+    echo $page . ' of ' . $pages;
+}
 
 
 function searchResult( $param ) {
@@ -388,3 +411,6 @@ function searchResult( $param ) {
     <?php endif;
 }
 add_action( 'searchResult', 'searchResult', 10, 1 );
+
+
+
