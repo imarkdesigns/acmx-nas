@@ -27,6 +27,7 @@ $fn_config = [
     'config/ondemand/news-list.php',
     'config/ondemand/nasis-property.php',
     'config/ondemand/nasis-brochure.php',
+    'config/ondemand/nasis-referrer.php',
     'config/ondemand/property.php',
     'config/ondemand/documents.php',
 

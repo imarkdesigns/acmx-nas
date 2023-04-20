@@ -9,6 +9,7 @@
     <?php 
         do_action( 'nasisProperty' );
         do_action( 'nasisBrochure' );
+        do_action( 'nasisReferrer' );
     ?>        
     </div>
 </div>
