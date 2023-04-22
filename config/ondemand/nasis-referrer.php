@@ -6,9 +6,11 @@ $nasis_referrer = get_field( 'refer_link', 'option' );
 ?>
 <div class="nasis-referrer">
     <figure class="uk-inline uk-margin-remove">
-        <?php if ( $nasis_referrer['referrer_photo'] ) {
-            echo wp_get_attachment_image( $nasis_referrer['referrer_photo']['ID'], 'full', '', [ 'uk-cover' => '' ] );
-        } ?>
+        <picture class="uk-width-expand uk-margin-remove">
+            <?php if ( $nasis_referrer['referrer_photo'] ) {
+                echo wp_get_attachment_image( $nasis_referrer['referrer_photo']['ID'], 'full', '', [ 'uk-cover' => '' ] );
+            } ?>
+        </picture>
         <canvas width="960" height="360"></canvas>
         <?php if ( !empty( $nasis_referrer['referrer_description'] ) ) : ?>
         <figcaption class="uk-overlay uk-overlay-primary uk-position-cover">
