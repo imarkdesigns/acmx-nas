@@ -204,15 +204,17 @@
             margin-top: 5px;
 
             figure.uk-inline {
+                width: 100%;
                 border-radius: 2px;
                 border: 1px solid #636367;
                 overflow: hidden;
             }
 
             canvas {
-                max-width: 960px !important;
+                max-width: 1200px !important;
                 width: 100%;
                 min-height: 260px;
+                max-height: 360px;
             }
 
             .uk-overlay-primary {
