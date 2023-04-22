@@ -5,7 +5,7 @@ $nasis_referrer = get_field( 'refer_link', 'option' );
 
 ?>
 <div class="nasis-referrer">
-    <figure class="uk-inline uk-margin-remove">
+    <figure class="uk-inline uk-margin-remove uk-width-1-1">
         <picture class="uk-width-expand uk-margin-remove">
             <?php if ( $nasis_referrer['referrer_photo'] ) {
                 echo wp_get_attachment_image( $nasis_referrer['referrer_photo']['ID'], 'full', '', [ 'uk-cover' => '' ] );
