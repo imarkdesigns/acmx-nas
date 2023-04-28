@@ -25,6 +25,12 @@
                 }
             }).resize();
 
+            UIkit.util.on('#maintenance-dialog', 'click', function (e) {
+                e.preventDefault();
+                e.target.blur();
+                UIkit.modal.dialog('<p class="uk-modal-body uk-text-center">Sorry, This property is under maintenance. Please checkback soon! <small class="uk-display-block uk-text-meta">(click anywhere to close this window)</small></p>');
+            });
+
         }
     }, 100);
 

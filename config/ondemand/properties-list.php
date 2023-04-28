@@ -21,6 +21,9 @@ $myProperties = get_posts([
     'post__in' => $property_IDs
 ]);
 
+$user = get_userdata( $userID );
+$userRole = $user->roles;
+
 ?>
 <ul class="mp-list">
     <?php foreach ( $myProperties as $dir ) :
@@ -28,6 +31,7 @@ $myProperties = get_posts([
     $post_title = $dir->post_title;
 
     $description = get_field( 'property_description', $post_id );
+    $maintenance = get_field( 'property_maintenance', $post_id );
     $term_cat = get_the_terms( $post_id, 'ondemand-categories' ); ?>
     <li class="mp-item">
         <div class="uk-card uk-card-default uk-card-body uk-card-small uk-card-hover uk-grid-collapse" uk-grid>
@@ -46,7 +50,21 @@ $myProperties = get_posts([
                     <div class="description"><?php echo custom_field_excerpt( $description, 20 ); ?></div>
                     <ul class="taxonomy | uk-text-small">
                         <li hidden>Category: <?php echo $term_cat[0]->name; ?></li>
-                        <li><a href="<?php echo get_permalink( $post_id ); ?>">Click to see Documents</a></li>
+                        <?php 
+                        // Check if the property is under-maintenance
+                        if ( $maintenance == '1' ) : 
+                            // Disable all investors access if property is under-maintenance
+                            // Exclude admin, moderators  to under-maintenance
+                            if ( in_array( 'administrator', $userRole, true ) ) : ?>
+                                <li><a href="<?php echo get_permalink( $post_id ); ?>">Click to see Documents</a></li>
+                            <?php elseif ( in_array( 'moderator', $userRole, true ) ) : ?>
+                                <li><a href="<?php echo get_permalink( $post_id ); ?>">Click to see Documents</a></li>
+                            <?php else: ?>
+                                <li><a href="#" id="maintenance-dialog">Click to see Documents</a></li>
+                            <?php endif;
+                        else : ?>
+                            <li><a href="<?php echo get_permalink( $post_id ); ?>">Click to see Documents</a></li>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </div>
