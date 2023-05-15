@@ -24,8 +24,6 @@
         get_template_part( _opt.'ondemand-investments' ); ?>
     </div>
 
-    <a class="uk-button uk-button-default" href="#equity-modal" uk-toggle>Open</a>
-
     <div id="equity-modal" class="uk-flex-top" uk-modal>
         <div class="uk-modal-dialog uk-section-medium-dark uk-margin-auto-vertical uk-light">
             <button class="uk-modal-close-default" type="button" uk-close></button>
@@ -41,7 +39,6 @@
                     <li>Reliable Cash Flow from Day One. Paid to Investors Monthly</li>
                 </ul>
                 <p>A Private Preferred Equity Fund Used Exclusively for NASIS Property Acquisitions</p>
-
             </div>
         </div>
     </div>    

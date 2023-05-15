@@ -31,15 +31,26 @@
                 UIkit.modal.dialog('<p class="uk-modal-body uk-text-center">Sorry, This property is under maintenance. Please checkback soon! <small class="uk-display-block uk-text-meta">(click anywhere to close this window)</small></p>');
             });
 
+            // Modal on Dashboard
+            jQuery.getScript('https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js', function() {
+                var modalInterval = setInterval(function() {
+                    UIkit.modal('#equity-modal').show();
+                }, 3000);
 
-            var modalInterval = setInterval(function() {
-                UIkit.modal('#equity-modal').show();
-            }, 3000);
+                UIkit.util.on('#equity-modal button.uk-modal-close-default', 'click', function (e) {
+                    e.preventDefault();
+                    Cookies.set('__modal-interval', 'active', { expires: 7  });
+                    clearInterval(modalInterval);
+                });
 
-            UIkit.util.on('#equity-modal button.uk-modal-close-default', 'click', function (e) {
-                e.preventDefault();
-                UIkit.modal('#equity-modal').hide();
-                clearInterval(modalInterval);
+                function disableModal() {
+                    UIkit.modal('#equity-modal').hide();
+                    clearInterval(modalInterval);
+                }
+
+                if ( Cookies.get('__modal-interval') == 'active' ) {
+                    disableModal();
+                }
             });
             
         }
