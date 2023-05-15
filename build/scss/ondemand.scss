@@ -776,4 +776,95 @@
 }
 
 
+//
+// Modal - Promotional
+//
+
+#equity-modal {
+    backdrop-filter: saturate(180%) blur(5px);
+
+    .uk-modal-dialog {
+        border-radius: 10px;
+    }
+
+    .uk-modal-dialog .uk-modal-body {
+        padding: 30px;
+    }
+
+    p:first-child {
+        @include proxima_light;
+        font-size: clamp(1rem, 0.7895rem + 0.7105vw, 1.5rem);
+        color: rgba($primary-clr,.9);
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    h1 {
+        @include proxima_bold;
+        font-size: clamp(2rem, 1.7369rem + 0.8881vw, 2.625rem);
+        line-height: 1;
+        margin: 0;
+        @include sharpText;
+    }
+
+    h2 {
+        @include proxima_light;
+        font-size: clamp(1.5rem, 1.2895rem + 0.7105vw, 2rem);
+        color: rgba($secondary-clr,.9);
+        line-height: 1;
+        margin: 30px 0;
+        @include sharpText;
+    }
+
+    ul {
+        list-style: none;
+        line-height: 1;
+        margin: 0;
+        padding-left: 0;
+
+        li {
+            position: relative;
+            font-size: clamp(1.125rem, 0.9671rem + 0.5329vw, 1.5rem);
+            line-height: 1;
+            letter-spacing: normal;
+            margin-top: 10px;
+            padding-left: 25px;
+            @include sharpText;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                background: linear-gradient(#ab9c8f 0,#ab9c8f 47%,#fff 47%,#fff 47%,#fff 49%,#fff 51%,#fff 54%,#fff 54%,#f37021 54%,#f37021 100%);
+                @include size(10px,20px);
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    p {
+        font-size: clamp(1rem, 0.9474rem + 0.1776vw, 1.125rem);
+        text-transform: uppercase;
+        line-height: normal;
+        margin-block: 30px 0;
+        @include sharpText;
+    }
+
+    @media screen and ( min-width: 640px ) {
+        
+        .uk-modal-dialog .uk-modal-body {
+            padding: 60px;
+        }
+
+    }
+
+
+}
+
+
 

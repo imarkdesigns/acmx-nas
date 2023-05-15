@@ -1,4 +1,8 @@
-<?php get_header(); 
+<?php 
+/*
+Template Name: Archives
+*/
+get_header(); 
 // Check type of Taxonomy
 $query_object = get_queried_object(); ?>
 <main id="main" class="main" role="main">

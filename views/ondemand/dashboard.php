@@ -22,6 +22,27 @@
 
         <?php
         get_template_part( _opt.'ondemand-investments' ); ?>
-
     </div>
+
+    <a class="uk-button uk-button-default" href="#equity-modal" uk-toggle>Open</a>
+
+    <div id="equity-modal" class="uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-section-medium-dark uk-margin-auto-vertical uk-light">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <div class="uk-modal-body">
+                <p>New Investment Opportunity</p>
+                <h1>NASIS Preferred Equity Fund II, LLC</h1>
+                <h2>12.5% Projected Cumulative Return</h2>
+                <ul>
+                    <li>Minimum 8% Annual Return Paid to the Fund</li>
+                    <li>1.5% added when money is allocated to an acquisition</li>
+                    <li>3 Property Acquisitions Anticipated Yearly</li>
+                    <li>Participation Minium: $250,000 for 2 Years</li>
+                    <li>Reliable Cash Flow from Day One. Paid to Investors Monthly</li>
+                </ul>
+                <p>A Private Preferred Equity Fund Used Exclusively for NASIS Property Acquisitions</p>
+
+            </div>
+        </div>
+    </div>    
 </main>

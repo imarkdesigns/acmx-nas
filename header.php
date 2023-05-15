@@ -7,11 +7,11 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <script async src=https://www.googletagmanager.com/gtag/js?id=UA-55912683-1></script>
     <script>
-     window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-     gtag('config', 'UA-55912683-1');
+        gtag('config', 'UA-55912683-1');
     </script>
 </head>
 <body <?php body_class() . schema() ?>>

@@ -31,6 +31,17 @@
                 UIkit.modal.dialog('<p class="uk-modal-body uk-text-center">Sorry, This property is under maintenance. Please checkback soon! <small class="uk-display-block uk-text-meta">(click anywhere to close this window)</small></p>');
             });
 
+
+            var modalInterval = setInterval(function() {
+                UIkit.modal('#equity-modal').show();
+            }, 3000);
+
+            UIkit.util.on('#equity-modal button.uk-modal-close-default', 'click', function (e) {
+                e.preventDefault();
+                UIkit.modal('#equity-modal').hide();
+                clearInterval(modalInterval);
+            });
+            
         }
     }, 100);
 
