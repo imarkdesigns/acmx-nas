@@ -178,7 +178,7 @@ if ( is_category() || is_tag() ) {
     $more_news = get_posts([
         'post_type' => [ 'post' ],
         'posts_per_page' => 10,
-        'paged' => $paged,
+        // 'paged' => $paged,
         'post_status' => 'publish',
         'has_password' => false,
         'order' => 'ASC',
